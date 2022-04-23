@@ -1,5 +1,5 @@
 {
-    "name": "Slayley's Theme",
+    "name": "slayley-theme",
     "description": "A theme made for Slayley.com powered by Ghost CMS",
     "demo": "https://slayley.com",
     "version": "1.0.0",
@@ -20,6 +20,10 @@
         "email": "therealjohnpolinski@gmail.com",
         "url": "https://github.com/microdotmatrix"
     },
+    "engines": {
+        "ghost": ">=4.0.0",
+        "ghost-api": ">=4.0.0"
+    },
     "gpm": {
         "type": "theme"
     },
@@ -33,14 +37,18 @@
         "url": "https://github.com/microdotmatrix/ggSlayley.git"
     },
     "devDependencies": {
+        "beeper": "^3.0.0",
         "browser-sync-webpack-plugin": "^2.3.0",
         "fast-glob": "^3.2.11",
         "gscan": "4.22.0",
+        "gulp": "^4.0.2",
+        "gulp-zip": "^5.1.0",
         "laravel-mix": "^6.0.43",
         "mini-css-extract-plugin": "^2.6.0",
         "postcss-custom-properties": "^12.1.7",
         "postcss-import": "^14.1.0",
         "postcss-preset-env": "^7.4.3",
+        "pump": "^3.0.0",
         "resolve-url-loader": "^5.0.0",
         "sass-loader": "^12.1.0",
         "tailwindcss": "^3.0.23"
