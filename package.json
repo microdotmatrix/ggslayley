@@ -1,36 +1,27 @@
 {
-    "name": "ghost-starter-theme",
-    "description": "A custom theme for ghost",
-    "demo": "https://starter.ghost.io",
+    "name": "Slayley's Theme",
+    "description": "A theme made for Slayley.com powered by Ghost CMS",
+    "demo": "https://slayley.com",
     "version": "1.0.0",
-    "engines": {
-        "ghost": ">=4.0.0",
-        "ghost-api": "v4"
-    },
     "license": "MIT",
     "screenshots": {
         "desktop": "assets/screenshot-desktop.jpg"
     },
     "scripts": {
-        "dev": "gulp",
-        "zip": "gulp zip",
+        "dev": "npx mix",
+        "watch": "npx mix watch",
         "test": "gscan .",
         "test:ci": "gscan --fatal --verbose .",
-        "pretest": "gulp build",
         "preship": "yarn test",
         "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; fi"
     },
     "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org"
+        "name": "John Polinski",
+        "email": "therealjohnpolinski@gmail.com",
+        "url": "https://github.com/microdotmatrix"
     },
     "gpm": {
-        "type": "theme",
-        "categories": [
-            "Minimal",
-            "Magazine"
-        ]
+        "type": "theme"
     },
     "keywords": [
         "ghost",
@@ -39,31 +30,50 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/TryGhost/Starter.git"
+        "url": "https://github.com/microdotmatrix/ggSlayley.git"
     },
-    "bugs": "https://github.com/TryGhost/Starter/issues",
-    "contributors": "https://github.com/TryGhost/Starter/graphs/contributors",
     "devDependencies": {
-        "autoprefixer": "10.4.4",
-        "beeper": "2.1.0",
-        "cssnano": "5.1.7",
-        "gscan": "4.27.0",
-        "gulp": "4.0.2",
-        "gulp-livereload": "4.0.2",
-        "gulp-postcss": "9.0.1",
-        "gulp-sourcemaps": "3.0.0",
-        "gulp-uglify": "3.0.2",
-        "gulp-util": "3.0.8",
-        "gulp-watch": "5.0.1",
-        "gulp-zip": "5.1.0",
-        "postcss": "8.4.12",
-        "postcss-color-mod-function": "3.0.3",
-        "postcss-easy-import": "4.0.0"
+        "browser-sync-webpack-plugin": "^2.3.0",
+        "fast-glob": "^3.2.11",
+        "gscan": "4.22.0",
+        "laravel-mix": "^6.0.43",
+        "mini-css-extract-plugin": "^2.6.0",
+        "postcss-custom-properties": "^12.1.7",
+        "postcss-import": "^14.1.0",
+        "postcss-preset-env": "^7.4.3",
+        "resolve-url-loader": "^5.0.0",
+        "sass-loader": "^12.1.0",
+        "tailwindcss": "^3.0.23"
+    },
+    "dependencies": {
+        "@waaark/luge": "^0.6.7-beta",
+        "accoutrement": "^4.0.1",
+        "fitvids": "^2.1.1",
+        "fslightbox": "^3.3.1",
+        "gerillass": "^1.3.0",
+        "glightbox": "^3.2.0",
+        "gsap": "^3.10.2",
+        "imagesloaded": "^5.0.0",
+        "isotope-layout": "^3.0.6",
+        "jarallax": "^2.0.3",
+        "jquery": "^3.6.0",
+        "lightgallery": "^2.4.0",
+        "open-props": "^1.3.16",
+        "rolly.js": "^0.4.0",
+        "shopify-buy": "^2.15.1",
+        "swiper": "^8.1.0",
+        "typesettings": "^4.2.0"
     },
     "browserslist": [
         "defaults"
     ],
     "config": {
+        "card_assets": {
+            "exclude": [
+                "gallery",
+                "bookmark"
+            ]
+        },
         "posts_per_page": 15,
         "image_sizes": {
             "xxs": {

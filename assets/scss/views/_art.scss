@@ -1,0 +1,27 @@
+.xc-gallery {
+  @apply w-full flex;
+  .xc-card {
+    &__figure {
+      display: block;
+      img {
+        @apply w-full h-full object-cover;
+      }
+      figcaption {
+        @apply absolute top-0 left-0 w-full opacity-0 hover:opacity-100;
+        background: rgba(_slayley(2), 0.5);
+        .xc-card__meta {
+          @apply block;
+          font-size: $sm;
+          font-family: $uni-sans;
+          font-weight: 400;
+        }
+        .xc-card__title {
+          display: block;
+          font-family: $abel;
+          font-size: $lg;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

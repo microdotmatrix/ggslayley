@@ -1,0 +1,39 @@
+.xc-header {
+  background: rgba(_slayley(9), 1);
+
+  .xc-navbar {
+    @apply flex flex-row w-full py-8 px-10;
+  }
+  .xc-title {
+    @apply relative flex justify-start items-center;
+    &__logo {
+      @apply block aspect-square overflow-clip rounded-full border-8 border-white opacity-10 p-1 mt-2 2xl:ml-[4.5vw];
+      @include sizer(12rem);
+      > img {
+        @apply w-full h-full object-contain invert;
+      }
+    }
+    &__link {
+      @apply block absolute top-1/4 left-1/2 lg:left-1/4;
+      font-size: $xxl;
+      font-family: $blacklisted;
+      text-transform: uppercase;
+      color: _slayley(2);
+      transform: scaleX(1.35) scaleY(0.9);
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    &__subtitle {
+      @apply block absolute left-1/3 lg:left-1/4 text-2xl;
+      margin-top: $xxxl;
+      color: _slayley(4);
+      font-family: $abel;
+      font-weight: 400;
+      //font-size: $md;
+    }
+  }
+  .xc-menu {
+    @apply flex justify-end items-center;
+  }
+}

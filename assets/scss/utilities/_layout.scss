@@ -1,0 +1,139 @@
+// Container
+// -----
+// I had been a die hard Bourbon user for years, practically since it was first distilled. But I
+// recently found Gerillass, a rather curiously named Sass function library with a few extra tools
+// that captured my heart. One being the elegant "adaptive" mixin, which simply generates the
+// breakpoints and widths of your container with whatever gutter width you plug into it.
+// -----
+
+.xc-container {
+  @include adaptive($container-gutter);
+  max-width: $content-width;
+}
+
+// Flex Grid + Data-Selectors...
+// -----
+// I just can't get over semantic styling enough to convert entirely to utility classes... but data-selectors  are fun, especially for anything that is assigned numeric values. And I love flexbox. I'll do some Grid stuff too, but Flex is my jam.
+//
+// http://sassflexboxgrid.com
+// ^^^ This guy wrote a very handy set of mixins to simplify row and column generation using Sass and Flexbox
+// fully decked out with responsive breakpoint functions and generators for utility classes. Here I'll just be
+// using the row and column mixins, passing through a @for function to generate data-attribute selectors with
+// 12 columns.
+// -----
+
+[data-flex],
+[data-flex="row"] {
+  @include row();
+
+}
+
+[data-flex="column"] {
+  @include row($direction: column);
+}
+
+$flex-columns: 12;
+
+@for $i from 1 through $flex-columns {
+  [data-column="#{$i}"] {
+     @include col($i);
+  }
+}
+
+@for $i from 1 through $flex-columns {
+  @include breakpoint(max, $bp-md) {
+    [data-column="#{$i}"] {
+      @include col(12);
+    }
+  }
+}
+
+[data-column="auto"] {
+  @include col();
+}
+
+[data-grid] {
+  display: grid;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+[data-grid] > div {
+  padding: calc($space-phi / $pi);
+}
+
+// Using Open Prop's grid-adapt-mixin custom property for a easy, responsive grid layout that will generate 3 columns automatically on large screens and adapt columns down on smaller screens.
+
+[data-grid="auto"] {
+  grid-template-columns: var(--grid_adapt_mixin);
+}
+
+$grid-columns: 6;
+
+@for $i from 1 through $grid-columns {
+  [data-grid="#{$i}"] {
+     grid-template-columns: repeat($i, 1fr);
+     @include breakpoint(max, $sm) {
+        grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+     }
+     @include breakpoint($sm, $md) {
+        grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
+     }
+  }
+}
+
+// 2 row x 2 column layout
+@for $i from 1 through $grid-columns {
+  [data-grid="2x#{$i}"] {
+     grid-template-columns: repeat($i, 1fr);
+   grid-template-rows: repeat(2, 1fr);
+     @include breakpoint(max, $sm) {
+        grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+     }
+     @include breakpoint($sm, $md) {
+        grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
+     }
+  }
+}
+
+// 3 row x 2 column layout
+@for $i from 1 through $grid-columns {
+  [data-grid="3x#{$i}"] {
+     grid-template-columns: repeat($i, 1fr);
+   grid-template-rows: repeat(2, 1fr);
+     @include breakpoint(max, $sm) {
+        grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+     }
+     @include breakpoint($sm, $md) {
+        grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
+     }
+  }
+}
+
+// 4 row x 2 column layout
+@for $i from 1 through $grid-columns {
+  [data-grid="4x#{$i}"] {
+     grid-template-columns: repeat($i, 1fr);
+   grid-template-rows: repeat(2, 1fr);
+     @include breakpoint(max, $sm) {
+        grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+     }
+     @include breakpoint($sm, $md) {
+        grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
+     }
+  }
+}
+
+[data-gutter="x"] {
+ padding: 0 $space-phi;
+}
+
+[data-gutter="y"] {
+ padding: calc(#{$space-e} / 2) 0;
+}
+
+[data-gutter="x/y"] {
+ padding: calc(#{$space-e} / 2) $space-phi;
+}
+

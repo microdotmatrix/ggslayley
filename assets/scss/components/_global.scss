@@ -1,0 +1,71 @@
+@include loadify(init);
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		 animation-duration: 0.01ms !important;
+		 animation-iteration-count: 1 !important;
+		 transition-duration: 0.01ms !important;
+		 scroll-behavior: auto !important;
+	}
+}
+
+html {
+   font-size: $text-root__size;
+   line-height: $text-root__line;
+   width: 100%;
+   height: 100%;
+   overflow-x: hidden;
+   -webkit-tap-highlight-color: transparent;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+// Dark/Light Mode Inversion
+.light {
+   --body-bg: var(--gradient-9);
+}
+
+.light,
+.light img,
+.light picture,
+.light video,
+.light canvas {
+   filter: invert(100%) hue-rotate(180deg);
+}
+
+html,
+img,
+picture,
+video,
+canvas {
+   transition: filter 300ms ease;
+}
+
+body {
+  color: $text-color;
+  font-size: $text-size;
+  font-family: $text-font;
+  font-weight: $text-weight;
+  background-image: $body-bg;
+  background-size: 100%;
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+	@apply flex flex-col place-content-between w-full relative;
+}
+
+a {
+	color: $a;
+  transition: all 300ms ease;
+	@apply no-underline hover:underline;
+   &:hover {
+      color: $a--hover;
+   }
+}
+
+main {
+  @apply w-full h-full relative flex flex-col;
+}

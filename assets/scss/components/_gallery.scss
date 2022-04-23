@@ -1,0 +1,12 @@
+.xc-grid-item, .xc-grid-sizer {
+  @apply relative w-1/4;
+  @include breakpoint(max, $bp-sm) {
+    width: 100%;
+  }
+  @include breakpoint($bp-sm, $bp-lg) {
+    width: 50%;
+  }
+  @include breakpoint($bp-lg, $bp-xl) {
+    width: 33.333%;
+  }
+}

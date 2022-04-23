@@ -1,0 +1,77 @@
+#home {
+
+  .kg-header-card {
+    background-color: _slayley(4);
+    background-blend-mode: hard-light;
+    background-position: 50% 50%;
+    &-header {
+      text-shadow: var(--ggs-text-3D);
+    }
+    &-subheader {
+      color: _slayley(4);
+    }
+  }
+  .kg-image-card {
+    @apply relative w-1/3 max-w-xl aspect-square overflow-hidden mx-12 my-0 float-left;
+    border: 2rem solid _slayley(4);
+    > a {
+      > .kg-image {
+        @apply relative w-full h-full object-cover;
+      }
+    }
+  }
+}
+
+.xc-page__content {
+  > p {
+    @include adaptive($container-gutter);
+    max-width: $content-width;
+    line-height: $phi;
+    margin-bottom: $space-phi;
+  }
+}
+
+.xc-postfeed {
+  @apply grid md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6;
+  .xc-card {
+    @apply col-span-2 flex flex-col relative;
+    &:first-of-type {
+      @apply flex flex-row col-span-4;
+      @include row();
+      &__figure {
+        @apply relative flex overflow-hidden;
+        @include col(5);
+      }
+      &__content {
+        @include col(7);
+      }
+    }
+    &__figure {
+      @include col(7);
+      @apply relative overflow-hidden;
+      aspect-ratio: 12 / 10;
+      img {
+        @apply w-full h-full relative object-cover;
+      }
+      figcaption {
+        @apply flex flex-col absolute bottom-0 left-0 p-4 z-20 justify-end;
+        background: rgba(_slayley(9), 0.5);
+      }
+    }
+    &__content {
+      @include col(5);
+      @apply px-4;
+    }
+    &__title {
+      display: block;
+      font-size: $h4;
+      font-family: $abel;
+      font-weight: 600;
+    }
+    &__excerpt {
+      > p {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}

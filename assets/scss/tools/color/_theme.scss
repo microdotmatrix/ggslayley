@@ -1,0 +1,27 @@
+@use "~accoutrement/sass/tools";
+
+$color-scheme: (
+   "bg" : _slate(9),
+   "body" : var(--gradient-16),
+   "text" : ocGray(4),
+   "heading" : _slate(8)
+);
+
+$slay-theme: (
+  "bg": _slayley(1),
+  "text": _slayley(8),
+  "heading": _slayley(5),
+  "link": _slayley(4),
+  "header-bg": _slayley(8),
+  "footer-bg": _slayley(7),
+  "accent": _slate(4),
+  "border": _slate(4),
+  "3d-text-blue": 3px 3px 0px rgb(10 189 240 / 30%),
+  "3d-text-red": -3px -3px 0px rgb(254 1 1 / 30%),
+  "text-3D":  'var(--ggs-3d-text-blue), var(--ggs-3d-text-red)'
+);
+
+:where(html) {
+   @include tools.custom-props($color-scheme, 'color-');
+   @include tools.custom-props($slay-theme, 'ggs-');
+}

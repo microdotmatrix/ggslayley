@@ -1,0 +1,24 @@
+<header class="xc-header">
+  <div class="xc-navbar" data-flex="row">
+    <div class="xc-title" data-column="4">
+      {{#if @site.logo}}
+        <a href="{{@site.url}}" class="xc-title__logo">
+          <img src="{{@site.logo}}" alt="{{@site.title}}" />
+        </a>
+       {{/if}}
+        <a href="{{@site.url}}" class="xc-title__link">{{@site.title}}</a>
+        <span class="xc-title__subtitle">{{@site.description}}</span>
+    </div>
+    <div class="xc-menu" data-column="8">
+      <a class="xc-nav__burger" role="button">
+        <div class="xc-nav__burger-box">
+          <div class="xc-nav__burger-inner"></div>
+        </div>
+      </a>
+      <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+      </a>
+      {{navigation}}
+    </div>
+  </div>
+</header>

@@ -1,0 +1,110 @@
+// Global Variables
+$base-url:            "http://localhost:2368";
+$themeDir:            "ghoulish";
+
+// Breakpoints
+$bp-xs: 32rem !default; // 512px
+$bp-sm: 48rem !default; // 768px
+$bp-md: 64rem !default; // 1024px
+$bp-lg: 80rem !default; // 1280px
+$bp-xl: 90rem !default; // 1440px
+
+$map-for-breakpoints: (
+  "xsmall": 0,
+  "small": 768px,
+  "medium": 1024px,
+  "large": 1280px,
+  "xlarge": 1440px,
+);
+
+// Import Colors and other functions used by global variables
+@import "tools";
+
+@import "~open-props/gradients";
+@import "~open-props/borders";
+@import "~open-props/shadows";
+
+// Gradient Backgrounds
+$gr-dark-fade:        var(--gr-dark-fade);
+$gr-cool-grey:        var(--gr-cool-grey);
+$gr-blue-night:       var(--gr-blue-night);
+$gr-slate-gray:       var(--gr-slate-gray);
+$gr-metallic-fade:    var(--gr-metallic-fade);
+$gr-sunset-purple:    var(--gr-sunset-purple);
+$gr-morpheus:         var(--gr-morpheus);
+$gr-dark-seas: 		    var(--gr-dark-seas);
+$gr-lawrencium: 		  var(--gr-lawrencium);
+$gr-royal: 				    var(--gr-royal);
+$gr-murdered: 			  var(--gr-murdered);
+$gr-subtle-grey:  	  var(--gr-subtle-grey);
+$gr-haze: 				    var(--gr-haze);
+
+$phi:                 1.618; // Golden Ratio
+$e:                   2.71828; // Euler's Constant
+$pi:                  3.14159; // Pi
+$golden:              $phi;
+
+$content-width:       var(--content-width);
+$spacing-unit:        var(--space-phi) !default;
+$spacing-unit-2:      var(--space-e);
+$spacing-unit-3:      var(--space-pi);
+
+$space-phi:           var(--space-phi);
+$space-e:             var(--space-e);
+$space-pi:            var(--space-pi);
+
+$container-gutter: 	  calc(#{$space-pi} / #{$e});
+
+$body-bg:             var(--ggs-bg);
+
+// Fonts
+$kanit:               'Kanit', sans-serif;
+$inter:               'Inter', sans-serif;
+$prompt:              'Prompt', sans-serif;
+$bakbak:              'BakBak One', sans-serif;
+$michroma:            'Michroma', sans-serif;
+$advent:              'Advent Pro', sans-serif;
+$abel:                'Abel', sans-serif;
+$unica:               'Unica One', cursive;
+$unifraktur: 			    'UnifrakturMaguntia', cursive;
+$uni-sans: 				    'Uni Sans', sans-serif;
+$uni-sans-bold: 		  'Uni Sans Heavy', sans-serif;
+$lighters: 				    'Lighters', sans-serif;
+$blacklisted:         'Blacklisted', sans-serif;
+$badbugs:             'Big Bad Bugs', sans-serif;
+$lilian:              'Dreaming of Lilian', sans-serif;
+$graphik:             'Graphik Arts', sans-serif;
+
+$text-root__size:     112.8%;
+$text-root__line:     1.618;
+$text-color:          var(--ggs-text);
+$text-font:           $kanit;
+$text-size:           var(--base);
+$text-weight:         200;
+$text-line:           calc(1.618 - 0.1618);
+$p:                   var(--p);
+$sm:                  var(--sm);
+$md:                  var(--md);
+$lg:                  var(--lg);
+$xl:                  var(--xl);
+$xxl:                 var(--xxl);
+$xxxl:                var(--xxxl);
+
+$h-color:             var(--ggs-heading);
+$h1:                  var(--h1);
+$h2:                  var(--h2);
+$h3:                  var(--h3);
+$h4:                  var(--h4);
+$h5:                  var(--h5);
+
+$sf-1:                var(--size-fluid-1);
+$sf-2:                var(--size-fluid-2);
+$sf-3:                var(--size-fluid-3);
+$sf-4:                var(--size-fluid-4);
+$sf-5:                var(--size-fluid-5);
+$sf-6:                var(--size-fluid-6);
+
+$a:                   var(--ggs-link);
+$a--hover:            lighten(_slayley(3), 30%);
+
+$text-3D:             var(--ggs-3d-text-blue), var(--ggs-3d-text-red);

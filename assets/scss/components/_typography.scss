@@ -1,0 +1,103 @@
+h1, h2, h3, h4, h5 {
+	font-family: $bakbak;
+	font-weight: 500;
+	line-height: 1;
+	margin-top: clamp(#{$phi}rem, 3.14vw, #{$pi}rem);
+	margin-bottom: clamp(0.618rem, 1.618vw, 1.618rem);
+	color: $h-color;
+	transition: all 200ms ease;
+	@include only(first) {
+		margin-top: 0;
+	}
+}
+
+.h1, .h2, .h3 {
+	&-subtitle {
+		font-family: $prompt;
+		font-weight: 400;
+		line-height: 1;
+		margin-left: 0.5rem;
+		color: ocGray(6);
+		transition: all 200ms ease;
+	}
+}
+
+h1 {
+	margin-top: 0;
+	font-size: $h1;
+	letter-spacing: -0.3vw;
+}
+
+h2 {
+	font-size: $h2;
+	letter-spacing: -0.2vw;
+}
+
+h3 {
+	font-size: $h3;
+	letter-spacing: -0.15vw;
+}
+
+h4 {
+	font-size: $h4;
+	letter-spacing: -0.1vw;
+}
+
+h5 {
+	font-size: $h5;
+	letter-spacing: -0.05vw;
+}
+
+small,
+.text-small {
+	font-size: 0.618rem;
+	line-height: 1.5;
+	letter-spacing: 0.0618rem;
+}
+
+p {
+   font-size: $p;
+   line-height: $text-line;
+   margin: calc(var(--space-phi) * 0.75) 0 calc(var(--space-phi) * 0.75);
+   @include except(first) {
+      margin-top: 0;
+   }
+}
+
+blockquote {
+	position: relative;
+	z-index: 1;
+	padding: 1rem $space-phi;
+	margin: 0 auto;
+	width: 80%;
+	color: ocGray(6);
+	font-size: $md;
+	> cite {
+		display: block;
+		font-size: $sm;
+		font-style: italic;
+		font-weight: 400;
+		&::before {
+			content: "-";
+			margin-right: 6px;
+		}
+	}
+	&::before {
+		content: "\"";
+		position: absolute;
+		z-index: -1;
+		top: -1rem;
+		left: 0;
+		color: ocGray(7);
+		font-size: $xxxl;
+	}
+	&::after {
+		content: "\"";
+		position: absolute;
+		z-index: -1;
+		bottom: 0;
+		right: 0;
+		color: ocGray(7);
+		font-size: $xxxl;
+	}
+}

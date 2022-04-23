@@ -1,0 +1,27 @@
+@import "~swiper/css/bundle";
+
+.xc-slider {
+  &__post-title {
+    color: _slate(7);
+  }
+  &__post-meta {
+    font-family: $uni-sans;
+    font-size: $lg;
+    font-weight: 600;
+  }
+  &__content {
+    @apply pt-12 border-r border-slate-400/20;
+    padding-right: calc(#{$space-pi} - #{$space-e});
+  }
+  &__post-img {
+    max-height: 80vh;
+    overflow: hidden;
+    > img {
+      @apply w-full h-full object-cover;
+    }
+  }
+  &__shop-item {
+    @apply relative flex pt-8 mx-auto;
+    color: _slayley(2);
+  }
+}

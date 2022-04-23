@@ -1,0 +1,15 @@
+.xc-nav {
+  @apply w-1/2;
+  ul {
+    @apply flex flex-row justify-between;
+    li {
+      @apply flex-1 px-4;
+      a {
+        @apply block;
+        font-size: $lg;
+        font-family: $abel;
+        font-weight: 400;
+      }
+    }
+  }
+}

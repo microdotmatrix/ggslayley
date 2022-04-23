@@ -1,0 +1,62 @@
+.xc-hero {
+  @apply relative;
+
+  //border: 1px solid;
+  border-image: linear-gradient(to left, rgba(_slate(4), 0.4), rgba(_slate(4), 0)) 1 0 1 0;
+  &__content {
+    background: rgba(_slayley(5), 0.5);
+    background-blend-mode: multiply;
+    padding-left: 15% !important;
+  }
+}
+
+#art {
+  .xc-hero {
+    background-color: _slayley(9);
+    &__category {
+      @apply flex justify-center pb-10;
+      &:hover {
+        svg {
+          fill: _slayley(1);
+        }
+        span {
+          color: _slayley(1);
+        }
+      }
+      svg {
+        fill: _slayley(3);
+        margin-bottom: 0.75rem;
+        transition: all 600ms ease;
+      }
+      span {
+        font-size: $lg;
+        font-family: $abel;
+        color: _slayley(3);
+        transition: all 600ms ease;
+      }
+    }
+  }
+}
+
+#about {
+  .xc-hero {
+    background-color: _slayley(9);
+    &__block {
+      @apply relative flex;
+      h2 {
+        color: var(--ggs-accent);
+      }
+      figure {
+        @apply relative w-full h-[540px] overflow-hidden;
+        max-height: 60vh;
+        clip-path: ellipse(50% 100% at 50% 100%);
+        img {
+          @apply w-full h-full object-cover object-bottom;
+        }
+        figcaption {
+          @apply absolute bottom-2 right-2;
+        }
+      }
+    }
+  }
+}

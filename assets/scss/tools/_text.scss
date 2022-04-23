@@ -1,0 +1,54 @@
+@use "~accoutrement/sass/tools";
+
+$fluid-text-sizes: (
+   "base" : clamp(1rem, 0.34vw + 0.91rem, 1.19rem),
+   "p" : clamp(1rem, 0.314vw + 1.184rem, 1.314rem),
+   "sm" : clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem),
+   "md" : clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem),
+   "lg" : clamp(1.56rem, 1vw + 1.31rem, 2.11rem),
+   "xl" : clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem),
+   "xxl" : clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem),
+   "xxxl" : clamp(3.05rem, 3.54vw + 2.17rem, 5rem),
+   "h1" : clamp(6.854rem, 6.85vw + 5.089rem, 11.089rem),
+   "h2" : clamp(4.236rem, 4.34vw + 2.854rem, 6.854rem),
+   "h3" : clamp(2.618rem, 2.69vw + 1.236rem, 4.236rem),
+   "h4" : clamp(1.618rem, 1.84vw + 1.121rem, 2.618rem),
+   "h5" : clamp(1.314rem, 0.82vw + 1.618rem, 1.618rem)
+);
+
+$fluid-sizes: (
+   "fluid-1": clamp(.5rem, 1vw, 1rem),
+   "fluid-2": clamp(1rem, 2vw, 1.5rem),
+   "fluid-3": clamp(1.5rem, 3vw, 2rem),
+   "fluid-4": clamp(2rem, 4vw, 3rem),
+   "fluid-5": clamp(4rem, 5vw, 5rem),
+   "fluid-6": clamp(5rem, 7vw, 7.5rem),
+   "fluid-7": clamp(7.5rem, 10vw, 10rem),
+   "fluid-8": clamp(10rem, 20vw, 15rem),
+   "fluid-9": clamp(15rem, 30vw, 20rem)
+);
+
+$container-sizes: (
+   "article-1" : 20ch,
+   "article-2" : 45ch,
+   "article-3" : 60ch,
+   "heading-1" : 20ch,
+   "heading-2" : 25ch,
+   "heading-3" : 35ch
+);
+
+:where(html) {
+   @include tools.custom-props($fluid-text-sizes);
+   @include tools.custom-props($fluid-sizes, 'size-');
+   @include tools.custom-props($container-sizes);
+}
+
+@include breakpoint(max, $bp-md) {
+   :where(html) {
+      --h1: var(--xxxl);
+      --h2: var(--xxl);
+      --h3: var(--xl);
+      --h4: var(--lg);
+      --h5: var(--md);
+   }
+}

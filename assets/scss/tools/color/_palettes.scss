@@ -1,0 +1,55 @@
+//  Gray
+//  ───────────────────────────────────
+
+$slate-list: (
+   "1": #FCFEFF,
+   "2": #E7F1FA,
+   "3": #D4E0E9,
+   "4": #C0CFDF,
+   "5": #727C8B,
+   "6": #546071,
+   "7": #3C4655,
+   "8": #181B20,
+   "9": #09090B
+);
+
+// Palette Selector
+
+@function _slate($shade) {
+
+   @if map-has-key($slate-list, #{$shade}) {
+      $shade: map-get($slate-list, #{$shade});
+   } @else {
+      @if type-of($shade) != colour {
+         @error "Invalid colour name: `#{$shade}`.";
+      }
+   }
+
+   @return $shade;
+}
+
+// Slayley's Color Palette
+$slayley-rgb: (
+  "1": #FCFEFF,
+  "2": #99A2AE,
+  "3": #6D7682,
+  "4": #444D58,
+  "5": #1F2732,
+  "6": #171a1c,
+  "7": #131414,
+  "8": #09090B,
+  "9": #040405
+);
+
+@function _slayley($shade) {
+
+  @if map-has-key($slayley-rgb, #{$shade}) {
+     $shade: map-get($slayley-rgb, #{$shade});
+  } @else {
+     @if type-of($shade) != colour {
+        @error "Invalid colour name: `#{$shade}`.";
+     }
+  }
+
+  @return $shade;
+}

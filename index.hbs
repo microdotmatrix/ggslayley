@@ -1,15 +1,21 @@
 {{!< default}}
 
-<div class="gh-page">
-    <div class="gh-container">
+<section id="home" class="xc-page">
+    <div class="xc-page__content">
 
-        <div class="gh-postfeed">
-        {{#foreach posts}}
+      {{#page}}
+        {{content}}
+      {{/page}}
 
-            {{> "card"}} {{!-- partials/card.hbs --}}
+      <div class="xc-postfeed">
+        {{#get "posts"}}
+          {{#foreach posts}}
 
-        {{/foreach}}
-        </div>
+              {{> "card"}} {{!-- partials/card.hbs --}}
+
+          {{/foreach}}
+        {{/get}}
+      </div>
 
     </div>
-</div>
+</section>

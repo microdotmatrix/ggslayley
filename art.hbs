@@ -1,0 +1,55 @@
+{{!< default}}
+
+
+<section id="art">
+  {{> "hero/hero.art"}}
+</section>
+
+<section id="art" class="xc-page">
+    <div class="xc-page__content">
+
+      {{#page}}
+        {{content}}
+      {{/page}}
+
+      <div class="xc-gallery">
+          <div class="xc-grid-sizer"></div>
+          {{#foreach posts}}
+
+              {{> "art/art.card"}} {{!-- partials/card.hbs --}}
+
+          {{/foreach}}
+
+      </div>
+
+    </div>
+</section>
+
+{{#contentFor "scripts"}}
+  <script>
+    var $grid = $('.xc-gallery').imagesLoaded( function() {
+      $grid.isotope({
+        itemSelector: '.xc-grid-item',
+        percentPosition: true,
+        stagger: 40,
+        masonry: {
+            columnWidth: '.xc-grid-sizer'
+        }
+      });
+    });
+
+    $('#isoFilters').on( 'click', '.sortFilter-button', function() {
+      var filterValue = $(this).attr('data-filter');
+      $grid.isotope({ filter: filterValue });
+    });
+
+    // change is-checked class on buttons
+    $('#isoFilters').each( function( i, buttonGroup ) {
+      var $buttonGroup = $( buttonGroup );
+      $buttonGroup.on( 'click', 'button', function() {
+        $buttonGroup.find('.selected').removeClass('selected');
+        $( this ).addClass('selected');
+      });
+    });
+  </script>
+{{/contentFor}}

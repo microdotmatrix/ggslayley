@@ -2,18 +2,12 @@
 
 {{#post}}
 
-<article class="gh-article {{post_class}}">
+<article class="xc-article {{post_class}}">
 
-    <header class="gh-header gh-canvas">
-        <span class="gh-post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
-        <h1 class="gh-title">{{title}}</h1>
-
-        {{#if custom_excerpt}}
-        <p class="gh-excerpt">{{custom_excerpt}}</p>
-        {{/if}}
+    <header class="xc-article__header">
 
         {{#if feature_image}}
-        <figure class="gh-feature-image">
+        <figure class="xc-article__feature-image">
             <img
                 srcset="{{img_url feature_image size="s"}} 300w,
                         {{img_url feature_image size="m"}} 600w,
@@ -29,20 +23,25 @@
             {{/if}}
         </figure>
         {{/if}}
+        <span class="xc-article__post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
+        <h2 class="xc-article__title">{{title}}</h2>
+        {{#if custom_excerpt}}
+          <p class="xc-article__excerpt">{{custom_excerpt}}</p>
+        {{/if}}
     </header>
 
-    <div class="gh-content gh-canvas">
-        {{content}}
+    <div class="xc-article__content">
+      {{content}}
     </div>
 
-    <footer class="gh-footer gh-canvas">
+    <footer class="xc-article__footer">
 
-        <div class="gh-post-authors">
-            Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
+        <div class="xc-article__post-authors">
+          Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
         </div>
 
         {{!--
-        <section class="gh-post-comments">
+        <section class="xc-post-comments">
             If you want to embed comments, this is a good place to do it!
         </section>
         --}}
@@ -51,12 +50,12 @@
 
 </article>
 
-<aside class="gh-readmore">
-    <div class="gh-readmore-inner gh-container">
-        <div class="gh-readmore-next">
+<aside class="xc-article">
+    <div class="xc-article__pg xc-container">
+        <div class="xc-article__pg--next">
             {{#next_post}}<a href="{{url}}">{{> "icons/arrow-left"}} <h4>{{title}}</h4></a>{{/next_post}}
         </div>
-        <div class="gh-readmore-prev">
+        <div class="xc-article__pg--prev">
             {{#prev_post}}<a href="{{url}}">
                 <h4>{{title}}</h4> {{> "icons/arrow-right"}}
             </a>{{/prev_post}}
