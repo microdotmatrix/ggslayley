@@ -77,7 +77,7 @@
         "posts_per_page": 15,
         "image_sizes": {
             "xxs": {
-                "width": 30
+                "width": 50
             },
             "xs": {
                 "width": 100
