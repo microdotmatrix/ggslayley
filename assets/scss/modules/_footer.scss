@@ -1,5 +1,5 @@
 .xc-footer {
-  @apply relative flex items-start justify-center w-full;
+  @apply relative flex flex-col items-start justify-center w-full;
   padding: $space-e 0 $space-pi;
   background: var(--ggs-footer-bg);
   &__nav {
@@ -23,5 +23,13 @@
   }
   &__social {
     @apply flex justify-end;
+  }
+  &__colophon {
+    @apply flex w-full pt-4 justify-center;
+    color: var(--ggs-accent);
+    p {
+      font-size: $sm;
+      font-family: $noto;
+    }
   }
 }

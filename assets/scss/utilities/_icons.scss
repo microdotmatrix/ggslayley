@@ -22,6 +22,11 @@ i,
   background-color: _socialColor(facebook);
 }
 
+.i\:instagram {
+  background-image: svgicon(logo-instagram, white);
+  background-color: _socialColor(instagrammagenta);
+}
+
 .i\:tiktok {
   background-image: svgicon(logo-tiktok, white);
   background-color: _socialColor(tiktokpink);
