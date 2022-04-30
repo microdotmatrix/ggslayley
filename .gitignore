@@ -26,3 +26,8 @@ zip/*
 *.zip
 
 *.lock
+
+assets/svg/ion/
+assets/svg/ion/*
+assets/dist/svg/ion/
+assets/dist/svg/ion/*
