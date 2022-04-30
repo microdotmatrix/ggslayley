@@ -403,6 +403,9 @@ Ensure the default browser behavior of the `hidden` attribute.
     max-width: 1536px;
   }
 }
+.visible{
+  visibility: visible;
+}
 .static{
   position: static;
 }
@@ -417,6 +420,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .block{
   display: block;
+}
+.inline-block{
+  display: inline-block;
 }
 .inline{
   display: inline;
@@ -436,8 +442,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hidden{
   display: none;
 }
+.flex-grow{
+  flex-grow: 1;
+}
 .transform{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.resize{
+  resize: both;
 }
 .flex-row{
   flex-direction: row;
@@ -471,6 +483,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .outline{
   outline-style: solid;
+}
+.blur{
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .filter{
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);

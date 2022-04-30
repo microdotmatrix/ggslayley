@@ -22,9 +22,6 @@ projectFilesBackup
 
 .DS_Store
 
-zip/*
-*.zip
-
 *.lock
 
 assets/svg/ion/
