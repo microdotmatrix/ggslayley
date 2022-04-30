@@ -12,13 +12,6 @@ jobs:
         with:
           api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
           api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
-          exclude:
-            - 'assets/svg/ion/*'
-            - 'assets/css/*'
-            - 'assets/fonts/*'
-            - 'assets/video/*'
-            - 'package-lock.json'
-            - 'yarn.lock'
-            - 'gulpfile.js'
+          exclude: 'assets/svg/ion/* assets/css/* assets/fonts/* assets/video/* package-lock.json yarn.lock gulpfile.js'
           theme-name: 'ggslayley'
           file: 'zip/ggslayley.zip'
