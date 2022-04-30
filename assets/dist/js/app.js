@@ -51,7 +51,7 @@ var swiper = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper', {
   },
   speed: 900,
   autoplay: {
-    delay: 9000
+    delay: 99000
   },
   loop: true
 });
@@ -63,11 +63,15 @@ var swiper = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper', {
   speed: 0.6
 }); //document.getElementsByTagName('body')[0].className = 'js';
 
+var lightbox = GLightbox({
+  touchNavigation: true,
+  descPosition: 'right',
+  selector: 'data-gallery'
+});
 var images = document.querySelectorAll('.kg-image-card img, .kg-gallery-card img'); // Lightbox function
 
 images.forEach(function (image) {
   var wrapper = document.createElement('a');
-  wrapper.setAttribute('data-no-swup', '');
   wrapper.setAttribute('data-gallery', 'kg-lightbox');
   wrapper.setAttribute('href', image.src);
   wrapper.setAttribute('aria-label', 'Click for Lightbox');
@@ -15024,7 +15028,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunkghost_starter_theme"] = self["webpackChunkghost_starter_theme"] || [];
+/******/ 		var chunkLoadingGlobal = self["webpackChunkggslayley"] = self["webpackChunkggslayley"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	}();

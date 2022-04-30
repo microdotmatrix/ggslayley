@@ -18,12 +18,19 @@ function zipper(done) {
     var filename = themeName + '.zip';
 
     pump([
-        src([
-            '**',
-            '!node_modules', '!node_modules/**'
+      src([
+        '**',
+        '!zip', '!zip/**',
+        '!assets/video', '!assets/video/**',
+        '!assets/scss', '!assets/scss/**',
+        '!assets/js', '!assets/js/**',
+        '!assets/svg', '!assets/svg/**',
+        '!assets/images', '!assets/images/**',
+        '!assets/img', '!assets/img/**',
+        '!node_modules', '!node_modules/**'
         ]),
-        zip(filename),
-        dest(targetDir)
+      zip(filename),
+      dest(targetDir)
     ], handleError(done));
 }
 

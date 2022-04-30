@@ -15,6 +15,7 @@ $map-for-breakpoints: (
   "medium": 1024px,
   "large": 1280px,
   "xlarge": 1440px,
+  "2xlarge": 1900px
 );
 
 // Import Colors and other functions used by global variables
@@ -58,6 +59,17 @@ $container-gutter: 	  calc(#{$space-pi} / #{$e});
 $body-bg:             var(--ggs-bg);
 
 // Fonts
+$opensans:                 'Open Sans', sans-serif;
+$play:                     'Play', sans-serif;
+$jura:                     'Jura', sans-serif;
+$gruppo:                   'Gruppo', sans-serif;
+$metrophobic:              'Metrophobic', sans-serif;
+$barlow:                   'Barlow', sans-serif;
+$mitr:                     'Mitr', sans-serif;
+$blinker:                  'Blinker', sans-serif;
+$grotesque:                'Darker Grotesque', sans-serif;
+$noto:                     'Noto Sans', sans-serif;
+
 $kanit:               'Kanit', sans-serif;
 $inter:               'Inter', sans-serif;
 $prompt:              'Prompt', sans-serif;
@@ -78,7 +90,8 @@ $graphik:             'Graphik Arts', sans-serif;
 $text-root__size:     112.8%;
 $text-root__line:     1.618;
 $text-color:          var(--ggs-text);
-$text-font:           $kanit;
+$text-font:           $metrophobic;
+$text-header:         $abel;
 $text-size:           var(--base);
 $text-weight:         200;
 $text-line:           calc(1.618 - 0.1618);
@@ -89,6 +102,7 @@ $lg:                  var(--lg);
 $xl:                  var(--xl);
 $xxl:                 var(--xxl);
 $xxxl:                var(--xxxl);
+$xxxxl:               var(--xxxxl);
 
 $h-color:             var(--ggs-heading);
 $h1:                  var(--h1);
@@ -105,6 +119,9 @@ $sf-5:                var(--size-fluid-5);
 $sf-6:                var(--size-fluid-6);
 
 $a:                   var(--ggs-link);
-$a--hover:            lighten(_slayley(3), 30%);
+$a--hover:            var(--ggs-link-hover);
 
 $text-3D:             var(--ggs-3d-text-blue), var(--ggs-3d-text-red);
+
+$icon-color:          var(--ggs-icon-color);
+$icon-size:           1.618rem;

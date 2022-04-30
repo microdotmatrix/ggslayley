@@ -1,16 +1,18 @@
 {{!< default}}
 
 {{#page}}
-  <section id="shop">
-    {{> "hero/shop"}}
-  </section>
+	<section class="xc-shop" data-flex="row">
 
-	<section class="xc-shop">
-	<h2>{{title}}</h2>
-		{{content}}
+    <div class="xc-shop__nav" data-column="2">
+      {{> "shop/sidebar.nav"}}
+    </div>
 
-    <div id="products" data-grid="auto"></div>
+    <div class="slayify" data-column="10">
+      <div class="collection"></div>
+    </div>
+
+    {{> "shop/cart"}}
 	</section>
 {{/page}}
 
-{{> "shopbox"}}
+{{> "shop/products"}}

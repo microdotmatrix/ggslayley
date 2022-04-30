@@ -1,0 +1,16 @@
+<nav class="social-links">
+  <ul>
+    {{#if @site.facebook}}
+      <li><a href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener"><i class="icon i:facebook"></i></i></a></li>
+    {{/if}}
+    {{#if @site.twitter}}
+      <li><a href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener"><i class="icon i:twitter"></i></a></li>
+    {{/if}}
+      <li><a href="https://www.tiktok.com/@ggslayley" title="TikTok" target="_blank" rel="noopener"><i class="icon i:tiktok"></i></a></li>
+      <li><a href="https://instagram.com/slayleyart" title="Instagram" target="_blank" rel="noopener"><i class="icon i:instagram"></i></a></li>
+      <li><a href="https://twitch.tv/ggslayley" title="Twitch" target="_blank" rel="noopener"><i class="icon i:twitch"></i></a></li>
+      <li><a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener"><i class="icon i:rss"></i></a></li>
+  </ul>
+</nav>
+
+{{! <li><a href="https://#" title="#" target="_blank" rel="noopener"><i class="icon i:#"></i></a></li> }}

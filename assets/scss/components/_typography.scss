@@ -1,6 +1,6 @@
 h1, h2, h3, h4, h5 {
-	font-family: $bakbak;
-	font-weight: 500;
+	font-family: $text-header;
+	font-weight: 600;
 	line-height: 1;
 	margin-top: clamp(#{$phi}rem, 3.14vw, #{$pi}rem);
 	margin-bottom: clamp(0.618rem, 1.618vw, 1.618rem);
@@ -25,17 +25,17 @@ h1, h2, h3, h4, h5 {
 h1 {
 	margin-top: 0;
 	font-size: $h1;
-	letter-spacing: -0.3vw;
+	letter-spacing: -0.165vw;
 }
 
 h2 {
 	font-size: $h2;
-	letter-spacing: -0.2vw;
+	letter-spacing: -0.15vw;
 }
 
 h3 {
 	font-size: $h3;
-	letter-spacing: -0.15vw;
+	letter-spacing: -0.125vw;
 }
 
 h4 {
@@ -62,6 +62,10 @@ p {
    @include except(first) {
       margin-top: 0;
    }
+}
+
+b, strong {
+  font-weight: 700;
 }
 
 blockquote {

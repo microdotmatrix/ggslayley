@@ -19,7 +19,7 @@ const swiper = new Swiper('.swiper', {
   },
   speed: 900,
   autoplay: {
-    delay: 9000,
+    delay: 99000,
   },
   loop: true,
 });
@@ -37,12 +37,17 @@ jarallax(document.querySelectorAll('.kg-header-card'), {
 
 //document.getElementsByTagName('body')[0].className = 'js';
 
+const lightbox = GLightbox({
+  touchNavigation: true,
+  descPosition: 'right',
+  selector: 'data-gallery'
+});
+
 const images = document.querySelectorAll('.kg-image-card img, .kg-gallery-card img');
 
 // Lightbox function
 images.forEach(function (image) {
   var wrapper = document.createElement('a');
-  wrapper.setAttribute('data-no-swup', '');
   wrapper.setAttribute('data-gallery', 'kg-lightbox');
   wrapper.setAttribute('href', image.src);
   wrapper.setAttribute('aria-label', 'Click for Lightbox');

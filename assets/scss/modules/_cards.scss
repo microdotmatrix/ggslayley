@@ -1,3 +1,43 @@
+@import "cards/kg-bookmark";
+@import "cards/kg-button";
+@import "cards/kg-gallery";
+@import "cards/kg-header";
+@import "cards/kg-image";
+
+
+#featured-items {
+  .xc-card {
+    &__figure {
+      @apply w-1/2 mx-auto;
+    }
+  }
+}
+
+.xc-card {
+  @apply relative flex;
+  &__figure {
+    @apply block relative overflow-clip;
+    img {
+      @apply w-full h-full object-cover;
+    }
+    figcaption {
+      .xc-card__meta {
+        @apply block;
+        font-size: $sm;
+        font-family: $uni-sans;
+        font-weight: 400;
+      }
+      .xc-card__title {
+        display: block;
+        font-family: $abel;
+        font-size: $lg;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+
 .xc-page__content :not(.kg-card):not([id]) + .kg-card {
   margin-top: 10vmin;
 }
@@ -13,69 +53,12 @@
   }
 }
 
-.kg-header-card {
-  @apply flex flex-col w-full py-8 mb-12 text-center border-y border-slate-600;
-  background: $gr-dark-fade;
-  background-size: cover;
-  background-position: 50% 50%;
-  &-header {
-    font-size: $h1;
-    color: var(--ggs-accent);
-    margin-bottom: 0;
+#about {
+  p {
+    padding: 0 $space-phi 0;
+    width: var(--article-3);
   }
-  &-subheader {
-    color: var(--ggs-text);
-  }
-}
-
-.kg-button-card {
-  @apply flex justify-center;
-  .kg-btn {
-    @apply block py-3 px-6 my-6 rounded-md shadow-lg shadow-slate-900/50 hover:shadow-slate-900/80;
-    font-size: $p;
-    font-weight: 500;
-    color: _slayley(9);
-    background: _slayley(2);
-    &:hover {
-      color: _slayley(2);
-      background: _slayley(7);
-      text-decoration: none;
-    }
-  }
-}
-
-.kg-gallery-card + .kg-gallery-card {
-  margin-top: 0.75em;
-}
-
-.kg-gallery-container {
-  position: relative;
-  @include adaptive($container-gutter);
-}
-
-.kg-gallery-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  &:not(:first-of-type) {
-      margin: 0 0 0 0;
-  }
-}
-
-.kg-gallery-image img {
-  display: block;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  &:not(:first-of-type) {
-      margin: 0 0 0 0.75em;
-  }
-}
-
-.kg-image-card {
-  &.kg-card-hascaption {
-    figcaption {
-      @apply absolute left-0 top-0;
-    }
+  .kg-image-card {
+    @apply float-right w-1/3 ml-6;
   }
 }

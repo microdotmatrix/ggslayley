@@ -1,5 +1,4 @@
 #home {
-
   .kg-header-card {
     background-color: _slayley(4);
     background-blend-mode: hard-light;
@@ -13,13 +12,17 @@
   }
   .kg-image-card {
     @apply relative w-1/3 max-w-xl aspect-square overflow-hidden mx-12 my-0 float-left;
-    border: 2rem solid _slayley(4);
+    border-radius: var(--radius-blob-4);
     > a {
       > .kg-image {
         @apply relative w-full h-full object-cover;
       }
     }
   }
+}
+
+.instagram-media {
+  max-width: none !important;
 }
 
 .xc-page__content {
@@ -34,20 +37,19 @@
 .xc-postfeed {
   @apply grid md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6;
   .xc-card {
-    @apply col-span-2 flex flex-col relative;
-    &:first-of-type {
+    @include only(first) {
       @apply flex flex-row col-span-4;
-      @include row();
-      &__figure {
-        @apply relative flex overflow-hidden;
-        @include col(5);
-      }
-      &__content {
-        @include col(7);
+      .xc-card__figure {
+        @apply relative overflow-hidden;
+        @include col(4);
+        max-height: 600px;
+        img {
+          @apply w-full h-full relative object-cover object-center;
+        }
       }
     }
+    @apply col-span-2 flex flex-col relative;
     &__figure {
-      @include col(7);
       @apply relative overflow-hidden;
       aspect-ratio: 12 / 10;
       img {
@@ -56,6 +58,10 @@
       figcaption {
         @apply flex flex-col absolute bottom-0 left-0 p-4 z-20 justify-end;
         background: rgba(_slayley(9), 0.5);
+        transition: all 300ms ease;
+        &:hover {
+          background: rgba(_slayley(9), 0.9);
+        }
       }
     }
     &__content {

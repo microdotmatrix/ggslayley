@@ -4,9 +4,13 @@
   //border: 1px solid;
   border-image: linear-gradient(to left, rgba(_slate(4), 0.4), rgba(_slate(4), 0)) 1 0 1 0;
   &__content {
-    background: rgba(_slayley(5), 0.5);
-    background-blend-mode: multiply;
-    padding-left: 15% !important;
+    background: rgba(_slayley(9), 0.6);
+    backdrop-filter: blur(4px);
+    animation-name: hueRotator;
+    animation-duration: 8s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
   }
 }
 
@@ -42,14 +46,27 @@
   .xc-hero {
     background-color: _slayley(9);
     &__block {
-      @apply relative flex;
-      h2 {
+      @apply relative flex items-center;
+      h3 {
+        @apply absolute left-10;
+        font-family: $lighters;
+        text-transform: uppercase;
         color: var(--ggs-accent);
+        &::after {
+          content: "?";
+          display: inline-block;
+          position: relative;
+          font-family: $metrophobic;
+          font-size: $h3;
+          font-weight: 300;
+          margin-left: 0.5rem;
+          @include loadify(1s, 2s);
+        }
       }
       figure {
-        @apply relative w-full h-[540px] overflow-hidden;
+        @apply relative w-full h-[500px] overflow-hidden;
         max-height: 60vh;
-        clip-path: ellipse(50% 100% at 50% 100%);
+        //clip-path: ellipse(50% 100% at 50% 100%);
         img {
           @apply w-full h-full object-cover object-bottom;
         }
@@ -58,5 +75,12 @@
         }
       }
     }
+  }
+}
+
+#shop {
+  .xc-hero {
+    @apply relative py-12 hidden;
+    background-color: _slayley(8);
   }
 }

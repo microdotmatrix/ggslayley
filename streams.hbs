@@ -1,0 +1,18 @@
+{{!< default}}
+
+
+<section id="streams" class="xc-page">
+
+{{#page}}
+  {{content}}
+{{/page}}
+
+  <article class="xc-article {{post_class}}">
+    {{#get posts limit="6" filter="tag:twitch"}}
+      {{#foreach posts}}
+        {{> "cards/post"}}
+      {{/foreach}}
+    {{/get}}
+  </article>
+
+</section>

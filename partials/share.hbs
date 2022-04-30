@@ -1,14 +1,10 @@
 <div class="xc-share">
   <a class="xc-share__link share@facebook" href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}" target="_blank" rel="noopener noreferrer">
-      <svg class="xc-icon__svg icon@facebook">
-          <use xlink:href="#facebook"></use>
-      </svg>
+      {{> "icons/social" name="facebook"}}
       Share
   </a>
   <a class="xc-share__link share@twitter" href="https://twitter.com/intent/tweet?url={{url absolute="true"}}&text={{encode title}}" target="_blank" rel="noopener noreferrer">
-      <svg class="xc-icon__svg icon@twitter">
-          <use xlink:href="#twitter"></use>
-      </svg>
+      {{> "icons/social" name="twitter"}}
       Tweet
   </a>
 </div>

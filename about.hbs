@@ -3,11 +3,16 @@
 {{#page}}
 
 <section id="about">
-  {{> "hero/page"}}
+  {{> "heros/page"}}
 </section>
 
-<section id="about" class="xc-about">
-		{{content}}
+<section id="about" class="xc-page">
+	<article class="content__block">
+    {{content}}
+  </article>
+  <aside class="content__social">
+    {{> "social"}}
+  </aside>
 </section>
 
 {{/page}}

@@ -2,7 +2,7 @@
 
 
 <section id="art">
-  {{> "hero/hero.art"}}
+  {{> "heros/art"}}
 </section>
 
 <section id="art" class="xc-page">
@@ -16,7 +16,7 @@
           <div class="xc-grid-sizer"></div>
           {{#foreach posts}}
 
-              {{> "art/art.card"}} {{!-- partials/card.hbs --}}
+              {{> "cards/art"}}
 
           {{/foreach}}
 
@@ -26,6 +26,7 @@
 </section>
 
 {{#contentFor "scripts"}}
+
   <script>
     var $grid = $('.xc-gallery').imagesLoaded( function() {
       $grid.isotope({

@@ -1,14 +1,29 @@
 .xc-nav {
-  @apply w-1/2;
+  @apply relative w-[90%] mr-4;
   ul {
-    @apply flex flex-row justify-between;
+    @apply flex flex-col lg:flex-row justify-between items-center text-center;
     li {
-      @apply flex-1 px-4;
+      @apply flex-1;
       a {
         @apply block;
-        font-size: $lg;
-        font-family: $abel;
-        font-weight: 400;
+        font-size: $md;
+        font-family: $lighters;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--ggs-accent);
+      }
+    }
+  }
+}
+
+.social-links {
+  ul {
+    @apply flex items-start w-1/2 gap-5;
+    li {
+      @apply flex-1;
+      a {
+        @apply relative block;
+
       }
     }
   }

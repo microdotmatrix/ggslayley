@@ -30,3 +30,24 @@
      transform: rotate(360deg) scale(18) translateX(20px);
   }
 }
+
+@keyframes textMorph3d {
+  0% {
+    text-shadow: 2px 2px 0px rgb(40 40 40 / 100%), 0px 0px 2px rgb(10 189 240 / 5%), 0px 0px 0px rgb(254 1 1 / 8%);
+  }
+  50% {
+    text-shadow: 2px 2px 0px rgb(40 40 40 / 100%), -5px -2px 0px rgb(10 189 240 / 10%), 4px 4px 1px rgb(254 1 1 / 15%);
+  }
+  100% {
+    text-shadow: 2px 2px 0px rgb(40 40 40 / 100%), 4px 3px 1px rgb(10 189 240 / 4%), -1px 3px 2px rgb(254 1 1 / 5%);
+  }
+}
+
+@keyframes hueRotator {
+  0% {
+    backdrop-filter: hue-rotate(0);
+  }
+  100% {
+    backdrop-filter: hue-rotate(180deg);
+  }
+}

@@ -54,7 +54,7 @@ body {
   -webkit-text-size-adjust: 100%;
   font-feature-settings: "kern" 1;
   font-kerning: normal;
-	@apply flex flex-col place-content-between w-full relative;
+	@apply flex flex-col place-content-between w-full h-full relative;
 }
 
 a {
@@ -67,5 +67,5 @@ a {
 }
 
 main {
-  @apply w-full h-full relative flex flex-col;
+  @apply w-full relative flex flex-col;
 }

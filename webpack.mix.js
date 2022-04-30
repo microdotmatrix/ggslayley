@@ -10,6 +10,9 @@ mix.js('assets/js/app.js', 'js')
       require('postcss-import'),
       require('autoprefixer'),
       require('tailwindcss'),
+      require('postcss-svgicon')({
+        path: 'assets/svg/ion'
+      }),
       tailwindcss('tailwind.config.js')
     ],
   })
@@ -23,8 +26,15 @@ mix.js('assets/js/app.js', 'js')
       'assets/dist/css/main.css'
     ]
   })
+  //.copy('assets/fonts', 'assets/dist/fonts')
+  //.copy([
+  //  'assets/svg/mandalas.svg',
+  //  'assets/svg/utility.svg',d
+  //  'assets/svg/social.svg'
+  //], 'assets/dist/svg')
+  //.copy('assets/video/mk-lightwarp.mp4', 'assets/dist/video')
+  //.copy('assets/video', 'assets/dist/video')
   //.autoload({
   //  jquery: ['$', 'window.jQuery']
   //})
-  //.copy('assets/fonts', 'assets/dist/fonts')
 ;

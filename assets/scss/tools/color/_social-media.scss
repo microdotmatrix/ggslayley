@@ -1,5 +1,7 @@
+@use "~accoutrement/sass/tools";
+
 // Social Media
-$social-colors: (
+$social-color-list: (
    "facebook": #1877f2,
    "facebookold": #3b5998,
    "twitter": #1da1f2,
@@ -190,3 +192,4 @@ $social-urls: (
 
    @return $shade;
 }
+

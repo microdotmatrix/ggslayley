@@ -1,0 +1,126 @@
+{{#contentFor "scripts"}}
+  <script src="https://sdks.shopifycdn.com/buy-button/2.1.8/buybutton.js"></script>
+  <script type="text/javascript" data-shopify-buy-ui>
+    var client = ShopifyBuy.buildClient({
+      domain: 'slayley.myshopify.com',
+      storefrontAccessToken: 'eb093d547b84f2875d7358517b9510d9'
+    });
+
+    var selector = {
+      product: '.xc-shop__item',
+      collection: '.xc-shop__collection'
+    }
+
+    var itemConfig = {
+      product: {
+        contents: {
+          img: false,
+          imgWithCarousel: true,
+          title: true,
+          variantTitle: true,
+          price: true,
+          unitPrice: false,
+          options: true,
+          quantity: false,
+          quantityIncrement: false,
+          quantityDecrement: false,
+          quantityInput: true,
+          button: true,
+          buttonWithQuantity: false,
+          description: false
+        },
+        text: {
+          button: 'Buy'
+        },
+        styles: {
+          button: {
+            'color': 'purple'
+          }
+        }
+      }
+    }
+
+    var collectConfig = {
+      product: {
+        contents: {
+          img: true,
+          imgWithCarousel: false,
+          title: true,
+          variantTitle: true,
+          price: true,
+          unitPrice: false,
+          options: true,
+          quantity: false,
+          quantityIncrement: false,
+          quantityDecrement: false,
+          quantityInput: true,
+          button: true,
+          buttonWithQuantity: false,
+          description: false
+        }
+      }
+    }
+
+    var ui = ShopifyBuy.UI.init(client);
+    $( selector.product ).each( function() {
+      var product = $( this );
+      var productId = product.attr( 'data-shopify-product' );
+      ui.createComponent('product', {
+        id: productId,
+        node: product[0],
+        options: {
+          product: {
+            iframe: false,
+            layout: 'horizontal',
+            contents: itemConfig.product.contents,
+          },
+          productSet: {
+            iframe: false,
+            //classes: {
+            //  wrapper: 'slayify-collection-wrapper',
+            //  productSet: 'slayify-collection',
+            //  title: 'slayify-collection__title',
+            //  collection: 'slayify-collection',
+            //  products: 'slayify-collection-products',
+            //  product: 'slayify-collection-product',
+            //  paginationButton: 'slayify-collection-pagination-button slayify-btn'
+            //},
+          }
+        }
+      })
+    })
+
+    $( selector.collection ).each( function() {
+      var collection = $( this );
+      var collectionId = collection.attr( 'data-shopify-collection' );
+      ui.createComponent('collection', {
+        id: collectionId,
+        node: collection[0],
+        options: {
+          product: {
+            iframe: false,
+            layout: 'vertical',
+            contents: itemConfig.product.contents,
+            text: {
+              button: 'Buy'
+            }
+          },
+          productSet: {
+            iframe: false,
+            //classes: {
+            //  wrapper: 'slayify-collection-wrapper',
+            //  productSet: 'slayify-collection',
+            //  title: 'slayify-collection__title',
+            //  collection: 'slayify-collection',
+            //  products: 'slayify-collection-products',
+            //  product: 'slayify-collection-product',
+            //  paginationButton: 'slayify-collection-pagination-button slayify-btn'
+            //},
+          }
+        }
+      })
+    })
+    ;
+
+  </script>
+{{/contentFor}}

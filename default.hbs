@@ -1,83 +1,48 @@
 <!DOCTYPE html>
 <html lang="{{@site.locale}}">
+
 <head>
-
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{{asset "dist/css/main.css"}}" />
-
     <title>{{meta_title}}</title>
+    <link rel="stylesheet" href="{{asset "dist/css/main.css"}}">
+
+    {{{block "styles"}}}
 
     {{ghost_head}}
-    {{!-- Outputs important meta data and settings, should always be in <head> --}}
-
 </head>
+
 <body class="{{body_class}}">
+  <div class="blockhead">
+    {{> "header"}}
+    {{#is "home"}}
+      {{> "heros/home"}}
+    {{/is}}
+  </div>
 
-{{> "header"}}
+  <main class="xc-body">
 
-<main class="xc-body">
+    {{{body}}}
+    {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
 
-  {{{body}}}
-  {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
+  </main>
 
-</main>
+  {{> "footer"}}
 
-{{> "footer"}}
+  {{!-- <foot> --}}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-</div>
+  <script src="{{asset "dist/js/app.js"}}"></script>
 
-{{!-- <foot> --}}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
 
-<script src="{{asset "dist/js/app.js"}}"></script>
-<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+  {{> "scripts"}}
 
-<script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+  {{{block "scripts"}}}
 
-<script type="text/javascript">
-  const lightbox = GLightbox({
-    touchNavigation: true,
-    descPosition: 'right',
-    selector: 'data-gallery'
-  });
-</script>
-
-{{#if pagination.pages}}
-  <script>
-    var maxPages = parseInt('{{pagination.pages}}');
-  </script>
-  <script src="{{asset "built/infinitescroll.js"}}"></script>
-{{/if}}
-
-<script>
-$(document).ready(function () {
-  // Mobile Menu Trigger
-  //$('.gh-burger').click(function () {
-  //  $('body').toggleClass('gh-head-open');
-  //});
-});
-</script>
-
-{{#is "post, page"}}
-<script>
-  var images = document.querySelectorAll('.kg-gallery-image img');
-  images.forEach(function (image) {
-    var container = image.closest('.kg-gallery-image');
-    var width = image.attributes.width.value;
-    var height = image.attributes.height.value;
-    var ratio = width / height;
-    container.style.flex = ratio + ' 1 0%';
-  });
-</script>
-{{/is}}
-
-{{{block "scripts"}}}
-
-{{ghost_foot}}
-{{!-- Outputs important scripts - should always be included before closing body tag --}}
-
+  {{ghost_foot}}
 </body>
+
 </html>

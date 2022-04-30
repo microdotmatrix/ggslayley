@@ -23,18 +23,5 @@
   }
   &__social {
     @apply flex justify-end;
-    > ul {
-      @apply flex items-start w-1/2 gap-5;
-      li {
-        @apply flex-1;
-        a {
-          @apply relative block max-h-8;
-          > svg {
-            @apply relative max-w-full;
-            fill: var(--ggs-link);
-          }
-        }
-      }
-    }
   }
 }

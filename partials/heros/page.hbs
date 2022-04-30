@@ -1,0 +1,15 @@
+<header class="xc-hero" data-flex="row">
+  <div class="xc-hero__block" data-column="4">
+    <h3>{{title}}</h3>
+  </div>
+  <div class="xc-hero__block" data-column="8">
+    {{#if feature_image}}
+      <figure class="xc-hero__feature-image jarallax">
+          <img src="{{feature_image}}" class="jarallax-img" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" />
+          {{#if feature_image_caption}}
+              <figcaption>{{feature_image_caption}}</figcaption>
+          {{/if}}
+      </figure>
+    {{/if}}
+  </div>
+</header>
