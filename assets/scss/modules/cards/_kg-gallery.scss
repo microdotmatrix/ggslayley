@@ -3,8 +3,8 @@
 }
 
 .kg-gallery-container {
-  position: relative;
-  @include adaptive($container-gutter);
+  @apply relative mx-auto;
+  max-width: 1024px;
 }
 
 .kg-gallery-row {

@@ -59,15 +59,6 @@ var swiper = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper', {
 (0,jarallax__WEBPACK_IMPORTED_MODULE_0__.jarallax)(document.querySelectorAll('.jarallax'), {
   speed: 0.2
 });
-(0,jarallax__WEBPACK_IMPORTED_MODULE_0__.jarallax)(document.querySelectorAll('.kg-header-card'), {
-  speed: 0.6
-}); //document.getElementsByTagName('body')[0].className = 'js';
-
-var lightbox = GLightbox({
-  touchNavigation: true,
-  descPosition: 'right',
-  selector: 'data-gallery'
-});
 var images = document.querySelectorAll('.kg-image-card img, .kg-gallery-card img'); // Lightbox function
 
 images.forEach(function (image) {

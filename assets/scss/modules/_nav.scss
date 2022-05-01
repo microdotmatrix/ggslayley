@@ -22,8 +22,8 @@
     li {
       @apply flex-1;
       a {
-        @apply relative block;
-
+        @apply relative flex justify-center items-center;
+        @include sizer($xxl);
       }
     }
   }

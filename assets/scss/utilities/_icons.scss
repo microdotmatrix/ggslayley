@@ -1,5 +1,5 @@
 :where(html) {
-  --icon-size: 2rem;
+  --icon-size: 100%;
   --facebook: _socialColor(facebook);
   --tiktok-pink: _socialColor(tiktokpink);
 }
@@ -10,6 +10,10 @@ i,
   @include sizer(var(--icon-size));
   background-size: 100%;
   background-repeat: no-repeat;
+  transition: all 300ms ease;
+  &:hover {
+    filter: brightness(1.5);
+  }
 }
 
 .icon__svg {
@@ -18,33 +22,27 @@ i,
 }
 
 .i\:facebook {
-  background-image: svgicon(logo-facebook, white);
-  background-color: _socialColor(facebook);
+  background-image: svgicon(logo-facebook, slategray);
 }
 
 .i\:instagram {
-  background-image: svgicon(logo-instagram, white);
-  background-color: _socialColor(instagrammagenta);
+  background-image: svgicon(logo-instagram, slategray);
 }
 
 .i\:reddit {
-  background-image: svgicon(logo-reddit, white);
-  background-color: _socialColor(reddit);
+  background-image: svgicon(logo-reddit, slategray);
 }
 
 .i\:tiktok {
-  background-image: svgicon(logo-tiktok, white);
-  background-color: _socialColor(tiktokpink);
+  background-image: svgicon(logo-tiktok, slategray);
 }
 
 .i\:twitch {
-  background-image: svgicon(logo-twitch, white);
-  background-color: _socialColor(twitch);
+  background-image: svgicon(logo-twitch, slategray);
 }
 
 .i\:twitter {
-  background-image: svgicon(logo-twitter, white);
-  background-color: _socialColor(twitter);
+  background-image: svgicon(logo-twitter, slategray);
 }
 
 .i\:mandala-one {

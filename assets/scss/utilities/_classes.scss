@@ -22,3 +22,14 @@
 	display: table;
 	clear: both;
 }
+
+.rgb-overlay {
+  @apply flex w-full h-full absolute top-0 left-0;
+  background: rgba(_slayley(9), 0.6);
+  backdrop-filter: blur(4px);
+  animation-name: hueRotator;
+  animation-duration: 8s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}

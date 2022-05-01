@@ -31,18 +31,6 @@ jarallax(document.querySelectorAll('.jarallax'), {
   speed: 0.2,
 });
 
-jarallax(document.querySelectorAll('.kg-header-card'), {
-  speed: 0.6,
-});
-
-//document.getElementsByTagName('body')[0].className = 'js';
-
-const lightbox = GLightbox({
-  touchNavigation: true,
-  descPosition: 'right',
-  selector: 'data-gallery'
-});
-
 const images = document.querySelectorAll('.kg-image-card img, .kg-gallery-card img');
 
 // Lightbox function

@@ -26,11 +26,20 @@
 }
 
 .xc-page__content {
+  @include adaptive($container-gutter);
   > p {
-    @include adaptive($container-gutter);
-    max-width: $content-width;
     line-height: $phi;
     margin-bottom: $space-phi;
+  }
+
+  .social-feeds {
+    //@apply grid auto-cols-auto gap-6 lg:grid-cols-2 mx-auto;
+    display: grid;
+    grid-template-columns: var(--grid_adapt_mixin);
+    padding: $space-phi 0 $space-pi;
+    .instagram-feed {
+      padding: 0 $space-pi;
+    }
   }
 }
 

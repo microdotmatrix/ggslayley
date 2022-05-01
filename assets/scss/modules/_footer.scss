@@ -1,7 +1,10 @@
 .xc-footer {
   @apply relative flex flex-col items-start justify-center w-full;
   padding: $space-e 0 $space-pi;
-  background: var(--ggs-footer-bg);
+  background-image: $gr-dark-seas;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   &__nav {
     > nav {
       > ul {
@@ -10,9 +13,10 @@
           line-height: 1.3;
           @apply flex-1;
           > a {
-            font-family: $abel;
-            font-size: $p;
+            font-family: $lighters;
+            font-size: $lg;
             font-weight: 400;
+            text-transform: uppercase;
           }
         }
       }

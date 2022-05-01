@@ -7,6 +7,20 @@
       {{content}}
     {{/page}}
 
+    <div class="social-feeds">
+      <div class="instagram-feed">
+        {{> "instagram"}}
+      </div>
+      <div class="tiktok-feed">
+        {{> "tiktok"}}
+      </div>
+      <div class="social-feeds__info">
+        <h4>Get Connected!</h4>
+        <p>Catch a preview of what's happening on the official <a href="https://instagram.com/slayleyart" target="_blank">Slayley Art Instagram</a> feed here on the left!</p> <p><<<< Be sure to <a href="https://www.instagram.com/slayleyart/">FOLLOW!</a></p>
+
+      </div>
+    </div>
+
     <div class="xc-postfeed">
       {{#get "posts" limit="6" filter="tag:-art+tag:-shop"}}
         {{#foreach posts}}

@@ -1,16 +1,8 @@
 .xc-hero {
   @apply relative;
-
-  //border: 1px solid;
   border-image: linear-gradient(to left, rgba(_slate(4), 0.4), rgba(_slate(4), 0)) 1 0 1 0;
-  &__content {
-    background: rgba(_slayley(9), 0.6);
-    backdrop-filter: blur(4px);
-    animation-name: hueRotator;
-    animation-duration: 8s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: both;
-    animation-iteration-count: infinite;
+  &__wrapper {
+    @include adaptive($container-gutter);
   }
 }
 

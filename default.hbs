@@ -14,12 +14,10 @@
 
 <body class="{{body_class}}">
 
-  <div class="blockhead">
-    {{> "header"}}
-    {{#is "home"}}
-      {{> "heros/home"}}
-    {{/is}}
-  </div>
+  {{> "header"}}
+  {{#is "home"}}
+    {{> "heros/home"}}
+  {{/is}}
 
   <main class="xc-body">
 

@@ -4,6 +4,7 @@
   border-image: linear-gradient(to left, rgba(_slate(4), 0.4), rgba(_slate(4), 0)) 1 0 1 0;
   .xc-navbar {
     @apply relative flex flex-row items-center w-full pt-12 pb-6 px-0;
+    @include adaptive($container-gutter);
   }
   .xc-title {
     @apply relative flex justify-end items-center;
