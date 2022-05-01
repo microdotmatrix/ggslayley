@@ -27,6 +27,11 @@ i,
   background-color: _socialColor(instagrammagenta);
 }
 
+.i\:reddit {
+  background-image: svgicon(logo-reddit, white);
+  background-color: _socialColor(reddit);
+}
+
 .i\:tiktok {
   background-image: svgicon(logo-tiktok, white);
   background-color: _socialColor(tiktokpink);
