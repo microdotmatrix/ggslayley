@@ -26,22 +26,23 @@
   max-width: none !important;
 }
 
-.xc-page__content {
-  @include adaptive($container-gutter);
-  > p {
-    line-height: $phi;
-    margin-bottom: $space-phi;
-  }
-
-  .social-feeds {
-    @apply flex flex-col lg:flex-row items-center;
-    gap: $spacing-unit;
-    padding: $space-phi 0 $space-pi;
-    .instagram-info {
-      flex: 0 1 60%;
+#home {
+  .xc-page__content {
+    > p {
+      line-height: $phi;
+      margin-bottom: $space-phi;
     }
-    .instagram-feed {
-      flex: 1 0 40%;
+
+    .social-feeds {
+      @apply flex flex-col lg:flex-row items-center;
+      gap: $spacing-unit;
+      padding: $space-phi 0 $space-pi;
+      .instagram-info {
+        flex: 0 1 60%;
+      }
+      .instagram-feed {
+        flex: 1 0 40%;
+      }
     }
   }
 }

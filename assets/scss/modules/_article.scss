@@ -1,0 +1,22 @@
+.xc-article {
+  &__header {
+    @apply relative w-full flex flex-col justify-center;
+  }
+  &__feature-image {
+    @apply relative w-full h-full max-h-96 overflow-hidden;
+    img {
+      @apply w-full h-full object-cover object-center;
+    }
+    figcaption {
+      @apply absolute bottom-0 right-0;
+    }
+  }
+  &__post-meta {
+    @apply relative z-20 -mt-12 w-full;
+    time {
+      font-size: $lg;
+      font-family: $uni-sans;
+      font-weight: 600;
+    }
+  }
+}

@@ -10,9 +10,6 @@ mix.js('assets/js/app.js', 'js')
       require('postcss-import'),
       require('autoprefixer'),
       require('tailwindcss'),
-      require('postcss-svgicon')({
-        path: 'assets/svg/ion'
-      }),
       tailwindcss('tailwind.config.js')
     ],
   })

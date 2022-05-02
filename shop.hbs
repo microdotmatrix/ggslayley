@@ -1,17 +1,19 @@
 {{!< default}}
 
 {{#page}}
-	<section class="xc-shop" data-flex="row">
+	<section id="shop" class="xc-page">
+	  <div class="xc-shop" data-flex="row">
 
-    <div class="xc-shop__nav" data-column="2">
-      {{> "shop/sidebar.nav"}}
-    </div>
+      <div class="xc-shop__nav" data-column="2">
+        {{> "shop/sidebar.nav"}}
+      </div>
 
-    <div class="slayify" data-column="10">
-      <div class="collection"></div>
-    </div>
+      <div class="slayify" data-column="10">
+        <div class="collection"></div>
+      </div>
 
-    {{> "shop/cart"}}
+      {{> "shop/cart"}}
+  	</div>
 	</section>
 {{/page}}
 

@@ -1,28 +1,36 @@
 {{!< default}}
 
 {{#post}}
-<article class="gh-article">
-
-    <header class="gh-header gh-canvas">
-        <h1 class="gh-title">{{title}}</h1>
-
-        {{#if custom_excerpt}}
-            <p class="gh-excerpt">{{custom_excerpt}}</p>
+<section id="page" class="xc-page">
+  <header class="xc-article__header">
+      {{#if feature_image}}
+      <figure class="xc-article__feature-image">
+        <img
+            srcset="{{img_url feature_image size="s"}} 300w,
+                {{img_url feature_image size="m"}} 720w,
+                {{img_url feature_image size="l"}} 960w,
+                {{img_url feature_image size="xl"}} 1200w,
+                {{img_url feature_image size="xxl"}} 2000w"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            loading="lazy"
+            src="{{img_url feature_image size="xl"}}"
+            alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+        />
+        {{#if feature_image_caption}}
+          <figcaption>{{feature_image_caption}}</figcaption>
         {{/if}}
+      </figure>
+    {{/if}}
+    <span class="xc-article__post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+    <h2 class="xc-article__title">{{title}}</h2>
+    {{#if custom_excerpt}}
+      <p class="xc-article__excerpt">{{custom_excerpt}}</p>
+    {{/if}}
+  </header>
 
-        {{#if feature_image}}
-            <figure class="gh-feature-image">
-                <img src="{{feature_image}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" />
-                {{#if feature_image_caption}}
-                    <figcaption>{{feature_image_caption}}</figcaption>
-                {{/if}}
-            </figure>
-        {{/if}}
-    </header>
+  <article class="xc-article__content xc-container">
+    {{content}}
+  </article>
 
-    <div class="gh-content gh-canvas">
-        {{content}}
-    </div>
-
-</article>
+</section>
 {{/post}}

@@ -2,17 +2,17 @@
 
 
 <section id="streams" class="xc-page">
+  <div class="xc-container">
+    {{#page}}
+      {{content}}
+    {{/page}}
 
-{{#page}}
-  {{content}}
-{{/page}}
-
-  <article class="xc-article {{post_class}}">
-    {{#get posts limit="6" filter="tag:twitch"}}
-      {{#foreach posts}}
-        {{> "cards/post"}}
-      {{/foreach}}
-    {{/get}}
-  </article>
-
+    <article class="xc-article {{post_class}}">
+      {{#get posts limit="6" filter="tag:twitch"}}
+        {{#foreach posts}}
+          {{> "cards/post"}}
+        {{/foreach}}
+      {{/get}}
+    </article>
+  </div>
 </section>

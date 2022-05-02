@@ -1,8 +1,13 @@
 {{!< default}}
 
 {{#page}}
-	<section class="xc-contact">
-	<h2>{{title}}</h2>
-		{{content}}
+  <section id="contact">
+    {{> "heros/page"}}
+  </section>
+
+	<section id="contact" class="xc-page">
+    <div class="xc-page__content xc-container">
+        {{content}}
+    </div>
 	</section>
 {{/page}}
