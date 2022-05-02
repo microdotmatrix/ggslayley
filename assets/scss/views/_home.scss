@@ -22,6 +22,7 @@
 }
 
 .instagram-media {
+  min-width: none !important;
   max-width: none !important;
 }
 
@@ -33,12 +34,14 @@
   }
 
   .social-feeds {
-    //@apply grid auto-cols-auto gap-6 lg:grid-cols-2 mx-auto;
-    display: grid;
-    grid-template-columns: var(--grid_adapt_mixin);
+    @apply flex flex-col lg:flex-row items-center;
+    gap: $spacing-unit;
     padding: $space-phi 0 $space-pi;
+    .instagram-info {
+      flex: 0 1 60%;
+    }
     .instagram-feed {
-      padding: 0 $space-pi;
+      flex: 1 0 40%;
     }
   }
 }

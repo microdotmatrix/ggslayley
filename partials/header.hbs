@@ -17,14 +17,51 @@
     </div>
     <div class="xc-menu" data-column="8">
       <a class="xc-nav__burger" role="button">
-        <div class="xc-nav__burger-box">
-          <div class="xc-nav__burger-inner"></div>
+        <div class="burger-box is-closed">
+          <div class="line-top"></div>
+          <div class="line-middle"></div>
+          <div class="line-bottom"></div>
         </div>
-      </a>
-      <a href="#" class="nav-close">
-        <span class="hidden">Close</span>
       </a>
       {{navigation}}
     </div>
   </div>
 </header>
+
+{{#contentFor "scripts"}}
+  <script>
+    const navAni = gsap.timeline();
+
+    navAni.fromTo('.xc-nav', {
+      duration: 1,
+      opacity: 0,
+      delay: 0,
+      yPercent: -100,
+      transformOrigin: 'right',
+      ease: 'expo.in'
+    },
+    {
+      yPercent: 0,
+      opacity: 1
+    });
+
+    $('.xc-nav__burger').on('click', function() {
+      var that = $('.xc-nav');
+      if (that.hasClass('expand')) {
+        that.removeClass('expand');
+      } else {
+        that.addClass('expand');
+      }
+      navAni.restart();
+    });
+
+    $(".burger-box").on("click", function() {
+      var that = $(this);
+      if (that.hasClass("is-open")) {
+        that.removeClass("is-open").addClass("is-closed");
+      } else {
+        that.removeClass("is-closed").addClass("is-open");
+      }
+    });
+  </script>
+{{/contentFor}}

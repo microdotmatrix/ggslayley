@@ -1,16 +1,23 @@
 .xc-header {
+  @apply relative;
+  z-index: 999;
   background-color: rgba(_slayley(9), 1);
   border-bottom: 1px solid;
   border-image: linear-gradient(to left, rgba(_slate(4), 0.4), rgba(_slate(4), 0)) 1 0 1 0;
   .xc-navbar {
-    @apply relative flex flex-row items-center w-full pt-12 pb-6 px-0;
+    @apply relative flex flex-row items-center w-full pt-10 pb-5 xl:pt-12 xl:pb-6 px-0;
     @include adaptive($container-gutter);
   }
   .xc-title {
-    @apply relative flex justify-end items-center;
+    @apply relative flex flex-col justify-center lg:justify-end items-center;
     &__logo {
       @apply block absolute aspect-square overflow-clip rounded-full left-0 z-10;
       @include sizer(25rem);
+      transform: scale(1);
+      @include breakpoint(max, medium) {
+        top: -100px;
+        transform: scale(0.7);
+      }
       top: -60px;
       > svg {
         @apply relative z-10 block max-w-full w-full h-full object-cover;
@@ -32,7 +39,7 @@
       }
     }
     &__link {
-      @apply block relative z-20 left-9 mix-blend-exclusion;
+      @apply block relative z-20 md:left-9 mix-blend-exclusion;
       font-size: $xxxl;
       font-family: $blacklisted;
       text-transform: uppercase;
@@ -46,6 +53,9 @@
       animation-timing-function: ease(elastic-2);
       animation-duration: 250ms;
       transition: all 420ms ease-in-out;
+      @include breakpoint(max, $bp-sm) {
+        font-size: 4rem;
+      }
       &:hover {
         text-decoration: none;
         animation: none;
@@ -54,15 +64,48 @@
       }
     }
     &__subtitle {
-      @apply block relative right-16 z-20;
-      margin-top: $xxxxl;
-      color: _slayley(4);
-      font-family: $abel;
-      font-weight: 400;
-      font-size: $p;
+      @apply block relative left-16 lg:left-20 z-20;
+      //margin-top: $xxxxl;
+      margin-top: -33px;
+      color: _slayley(3);
+      font-family: $lighters;
+      font-weight: 600;
+      font-size: $text-size;
+      text-transform: uppercase;
     }
   }
   .xc-menu {
-    @apply flex justify-end items-center;
+    @apply relative flex justify-center lg:justify-end items-center;
+  }
+}
+
+.stick {
+  @include breakpoint(max, medium) {
+    @apply fixed w-full top-0 left-0;
+    transition: all 300ms ease-in;
+    .xc-navbar {
+      @apply pt-4 pb-2;
+    }
+    .xc-title {
+      @include breakpoint(max, medium) {
+        &__logo {
+          @include sizer(20rem);
+          top: -80px;
+          left: -80px;
+          &::after {
+            @include sizer(18.944rem);
+          }
+        }
+        &__link {
+          font-size: 3rem;
+        }
+        &__subtitle {
+          margin-top: -23px;
+        }
+      }
+    }
+    .xc-nav__burger {
+      top: -4.5rem;
+    }
   }
 }

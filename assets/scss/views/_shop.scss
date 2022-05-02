@@ -5,7 +5,18 @@
 }
 
 .xc-shop__nav {
-  @apply px-6 pt-24;
+  @apply relative z-50 pt-12 lg:pt-24;
+  padding-left: $spacing-unit;
+  padding-right: $spacing-unit;
+  ul {
+    @apply flex flex-col sm:flex-row lg:flex-col w-full justify-between;
+    li {
+      @apply inline-block md:block;
+    }
+  }
+  .nav-open {
+    @apply absolute right-0 top-0;
+  }
 }
 
 .slayify {

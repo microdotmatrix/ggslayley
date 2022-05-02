@@ -42,3 +42,9 @@ images.forEach(function (image) {
   image.parentNode.insertBefore(wrapper, image.parentNode.firstChild);
   wrapper.appendChild(image);
 });
+
+const header = document.querySelector(".xc-header");
+
+window.addEventListener("scroll", function() {
+  header.classList.toggle("stick", window.scrollY > 10);
+})
