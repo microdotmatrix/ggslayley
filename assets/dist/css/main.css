@@ -1657,7 +1657,7 @@ Ensure the default browser behavior of the `hidden` attribute.
             backface-visibility: visible;
   }
 }
-#about .xc-hero__block h3::after {
+#about .xc-hero__block h3::after, #contact .xc-hero__block h3::after {
   opacity: 0;
   visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -2653,47 +2653,82 @@ i .i\:svg, .icon .i\:svg{
     max-width: calc(1880px - (calc(var(--space-pi) / 2.71828) * 2));
   }
 }
-#art .xc-hero {
+#art .xc-hero{
+  padding-top: 5rem;
   background-color: #040405;
 }
+#art .xc-hero .filter-button{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
 #art .xc-hero__category{
+  position: relative;
   display: flex;
   justify-content: center;
   padding-bottom: 2.5rem;
 }
-#art .xc-hero__category:hover svg {
+#art .xc-hero__category:hover .sortFilter-button svg {
   fill: #FCFEFF;
+  filter: drop-shadow(0 1px 8px var(--ggs-link));
 }
-#art .xc-hero__category:hover span {
+#art .xc-hero__category:hover .sortFilter-button .category-name {
   color: #FCFEFF;
 }
-#art .xc-hero__category svg {
-  fill: #6D7682;
+#art .xc-hero__category .sortFilter-button{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#art .xc-hero__category .sortFilter-button svg{
   margin-bottom: 0.75rem;
+  height: 100%;
+  max-height: 100%;
+  width: 100%;
+}
+@media (min-width: 1024px){
+  #art .xc-hero__category .sortFilter-button svg{
+    height: 8rem;
+  }
+}
+@media (min-width: 1280px){
+  #art .xc-hero__category .sortFilter-button svg{
+    height: 12rem;
+  }
+}
+#art .xc-hero__category .sortFilter-button svg {
+  fill: #6D7682;
   transition: all 600ms ease;
 }
-#art .xc-hero__category span {
+#art .xc-hero__category .sortFilter-button .category-name {
   font-size: var(--lg);
   font-family: "Abel", sans-serif;
   color: #6D7682;
   transition: all 600ms ease;
 }
-#about .xc-hero {
+#about .xc-hero, #contact .xc-hero {
   background-color: #040405;
 }
-#about .xc-hero__block{
+#about .xc-hero__block, #contact .xc-hero__block{
   position: relative;
   display: flex;
-  align-items: center;
+  height: 24rem;
+  align-items: flex-end;
+  justify-content: flex-start;
+  background-size: 75%;
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
 }
-#about .xc-hero__block h3{
+#about .xc-hero__block h3, #contact .xc-hero__block h3{
   position: absolute;
   left: 2.5rem;
   font-family: "Lighters", sans-serif;
   text-transform: uppercase;
   color: var(--ggs-accent);
 }
-#about .xc-hero__block h3::after {
+#about .xc-hero__block h3::after, #contact .xc-hero__block h3::after {
   content: "?";
   display: inline-block;
   position: relative;
@@ -2706,14 +2741,14 @@ i .i\:svg, .icon .i\:svg{
   -webkit-animation-duration: 2s;
           animation-duration: 2s;
 }
-#about .xc-hero__block figure{
+#about .xc-hero__block figure, #contact .xc-hero__block figure{
   position: relative;
   height: 500px;
   width: 100%;
   overflow: hidden;
   max-height: 60vh;
 }
-#about .xc-hero__block figure img{
+#about .xc-hero__block figure img, #contact .xc-hero__block figure img{
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
@@ -2721,7 +2756,7 @@ i .i\:svg, .icon .i\:svg{
   -o-object-position: bottom;
      object-position: bottom;
 }
-#about .xc-hero__block figure figcaption{
+#about .xc-hero__block figure figcaption, #contact .xc-hero__block figure figcaption{
   position: absolute;
   bottom: 0.5rem;
   right: 0.5rem;
