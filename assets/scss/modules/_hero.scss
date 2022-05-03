@@ -29,7 +29,7 @@
       .sortFilter-button {
         @apply relative flex flex-col items-center justify-center;
         svg {
-          @apply w-full h-full lg:h-32 xl:h-48 max-h-full mb-3;
+          @apply h-full w-10/12 md:w-full lg:h-32 xl:h-48 max-h-full mb-3;
           fill: _slayley(3);
           transition: all 600ms ease;
         }

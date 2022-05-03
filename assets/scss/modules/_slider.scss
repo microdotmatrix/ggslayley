@@ -67,7 +67,7 @@
       .product[data-layout="featured"] {
         @apply flex flex-col md:flex-row;
         .image-overlay-container {
-          @apply flex-1 basis-1/4 h-full max-h-[33rem] p-5 md:p-6 lg:p-8;
+          @apply flex-1 basis-1/4 h-full max-h-[33rem] p-6 md:p-7 lg:p-8;
         }
         .product-details {
           @apply flex-1 basis-1/3 justify-center;
@@ -82,16 +82,11 @@
     .slide__nav-prev,
     .slide__nav-next {
       --icon-size: 2.5rem;
-      position: absolute;
-      top: 50%;
+      @apply absolute top-1/2 z-10 flex items-center justify-center;
       width: calc(var(--xxxl) / 44 * 27);
       height: var(--xxxl);
       margin-top: calc(0px - var(--xxxl) / 2);
-      z-index: 10;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       fill: var(--ggs-accent);
       @include breakpoint(min, large) {
         --icon-size: 3rem;

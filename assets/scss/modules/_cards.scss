@@ -16,7 +16,7 @@
 .xc-card {
   @apply relative flex;
   &__figure {
-    @apply block relative overflow-clip;
+    @apply block relative w-full overflow-clip;
     img {
       @apply w-full h-full object-cover;
     }
