@@ -9,8 +9,8 @@ const swiper = new Swiper('.swiper', {
   modules: [Navigation, Pagination, Parallax, Autoplay, EffectFade, EffectCreative],
   slidesPerView: 1,
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.slide__nav-next',
+    prevEl: '.slide__nav-prev',
   },
   parallax: true,
   effect: 'slide',

@@ -1,5 +1,11 @@
 @import "~swiper/css/bundle";
 
+:root {
+  @include breakpoint(max, medium) {
+    --swiper-navigation-size: 2.5rem;
+  }
+}
+
 .xc-slider {
   &__post-title {
     color: _slate(7);
@@ -17,16 +23,28 @@
     font-family: $barlow;
   }
   &__post {
-    @apply flex flex-col justify-center h-full;
-    padding: $space-phi calc(#{$space-pi} + #{$space-e});
+    @apply flex flex-col justify-center md:h-full;
+    padding: $space-pi 2.718rem $space-phi;
     color: var(--ggs-bg);
     font-weight: 200;
     font-family: $barlow;
+    @include breakpoint(min, large) {
+      padding: $space-phi calc(#{$space-pi} + #{$space-e});
+    }
   }
   &__post-img {
-    padding: $space-phi;
-    max-height: 80vh;
+    position: absolute;
+    z-index: -1;
+    padding: 0;
+    max-height: 30vh;
     overflow: hidden;
+    opacity: 0.5;
+    @include breakpoint(min, medium) {
+      position: relative;
+      padding: $space-e;
+      max-height: 80vh;
+      margin-top: 0;
+    }
     > img {
       @apply w-full h-full object-cover;
 
@@ -52,17 +70,40 @@
     .collection {
       @apply flex;
       .product[data-layout="featured"] {
-        @apply flex flex-row;
+        @apply flex flex-col md:flex-row;
         .image-overlay-container {
-          @apply flex-1 basis-1/4 h-full max-h-[33rem];
+          @apply flex-1 basis-1/4 h-full max-h-[33rem] p-5 md:p-6 lg:p-8;
         }
         .product-details {
           @apply flex-1 basis-1/3 justify-center;
           .product-title {
-            font-size: $h3;
+            font-size: $xxl;
           }
         }
       }
+    }
+  }
+  &__nav {
+    .slide__nav-prev,
+    .slide__nav-next {
+      --icon-size: 3rem;
+      position: absolute;
+      top: 50%;
+      width: calc(var(--xxxl) / 44 * 27);
+      height: var(--xxxl);
+      margin-top: calc(0px - var(--xxxl) / 2);
+      z-index: 10;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      fill: var(--ggs-accent);
+    }
+    .slide__nav-prev {
+      left: 0;
+    }
+    .slide__nav-next {
+      right: 0;
     }
   }
 }

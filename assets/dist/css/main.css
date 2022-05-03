@@ -4,18 +4,11 @@
 @import url(https://fonts.googleapis.com/css2?family=Michroma&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Abel:400|Advent+Pro:600);
 @import url(https://fonts.googleapis.com/css2?family=Unica+One&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Inter:wght@250&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Jura:wght@300;400;700&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Gruppo&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Metrophobic&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Barlow:wght@200;400;600&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Blinker:wght@200;300;400;600&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;600&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap);
 @charset "UTF-8";
 /*
 ! tailwindcss v3.0.24 | MIT License | https://tailwindcss.com
@@ -3334,6 +3327,11 @@ button.swiper-pagination-bullet {
   backface-visibility: hidden;
   overflow: hidden;
 }
+@media (max-width: 1024px) {
+  :root {
+    --swiper-navigation-size: 2.5rem;
+  }
+}
 .xc-slider__post-title {
   color: #3C4655;
 }
@@ -3353,18 +3351,40 @@ button.swiper-pagination-bullet {
 }
 .xc-slider__post{
   display: flex;
-  height: 100%;
   flex-direction: column;
   justify-content: center;
-  padding: var(--space-phi) calc(var(--space-pi) + var(--space-e));
+}
+@media (min-width: 768px){
+  .xc-slider__post{
+    height: 100%;
+  }
+}
+.xc-slider__post {
+  padding: var(--space-pi) 2.718rem var(--space-phi);
   color: var(--ggs-bg);
   font-weight: 200;
   font-family: "Barlow", sans-serif;
 }
+@media (min-width: 1280px) {
+  .xc-slider__post {
+    padding: var(--space-phi) calc(var(--space-pi) + var(--space-e));
+  }
+}
 .xc-slider__post-img {
-  padding: var(--space-phi);
-  max-height: 80vh;
+  position: absolute;
+  z-index: -1;
+  padding: 0;
+  max-height: 30vh;
   overflow: hidden;
+  opacity: 0.5;
+}
+@media (min-width: 1024px) {
+  .xc-slider__post-img {
+    position: relative;
+    padding: var(--space-e);
+    max-height: 80vh;
+    margin-top: 0;
+  }
 }
 .xc-slider__post-img > img{
   height: 100%;
@@ -3395,13 +3415,29 @@ button.swiper-pagination-bullet {
 }
 .xc-slider__featured-products .collection .product[data-layout=featured]{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+}
+@media (min-width: 768px){
+  .xc-slider__featured-products .collection .product[data-layout=featured]{
+    flex-direction: row;
+  }
 }
 .xc-slider__featured-products .collection .product[data-layout=featured] .image-overlay-container{
   height: 100%;
   max-height: 33rem;
   flex: 1 1 0%;
   flex-basis: 25%;
+  padding: 1.25rem;
+}
+@media (min-width: 768px){
+  .xc-slider__featured-products .collection .product[data-layout=featured] .image-overlay-container{
+    padding: 1.5rem;
+  }
+}
+@media (min-width: 1024px){
+  .xc-slider__featured-products .collection .product[data-layout=featured] .image-overlay-container{
+    padding: 2rem;
+  }
 }
 .xc-slider__featured-products .collection .product[data-layout=featured] .product-details{
   flex: 1 1 0%;
@@ -3409,7 +3445,28 @@ button.swiper-pagination-bullet {
   justify-content: center;
 }
 .xc-slider__featured-products .collection .product[data-layout=featured] .product-details .product-title {
-  font-size: var(--h3);
+  font-size: var(--xxl);
+}
+.xc-slider__nav .slide__nav-prev,
+.xc-slider__nav .slide__nav-next {
+  --icon-size: 3rem;
+  position: absolute;
+  top: 50%;
+  width: calc(var(--xxxl) / 44 * 27);
+  height: var(--xxxl);
+  margin-top: calc(0px - var(--xxxl) / 2);
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: var(--ggs-accent);
+}
+.xc-slider__nav .slide__nav-prev {
+  left: 0;
+}
+.xc-slider__nav .slide__nav-next {
+  right: 0;
 }
 .kg-bookmark-card,
 .kg-bookmark-publisher {
@@ -4076,7 +4133,7 @@ button.swiper-pagination-bullet {
   font-weight: 600;
   letter-spacing: normal;
   line-height: 1.2;
-  color: var(--ggs-heading);
+  color: var(--ggs-alt);
 }
 .product .product-details .variant-title {
   font-size: var(--p);

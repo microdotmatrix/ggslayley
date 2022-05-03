@@ -40,7 +40,6 @@
               {{#if feature_image}}
                 <figure class="xc-slider__post-img" data-column="5"
                   data-swiper-parallax="-100"
-                  data-swiper-parallax-opacity="0"
                   data-swiper-parallax-scale="0.25"
                   data-swiper-parallax-duration="900">
 
@@ -62,8 +61,12 @@
         {{/get}}
       </div>
     </div>
-    <div class="xc-slider__nav" style="--swiper-navigation-size: 4.2rem; --swiper-navigation-color: #aaaaaa;">
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+    <div class="xc-slider__nav">
+      <div class="slide__nav-prev">
+        {{> "icons/utility" name="chevron-left"}}
+      </div>
+      <div class="slide__nav-next">
+        {{> "icons/utility" name="chevron-right"}}
+      </div>
     </div>
 </div>
