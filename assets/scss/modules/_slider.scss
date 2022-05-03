@@ -1,11 +1,5 @@
 @import "~swiper/css/bundle";
 
-:root {
-  @include breakpoint(max, medium) {
-    --swiper-navigation-size: 2.5rem;
-  }
-}
-
 .xc-slider {
   &__post-title {
     color: _slate(7);
@@ -86,7 +80,7 @@
   &__nav {
     .slide__nav-prev,
     .slide__nav-next {
-      --icon-size: 3rem;
+      --icon-size: 2.5rem;
       position: absolute;
       top: 50%;
       width: calc(var(--xxxl) / 44 * 27);
@@ -98,6 +92,12 @@
       align-items: center;
       justify-content: center;
       fill: var(--ggs-accent);
+      @include breakpoint(min, large) {
+        --icon-size: 3rem;
+      }
+      @include breakpoint(min, xlarge) {
+        --icon-size: 3.5rem
+      }
     }
     .slide__nav-prev {
       left: 0;

@@ -3327,11 +3327,6 @@ button.swiper-pagination-bullet {
   backface-visibility: hidden;
   overflow: hidden;
 }
-@media (max-width: 1024px) {
-  :root {
-    --swiper-navigation-size: 2.5rem;
-  }
-}
 .xc-slider__post-title {
   color: #3C4655;
 }
@@ -3449,7 +3444,7 @@ button.swiper-pagination-bullet {
 }
 .xc-slider__nav .slide__nav-prev,
 .xc-slider__nav .slide__nav-next {
-  --icon-size: 3rem;
+  --icon-size: 2.5rem;
   position: absolute;
   top: 50%;
   width: calc(var(--xxxl) / 44 * 27);
@@ -3461,6 +3456,18 @@ button.swiper-pagination-bullet {
   align-items: center;
   justify-content: center;
   fill: var(--ggs-accent);
+}
+@media (min-width: 1280px) {
+  .xc-slider__nav .slide__nav-prev,
+.xc-slider__nav .slide__nav-next {
+    --icon-size: 3rem;
+  }
+}
+@media (min-width: 1400px) {
+  .xc-slider__nav .slide__nav-prev,
+.xc-slider__nav .slide__nav-next {
+    --icon-size: 3.5rem ;
+  }
 }
 .xc-slider__nav .slide__nav-prev {
   left: 0;
