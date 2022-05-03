@@ -4026,6 +4026,27 @@ button.swiper-pagination-bullet {
     max-width: calc(1880px - (calc(var(--space-pi) / 2.71828) * 2));
   }
 }
+.xc-shop .shop-breadcrumbs{
+  position: relative;
+  left: 25%;
+  top: 1.5rem;
+}
+.xc-shop .shop-breadcrumbs ul{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+.xc-shop .shop-breadcrumbs ul li {
+  font-family: "Lighters", sans-serif;
+  font-size: var(--p);
+  color: var(--ggs-subheading);
+  text-transform: uppercase;
+}
+.xc-shop .shop-breadcrumbs ul li i\:utility {
+  --icon-size: var(--p);
+}
 .xc-shop__nav{
   position: relative;
   z-index: 50;
@@ -4035,10 +4056,6 @@ button.swiper-pagination-bullet {
   .xc-shop__nav{
     padding-top: 6rem;
   }
-}
-.xc-shop__nav {
-  padding-left: var(--space-phi);
-  padding-right: var(--space-phi);
 }
 .xc-shop__nav ul{
   display: flex;
@@ -4063,11 +4080,6 @@ button.swiper-pagination-bullet {
   .xc-shop__nav ul li{
     display: block;
   }
-}
-.xc-shop__nav .nav-open{
-  position: absolute;
-  right: 0px;
-  top: 0px;
 }
 .slayify .collection{
   display: grid;

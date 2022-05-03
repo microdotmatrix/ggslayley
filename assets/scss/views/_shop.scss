@@ -2,20 +2,30 @@
   @include adaptive($container-gutter);
   max-width: 1900px;
   padding-top: $spacing-unit;
+  .shop-breadcrumbs {
+    @apply relative left-1/4 top-6;
+    ul {
+      @apply flex flex-row justify-start items-center gap-8;
+      li {
+        font-family: $lighters;
+        font-size: $p;
+        color: var(--ggs-subheading);
+        text-transform: uppercase;
+        i\:utility {
+          --icon-size: #{$p};
+        }
+      }
+    }
+  }
 }
 
 .xc-shop__nav {
   @apply relative z-50 pt-12 lg:pt-24;
-  padding-left: $spacing-unit;
-  padding-right: $spacing-unit;
   ul {
     @apply flex flex-col sm:flex-row lg:flex-col w-full justify-between;
     li {
       @apply inline-block md:block;
     }
-  }
-  .nav-open {
-    @apply absolute right-0 top-0;
   }
 }
 
