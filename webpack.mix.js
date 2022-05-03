@@ -23,6 +23,7 @@ mix.js('assets/js/app.js', 'js')
       'assets/dist/css/main.css'
     ]
   })
+  .copy('assets/svg/bootstrap-icons.svg', 'assets/dist/svg')
   //.copy('assets/fonts', 'assets/dist/fonts')
   //.copy([
   //  'assets/svg/mandalas.svg',

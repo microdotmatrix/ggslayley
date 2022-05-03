@@ -46,5 +46,5 @@ images.forEach(function (image) {
 const header = document.querySelector(".xc-header");
 
 window.addEventListener("scroll", function() {
-  header.classList.toggle("stick", window.scrollY > 10);
+  header.classList.toggle("stick", window.scrollY > 0);
 })

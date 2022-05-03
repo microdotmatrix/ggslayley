@@ -1,5 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
     "/js/lib.js": "/js/lib.js",
-    "/css/main.css": "/css/main.css"
+    "/css/main.css": "/css/main.css",
+    "/svg/bootstrap-icons.svg": "/svg/bootstrap-icons.svg"
 }

@@ -1,0 +1,44 @@
+:where(html) {
+  --icon-size: #{$lg};
+}
+
+i, .icon {
+  @apply inline-flex justify-center items-center;
+  @include sizer(var(--icon-size));
+  transition: all 300ms ease;
+  &:hover {
+    filter: brightness(1.5);
+  }
+  .i\:svg {
+    @apply relative w-5/6 h-5/6;
+  }
+}
+
+.social-links {
+  ul {
+    @apply flex items-center gap-5;
+    li {
+      @apply flex-1;
+      a {
+        @apply relative flex justify-center items-center;
+        i {
+          --icon-size: #{$xl};
+          .i\:svg {
+            @apply relative w-full h-full;
+          }
+        }
+      }
+    }
+  }
+}
+
+.i\:social {
+
+}
+
+@each $name, $color in $social-color-list {
+  .i\:#{$name} {
+    background-color: #{$color};
+    color: #fff;
+  }
+}

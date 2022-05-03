@@ -38,6 +38,7 @@
       padding: $space-e;
       max-height: 80vh;
       margin-top: 0;
+      opacity: 0.9;
     }
     > img {
       @apply w-full h-full object-cover;
@@ -101,9 +102,21 @@
     }
     .slide__nav-prev {
       left: 0;
+      @include breakpoint(min, xlarge) {
+        left: 2%;
+      }
+      @include breakpoint(min, 2xlarge) {
+        left: 4%;
+      }
     }
     .slide__nav-next {
       right: 0;
+      @include breakpoint(min, xlarge) {
+        right: 2%;
+      }
+      @include breakpoint(min, 2xlarge) {
+        right: 4%;
+      }
     }
   }
 }
