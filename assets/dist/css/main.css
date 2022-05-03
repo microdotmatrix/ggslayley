@@ -4044,8 +4044,12 @@ button.swiper-pagination-bullet {
   color: var(--ggs-subheading);
   text-transform: uppercase;
 }
-.xc-shop .shop-breadcrumbs ul li i\:utility {
-  --icon-size: var(--p);
+.xc-shop .shop-breadcrumbs ul li i {
+  --icon-size: var(--sm);
+  vertical-align: middle;
+}
+.xc-shop .shop-breadcrumbs ul li i > svg {
+  height: inherit;
 }
 .xc-shop__nav{
   position: relative;

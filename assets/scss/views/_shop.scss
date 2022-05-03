@@ -11,8 +11,12 @@
         font-size: $p;
         color: var(--ggs-subheading);
         text-transform: uppercase;
-        i\:utility {
-          --icon-size: #{$p};
+        i {
+          --icon-size: #{$sm};
+          vertical-align: middle;
+          > svg {
+            height: inherit;
+          }
         }
       }
     }
