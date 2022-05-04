@@ -4,15 +4,15 @@
   </div>
   <div class="xc-hero__block" data-column="8">
     {{#if feature_image}}
-      <figure class="xc-hero__feature-image jarallax">
-          <img src="{{feature_image}}" class="jarallax-img" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" />
+      <figure class="xc-hero__feature-image">
+          <img src="{{feature_image}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" />
           {{#if feature_image_caption}}
               <figcaption>{{feature_image_caption}}</figcaption>
           {{/if}}
       </figure>
     {{else}}
-      <figure class="xc-hero__feature-image jarallax">
-          <img src="http://placeskull.com/1920/800/1F2731/1" class="jarallax-img" alt="No Feature Image" />
+      <figure class="xc-hero__feature-image">
+          <img src="http://placeskull.com/1920/800/1F2731/1" alt="No Feature Image" />
       </figure>
     {{/if}}
   </div>

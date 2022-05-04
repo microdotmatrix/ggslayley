@@ -4136,10 +4136,9 @@ button.swiper-pagination-bullet {
   }
 }
 .product .image-overlay-container .variant-image{
-  height: 100%;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
   -o-object-position: center;
      object-position: center;
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -4387,7 +4386,6 @@ button.swiper-pagination-bullet {
   top: 0.75rem;
   right: 1.25rem;
   padding: 1rem;
-  background-image: svgicon(close-circle, var(--ggs-subheading));
   cursor: pointer;
 }
 .product-modal-underlay{

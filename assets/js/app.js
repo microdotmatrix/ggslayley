@@ -31,6 +31,12 @@ jarallax(document.querySelectorAll('.jarallax'), {
   speed: 0.2,
 });
 
+jarallax(document.querySelectorAll('.xc-hero__feature-image'), {
+  type: 'scroll-opacity',
+  imgElement: 'img',
+  speed: 0.4,
+});
+
 const images = document.querySelectorAll('.kg-image-card img, .kg-gallery-card img');
 
 // Lightbox function

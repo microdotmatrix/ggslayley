@@ -72,7 +72,7 @@
       height: 580px;
     }
     .variant-image {
-      @apply w-full h-full object-cover object-center shadow-lg shadow-gray-800/30;
+      @apply w-full object-contain object-center shadow-lg shadow-gray-800/30;
       transition: all 420ms ease;
     }
     .image-overlay {
@@ -188,7 +188,6 @@
 
 .product-modal-close {
   @apply absolute top-3 right-5 p-4;
-  background-image: svgicon(close-circle, var(--ggs-subheading));
 	cursor: pointer;
 }
 
