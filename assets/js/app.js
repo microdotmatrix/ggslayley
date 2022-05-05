@@ -19,9 +19,9 @@ const swiper = new Swiper('.swiper', {
   },
   speed: 900,
   autoplay: {
-    delay: 99000,
+    delay: 5000,
   },
-  loop: true,
+  rewind: true,
 });
 
 

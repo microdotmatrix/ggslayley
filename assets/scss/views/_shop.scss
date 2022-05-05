@@ -249,9 +249,10 @@
 }
 
 .cart {
-  @apply fixed w-full max-w-sm h-full top-0 right-0 z-50 translate-x-full transition-shadow transition-transform duration-200;
+  @apply fixed w-full max-w-sm h-full top-0 right-0 translate-x-full transition-shadow transition-transform duration-200;
 	border-radius: 1px;
   background-color: _slayley(1);
+  z-index: 1000;
   @include breakpoint(max, $bp-md) {
     max-width: auto;
     width: 50%;

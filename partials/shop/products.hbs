@@ -40,7 +40,7 @@ $(function() {
 
 	var previousFocusItem;
 
- client.fetchAllProducts({sortKey: 'CREATED_AT', order: 'desc'}).then(function(products) {
+ client.fetchAllProducts({sort_by: 'CREATED_AT', sortKey: 'CREATED_AT', first: 1}).then(function(products) {
     // console.log(products);
     // Loop ober the products and create a card to be displayed
     // Products ==  the array of products within the collection

@@ -33,46 +33,31 @@ $(function() {
 		});
 	}
 	var previousFocusItem;
-  const query = {
-    first: 1,
-    sortKey: 'CREATED_AT',
-    reverse: true,
-    query: "tag:Featured"
-  };
-  client.fetchQueryProducts({query: 'tag:Featured', sort_by: 'CREATED_AT', order: 'desc', limit: 1 }).then(function(products) {
+
+  client.fetchQueryProducts({query: 'tag:Featured', limit: 5}).then(function(products) {
     // console.log(products);
     // Loop ober the products and create a card to be displayed
     // Products ==  the array of products within the collection
 		for (i = 0; i < products.length; i++) {
 			product = products[i];
 			var productHTML =
+              '<div class="swiper-slide">' +
                 '<div class="product" id="buy-button-'+i+'" data-layout="featured" data-product-id = "'+ product.id+'">' +
 									'<div class="image-overlay-container">' +
 										'<img class="variant-image pointer">' +
 										'<div class="image-overlay pointer"></div>' +
+
 									'</div>' +
 								  '<div class="product-details">' +
 										'<h4 class="product-title pointer"></h4>' +
                     '<div class="variant-selectors"></div>' +
                     '<div class="product-options">' +
-                      '<div class="variant-select pointer">See Options... <i class="icon icon-chevron-fwd-circle"></i></div>' +
-                      '<div class="variant-price"></div>' +
-								  '</div>'+
-									'<div class="product-modal">' +
-										'<div class="modal-left">' +
-                      '<figure class="modal-image"><img class="variant-image"></figure>' +
-                    '</div>'+
-										'<div class="modal-right">' +
-                      '<h4 class="product-title"></h4>' +
-                      '<h2 class="variant-title"></h2>' +
-											'<div class="variant-price"></div>' +
-											'<div class="product-description"></div>' +
-					  						'<div class="variant-selectors"></div>' +
-										'</div>' +
-                    '<div class="button-container">' +
-											'<button class="btn buy-button js-prevent-cart-listener add-button" data-product-id = "'+product.id+'" data-variant-id = "'+ product.selectedVariant.id+'">Add To Cart</button>' +
-									  '</div>' +
-										'<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#1f2731" class="product-modal-close" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg>' +
+                      '<div class="product-description"></div>' +
+                      '<div class="button-container">' +
+                        '<div class="variant-price"></div>' +
+                        '<button class="btn buy-button js-prevent-cart-listener add-button" data-product-id = "'+product.id+'" data-variant-id = "'+ product.selectedVariant.id+'">Add To Cart</button>' +
+                      '</div>' +
+								    '</div>'+
 								  '</div>' +
 								'</div>';
 			$('.collection').append(productHTML);

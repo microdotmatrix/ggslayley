@@ -51,9 +51,9 @@ var swiper = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper', {
   },
   speed: 900,
   autoplay: {
-    delay: 99000
+    delay: 5000
   },
-  loop: true
+  rewind: true
 });
 (0,jarallax__WEBPACK_IMPORTED_MODULE_0__.jarallaxVideo)();
 (0,jarallax__WEBPACK_IMPORTED_MODULE_0__.jarallax)(document.querySelectorAll('.jarallax'), {

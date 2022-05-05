@@ -48,24 +48,26 @@
   &__intro-msg {
     padding-top: $spacing-unit;
     padding-left: 5%;
-  }
-  &__shop-title {
-    color: var(--ggs-accent);
-    font-family: $barlow;
-    text-shadow: var(--ggs-text-3D);
-  }
-  &__subheading {
-    font-family: $barlow;
-    font-size: $md;
-    font-weight: 400;
-    color: _slayley(3);
+    h2 {
+      color: var(--ggs-accent);
+      font-family: $lighters;
+      font-size: $h3;
+      text-transform: uppercase;
+      text-shadow: var(--ggs-text-3D);
+    }
+    p {
+      font-family: $barlow;
+      font-size: $md;
+      font-weight: 400;
+      color: _slayley(3);
+    }
   }
   &__featured-products {
     @apply relative;
     .collection {
       @apply flex;
       .product[data-layout="featured"] {
-        @apply flex flex-col md:flex-row;
+        @apply flex flex-col justify-center md:flex-row;
         .image-overlay-container {
           @apply flex-1 basis-1/4 h-full max-h-[33rem] p-6 md:p-7 lg:p-8;
         }
@@ -73,6 +75,22 @@
           @apply flex-1 basis-1/3 justify-center;
           .product-title {
             font-size: $xxl;
+          }
+          .product-options {
+            @apply relative flex flex-col justify-start gap-4;
+            .product-description {
+              @apply relative flex flex-col max-h-80 min-h-fit h-1/2 w-full overflow-x-auto overflow-y-scroll;
+            }
+            .button-container {
+              @apply relative flex flex-row justify-between left-0 md:left-0 lg:left-0 w-full md:w-full bottom-0 mx-auto py-2;
+              .variant-price {
+                @apply text-left;
+              }
+              .btn {
+                @apply py-1 px-3 mx-auto border border-solid rounded-md w-fit overflow-hidden text-ellipsis appearance-none;
+                font-size: $p;
+              }
+            }
           }
         }
       }
