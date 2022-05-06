@@ -34,7 +34,9 @@ $(function() {
 	}
 	var previousFocusItem;
 
-  client.fetchQueryProducts({query: 'tag:Featured', limit: 5}).then(function(products) {
+
+
+  client.fetchQueryProducts({ collection_id: collectionID, sort_by: 'collection-default', limit: 5 }).then(function(products) {
     // console.log(products);
     // Loop ober the products and create a card to be displayed
     // Products ==  the array of products within the collection
@@ -44,12 +46,10 @@ $(function() {
               '<div class="swiper-slide">' +
                 '<div class="product" id="buy-button-'+i+'" data-layout="featured" data-product-id = "'+ product.id+'">' +
 									'<div class="image-overlay-container">' +
-										'<img class="variant-image pointer">' +
-										'<div class="image-overlay pointer"></div>' +
-
+										'<a href="'+product.selectedVariantImage.src+'" rel="lightbox" class="glightbox" data-gallery="products"><img class="variant-image"></a>' +
 									'</div>' +
 								  '<div class="product-details">' +
-										'<h4 class="product-title pointer"></h4>' +
+										'<h4 class="product-title"></h4>' +
                     '<div class="variant-selectors"></div>' +
                     '<div class="product-options">' +
                       '<div class="product-description"></div>' +
@@ -131,15 +131,15 @@ $(function() {
 			openCart();
 		});
 		// open product modal
-		$('.collection').on('click', '.image-overlay, .variant-image, .variant-select, .product-title, .product-options', function(){
-			console.log('clicked');
-			$(this).parents('.product').find('.product-modal').show();
-			if (!$('.product-modal-underlay').length) {
-				$('body').append('<div class = "product-modal-underlay"></div>');
-			}
-		});
+		//$('.collection').on('click', '.image-overlay, .variant-image, .variant-select, .product-title, .product-options', function(){
+			//console.log('clicked');
+			//$(this).parents('.product').find('.product-modal').show();
+			//if (!$('.product-modal-underlay').length) {
+			//$('body').append('<div class = "product-modal-underlay"></div>');
+			//}
+		//});
 		// close product modal
-		$('body').on('click', '.product-modal-underlay, .product-modal-close', hideModal);
+		//$('body').on('click', '.product-modal-underlay, .product-modal-close', hideModal);
 	}
 	/* Event Listener handles post messages from checkout page
 	============================================================ */

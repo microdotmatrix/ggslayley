@@ -44,20 +44,34 @@ var swiper = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper', {
     nextEl: '.slide__nav-next',
     prevEl: '.slide__nav-prev'
   },
-  parallax: true,
-  effect: 'slide',
-  fadeEffect: {
-    crossFade: true
+  pagination: {
+    el: '.slide__nav-pagination',
+    type: 'bullets',
+    clickable: true
   },
-  speed: 900,
-  autoplay: {
-    delay: 5000
-  },
-  rewind: true
+  enabled: false,
+  breakpoints: {
+    768: {
+      enabled: true,
+      parallax: true,
+      effect: 'slide',
+      fadeEffect: {
+        crossFade: true
+      },
+      speed: 900,
+      autoplay: {
+        delay: 5000
+      },
+      rewind: true
+    }
+  }
 });
 (0,jarallax__WEBPACK_IMPORTED_MODULE_0__.jarallaxVideo)();
 (0,jarallax__WEBPACK_IMPORTED_MODULE_0__.jarallax)(document.querySelectorAll('.jarallax'), {
   speed: 0.2
+});
+(0,jarallax__WEBPACK_IMPORTED_MODULE_0__.jarallax)(document.querySelectorAll('.parallax-container'), {
+  speed: -0.6
 });
 (0,jarallax__WEBPACK_IMPORTED_MODULE_0__.jarallax)(document.querySelectorAll('.xc-hero__feature-image'), {
   type: 'scroll-opacity',

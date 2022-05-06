@@ -19,7 +19,7 @@
   ul {
     @apply flex flex-col xl:flex-row justify-between items-center text-center;
     li {
-      @apply flex-1;
+      flex: 0 1 0%;
       &.nav-current {
         a {
           color: var(--ggs-bright);

@@ -1,57 +1,20 @@
 @import "~swiper/css/bundle";
 
 .xc-slider {
-  &__post-title {
-    color: _slate(7);
-  }
-  &__post-meta {
-    font-family: $uni-sans;
-    font-size: $lg;
-    font-weight: 600;
-  }
   &__content {
     @apply flex items-center h-full;
-    padding: $space-phi calc(#{$space-pi} - #{$space-e});
+    padding: calc(#{$space-phi} + 3.14rem) calc(#{$space-pi} - #{$space-e});
     color: var(--ggs-bg);
     font-weight: 200;
     font-family: $barlow;
-  }
-  &__post {
-    @apply flex flex-col justify-center md:h-full;
-    padding: $space-pi 2.718rem $space-phi;
-    color: var(--ggs-bg);
-    font-weight: 200;
-    font-family: $barlow;
-    @include breakpoint(min, large) {
-      padding: $space-phi calc(#{$space-pi} + #{$space-e});
-    }
-  }
-  &__post-img {
-    position: absolute;
-    z-index: -1;
-    padding: 0;
-    max-height: 30vh;
-    overflow: hidden;
-    opacity: 0.5;
-    @include breakpoint(min, medium) {
-      position: relative;
-      padding: $space-e;
-      max-height: 80vh;
-      margin-top: 0;
-      opacity: 0.9;
-    }
-    > img {
-      @apply w-full h-full object-cover;
-
-    }
   }
   &__intro-msg {
-    padding-top: $spacing-unit;
-    padding-left: 5%;
+    padding-top: -2.5%;
+    padding-left: 2.5%;
     h2 {
       color: var(--ggs-accent);
       font-family: $lighters;
-      font-size: $h3;
+      font-size: $xl;
       text-transform: uppercase;
       text-shadow: var(--ggs-text-3D);
     }
@@ -64,31 +27,66 @@
   }
   &__featured-products {
     @apply relative;
+    .swiper {
+      box-shadow: var(--shadow-6);
+      background: rgba(_slayley(9), 0.4);
+      backdrop-filter: blur(3px);
+      padding-bottom: 2rem;
+    }
     .collection {
       @apply flex;
       .product[data-layout="featured"] {
-        @apply flex flex-col justify-center md:flex-row;
+        @apply flex flex-col justify-center lg:flex-row;
         .image-overlay-container {
-          @apply flex-1 basis-1/4 h-full max-h-[33rem] p-6 md:p-7 lg:p-8;
+          @apply flex-1 basis-1/4 self-center h-full max-h-[25rem] lg:max-h-[33rem] p-0 md:p-4 2xl:p-8;
+        }
+        .variant-image {
+          @apply shadow-none;
         }
         .product-details {
-          @apply flex-1 basis-1/3 justify-center;
+          @apply flex-1 basis-1/3 justify-center pt-5 pl-0 pr-0;
           .product-title {
-            font-size: $xxl;
+            @apply px-6;
+            font-size: $lg;
+            color: var(--ggs-light);
+            text-shadow: 4px 3px 3px rgba(_slayley(9), 0.9);
+            @include breakpoint(min, large) {
+              @apply px-3;
+              font-size: $h4;
+            }
+          }
+          .variant-selectors {
+            @apply mx-6;
           }
           .product-options {
-            @apply relative flex flex-col justify-start gap-4;
+            @apply relative flex flex-col justify-start gap-1;
             .product-description {
-              @apply relative flex flex-col max-h-80 min-h-fit h-1/2 w-full overflow-x-auto overflow-y-scroll;
+              @apply relative flex flex-col max-h-40 lg:max-h-48 xl:max-h-56 min-h-fit h-full w-[92%] overflow-x-auto overflow-y-scroll;
+              scrollbar-width: thin;
+              scrollbar-color: black;
+              &::-webkit-scrollbar {
+                width: 10px;
+              }
+              &::-webkit-scrollbar-track {
+                background: var(--ggs-primary);
+              }
+              &::-webkit-scrollbar-thumb {
+                background: var(--ggs-dark);
+              }
             }
             .button-container {
-              @apply relative flex flex-row justify-between left-0 md:left-0 lg:left-0 w-full md:w-full bottom-0 mx-auto py-2;
+              @apply relative flex flex-row justify-between items-center left-0 md:left-0 lg:left-0 w-full md:w-full bottom-0 mx-auto pb-2 pt-0;
               .variant-price {
                 @apply text-left;
+                font-size: $xl;
+                color: _slate(5);
               }
               .btn {
-                @apply py-1 px-3 mx-auto border border-solid rounded-md w-fit overflow-hidden text-ellipsis appearance-none;
-                font-size: $p;
+                @apply pt-3 pb-2 px-3 mx-auto border border-solid rounded-md w-fit h-fit overflow-hidden text-ellipsis appearance-none;
+                font-size: $sm;
+                font-family: $lighters;
+                text-transform: uppercase;
+                line-height: 1;
               }
             }
           }
@@ -97,38 +95,53 @@
     }
   }
   &__nav {
+    @apply relative;
+    .slide__nav-pagination {
+      --swiper-pagination-bullet-width: 0.8rem;
+      --swiper-pagination-bullet-height: 0.8rem;
+      --swiper-pagination-color: #ccc;
+      --swiper-pagination-bullet-active-color: #ccc;
+      --swiper-pagination-bullet-inactive-color: #111;
+      --swiper-pagination-bullet-opacity: 1;
+      --swiper-pagination-bullet-inactive-opacity: 0.7;
+      @extend .swiper-pagination;
+      @apply bottom-4 lg:bottom-2;
+      .swiper-pagination-bullet {
+        border-radius: 0;
+      }
+    }
     .slide__nav-prev,
     .slide__nav-next {
-      --icon-size: 2.5rem;
-      @apply absolute top-1/2 z-10 flex items-center justify-center;
+      --icon-size: 2rem;
+      @apply absolute bottom-2 z-10 flex items-center justify-center;
       width: calc(var(--xxxl) / 44 * 27);
-      height: var(--xxxl);
-      margin-top: calc(0px - var(--xxxl) / 2);
+      //height: var(--xxxl);
+      //margin-top: calc(0px - var(--xxxl) / 2);
       cursor: pointer;
       fill: var(--ggs-accent);
       @include breakpoint(min, large) {
-        --icon-size: 3rem;
+        --icon-size: 2rem;
       }
       @include breakpoint(min, xlarge) {
-        --icon-size: 3.5rem
+        --icon-size: 2rem;
       }
     }
     .slide__nav-prev {
       left: 0;
       @include breakpoint(min, xlarge) {
-        left: 2%;
+        left: 15%;
       }
       @include breakpoint(min, 2xlarge) {
-        left: 4%;
+        left: 25%;
       }
     }
     .slide__nav-next {
       right: 0;
       @include breakpoint(min, xlarge) {
-        right: 2%;
+        right: 15%;
       }
       @include breakpoint(min, 2xlarge) {
-        right: 4%;
+        right: 25%;
       }
     }
   }

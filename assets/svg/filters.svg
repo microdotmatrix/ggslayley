@@ -1,0 +1,19 @@
+<svg width="2000" height="2000" viewBox="0 0 200 85" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <filter id="blurSm">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>
+  </filter>
+  <filter id="blurMd">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+  </filter>
+  <filter id="blurLg">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="10" result="blur"/>
+  </filter>
+  <filter id="drop-shadow">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+    <feoffset in="blur" dx="4" dy="4" result="offsetBlur"/>
+    <feMerge>
+      <feMergeNode in="offsetBlur"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+</svg>

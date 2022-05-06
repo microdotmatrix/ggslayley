@@ -12,16 +12,27 @@ const swiper = new Swiper('.swiper', {
     nextEl: '.slide__nav-next',
     prevEl: '.slide__nav-prev',
   },
-  parallax: true,
-  effect: 'slide',
-  fadeEffect: {
-    crossFade: true
+  pagination: {
+    el: '.slide__nav-pagination',
+    type: 'bullets',
+    clickable: true,
   },
-  speed: 900,
-  autoplay: {
-    delay: 5000,
-  },
-  rewind: true,
+  enabled: false,
+  breakpoints: {
+    768: {
+      enabled: true,
+      parallax: true,
+      effect: 'slide',
+      fadeEffect: {
+        crossFade: true
+      },
+      speed: 900,
+      autoplay: {
+        delay: 5000,
+      },
+      rewind: true,
+    }
+  }
 });
 
 
@@ -30,6 +41,11 @@ jarallaxVideo();
 jarallax(document.querySelectorAll('.jarallax'), {
   speed: 0.2,
 });
+
+jarallax(document.querySelectorAll('.parallax-container'), {
+  speed: -0.6,
+});
+
 
 jarallax(document.querySelectorAll('.xc-hero__feature-image'), {
   type: 'scroll-opacity',
