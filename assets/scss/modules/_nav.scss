@@ -22,7 +22,7 @@
       flex: 0 1 0%;
       &.nav-current {
         a {
-          color: var(--ggs-bright);
+          color: var(--ggs-brighter);
           &::before {
             content: "";
             position: absolute;
@@ -36,7 +36,7 @@
         font-family: $lighters;
         font-weight: 600;
         text-transform: uppercase;
-        color: var(--ggs-accent);
+        color: var(--ggs-link-inv);
         transition: all 200ms ease;
         &::after {
           @apply absolute left-0 bottom-[6px] w-full h-[1px];
@@ -47,7 +47,7 @@
           transition: transform 420ms ease-in;
         }
         &:hover {
-          color: var(--ggs-link);
+          color: var(--ggs-brighter);
           text-decoration: none;
 
           &::after {
