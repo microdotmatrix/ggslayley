@@ -38,7 +38,10 @@
       .product[data-layout="featured"] {
         @apply flex flex-col justify-center lg:flex-row;
         .image-overlay-container {
-          @apply flex-1 basis-1/4 self-center h-full max-h-[25rem] lg:max-h-[33rem] p-0 md:p-4 2xl:p-8;
+          @apply flex-1 basis-1/4 self-center h-full p-0 md:p-4 2xl:p-8;
+          a {
+            @apply block overflow-hidden max-h-[25rem] lg:max-h-[33rem];
+          }
         }
         .variant-image {
           @apply shadow-none;
