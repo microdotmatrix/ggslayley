@@ -3865,15 +3865,6 @@ button.swiper-pagination-bullet {
 .kg-card h1, .kg-card h2, .kg-card h3, .kg-card h4, .kg-card h5 {
   letter-spacing: normal;
 }
-#about p {
-  padding: 0 var(--space-phi) 0;
-  width: var(--article-3);
-}
-#about .kg-image-card{
-  float: right;
-  margin-left: 1.5rem;
-  width: 33.333333%;
-}
 .xc-article__header{
   position: relative;
   display: flex;
@@ -4146,6 +4137,17 @@ button.swiper-pagination-bullet {
 .xc-gallery{
   display: flex;
   width: 100%;
+}
+#about .kg-gallery-card{
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+#about .xc-article__content {
+  max-width: 96ch;
+}
+#about .xc-article__content h3 {
+  font-size: var(--lg);
+  margin-top: var(--space-phi);
 }
 .xc-shop {
   margin: 0 auto;
