@@ -1414,22 +1414,30 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 @-webkit-keyframes hueRotator {
   0% {
-    -webkit-backdrop-filter: hue-rotate(0);
-            backdrop-filter: hue-rotate(0);
+    -webkit-backdrop-filter: blur(0px) contrast(1) hue-rotate(0);
+            backdrop-filter: blur(0px) contrast(1) hue-rotate(0);
+  }
+  50% {
+    -webkit-backdrop-filter: blur(3px) contrast(1.2) hue-rotate(180deg);
+            backdrop-filter: blur(3px) contrast(1.2) hue-rotate(180deg);
   }
   100% {
-    -webkit-backdrop-filter: hue-rotate(180deg);
-            backdrop-filter: hue-rotate(180deg);
+    -webkit-backdrop-filter: blur(0px) contrast(1) hue-rotate(0);
+            backdrop-filter: blur(0px) contrast(1) hue-rotate(0);
   }
 }
 @keyframes hueRotator {
   0% {
-    -webkit-backdrop-filter: hue-rotate(0);
-            backdrop-filter: hue-rotate(0);
+    -webkit-backdrop-filter: blur(0px) contrast(1) hue-rotate(0);
+            backdrop-filter: blur(0px) contrast(1) hue-rotate(0);
+  }
+  50% {
+    -webkit-backdrop-filter: blur(3px) contrast(1.2) hue-rotate(180deg);
+            backdrop-filter: blur(3px) contrast(1.2) hue-rotate(180deg);
   }
   100% {
-    -webkit-backdrop-filter: hue-rotate(180deg);
-            backdrop-filter: hue-rotate(180deg);
+    -webkit-backdrop-filter: blur(0px) contrast(1) hue-rotate(0);
+            backdrop-filter: blur(0px) contrast(1) hue-rotate(0);
   }
 }
 @-webkit-keyframes line-top-in {
@@ -1626,9 +1634,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: flex;
   height: 100%;
   width: 100%;
-  background: rgba(4, 4, 5, 0.6);
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  background: rgba(31, 39, 50, 0.3);
+  mix-blend-mode: color-burn;
   -webkit-animation-name: hueRotator;
           animation-name: hueRotator;
   -webkit-animation-duration: 8s;
@@ -1655,16 +1662,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     -webkit-backface-visibility: visible;
             backface-visibility: visible;
   }
-}
-#about .xc-hero__block h3::after, #contact .xc-hero__block h3::after {
-  opacity: 0;
-  visibility: hidden;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  -webkit-animation-name: loadify;
-          animation-name: loadify;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
 }
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
@@ -2714,47 +2711,63 @@ i .i\:svg, .icon .i\:svg{
   color: #6D7682;
   transition: all 600ms ease;
 }
+#about .xc-hero, #contact .xc-hero{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+}
+@media (min-width: 1024px){
+  #about .xc-hero, #contact .xc-hero{
+    flex-wrap: wrap;
+  }
+}
 #about .xc-hero, #contact .xc-hero {
   background-color: #040405;
 }
 #about .xc-hero__block, #contact .xc-hero__block{
   position: relative;
   display: flex;
-  height: 24rem;
+  height: 6rem;
   align-items: flex-end;
   justify-content: flex-start;
+}
+@media (min-width: 1024px){
+  #about .xc-hero__block, #contact .xc-hero__block{
+    height: 24rem;
+  }
+}
+#about .xc-hero__block, #contact .xc-hero__block {
   background-size: 75%;
   background-repeat: no-repeat;
   background-position: 100% 50%;
 }
 #about .xc-hero__block h3, #contact .xc-hero__block h3{
-  position: absolute;
-  left: 2.5rem;
+  position: relative;
+  margin-left: 5rem;
   font-family: "Lighters", sans-serif;
   text-transform: uppercase;
   color: var(--ggs-accent);
 }
-#about .xc-hero__block h3::after, #contact .xc-hero__block h3::after {
-  content: "?";
-  display: inline-block;
+#about .xc-hero__image, #contact .xc-hero__image{
   position: relative;
-  font-family: "Metrophobic", sans-serif;
-  font-size: var(--h3);
-  font-weight: 300;
-  margin-left: 0.5rem;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+  display: flex;
+  height: 18rem;
+  align-items: flex-end;
+  justify-content: flex-start;
 }
-#about .xc-hero__block figure, #contact .xc-hero__block figure{
+@media (min-width: 1024px){
+  #about .xc-hero__image, #contact .xc-hero__image{
+    height: 24rem;
+  }
+}
+#about .xc-hero__image figure, #contact .xc-hero__image figure{
   position: relative;
-  height: 500px;
+  height: 100%;
+  max-height: 500px;
   width: 100%;
   overflow: hidden;
-  max-height: 60vh;
 }
-#about .xc-hero__block figure img, #contact .xc-hero__block figure img{
+#about .xc-hero__image figure img, #contact .xc-hero__image figure img{
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
@@ -2762,7 +2775,7 @@ i .i\:svg, .icon .i\:svg{
   -o-object-position: bottom;
      object-position: bottom;
 }
-#about .xc-hero__block figure figcaption, #contact .xc-hero__block figure figcaption{
+#about .xc-hero__image figure figcaption, #contact .xc-hero__image figure figcaption{
   position: absolute;
   bottom: 0.5rem;
   right: 0.5rem;

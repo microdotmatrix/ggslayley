@@ -45,10 +45,13 @@
 
 @keyframes hueRotator {
   0% {
-    backdrop-filter: hue-rotate(0);
+    backdrop-filter: blur(0px) contrast(1) hue-rotate(0);
+  }
+  50% {
+    backdrop-filter: blur(3px) contrast(1.2) hue-rotate(180deg);
   }
   100% {
-    backdrop-filter: hue-rotate(180deg);
+    backdrop-filter: blur(0px) contrast(1) hue-rotate(0);
   }
 }
 
