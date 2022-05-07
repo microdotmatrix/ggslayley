@@ -24,11 +24,16 @@
 }
 
 .xc-shop__nav {
+  h4 {
+    font-size: var(--md);
+  }
   @apply relative z-50 pt-12 lg:pt-24;
   ul {
     @apply flex flex-col sm:flex-row lg:flex-col w-full justify-between;
     li {
       @apply inline-block md:block;
+      font-family: $barlow;
+      font-weight: 400;
     }
   }
 }
@@ -89,8 +94,7 @@
       @apply mb-4;
     }
     .product-title {
-      font-size: $lg;
-      font-family: $abel;
+      font-size: $md;
       font-weight: 600;
       letter-spacing: normal;
       line-height: 1.2;

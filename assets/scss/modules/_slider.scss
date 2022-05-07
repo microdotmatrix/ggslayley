@@ -40,7 +40,7 @@
         .image-overlay-container {
           @apply flex-1 basis-1/4 self-center h-full p-0 md:p-4 2xl:p-8;
           a {
-            @apply block overflow-hidden max-h-[25rem] lg:max-h-[33rem];
+            @apply block overflow-hidden max-h-[25rem] lg:max-h-[29rem];
           }
         }
         .variant-image {
@@ -64,7 +64,7 @@
           .product-options {
             @apply relative flex flex-col justify-start gap-1;
             .product-description {
-              @apply relative flex flex-col max-h-40 lg:max-h-48 xl:max-h-56 min-h-fit h-full w-[92%] overflow-x-auto overflow-y-scroll;
+              @apply relative flex flex-col justify-between max-h-40 lg:max-h-48 xl:max-h-56 min-h-fit h-full w-[92%] overflow-x-auto overflow-y-scroll;
               scrollbar-width: thin;
               scrollbar-color: black;
               &::-webkit-scrollbar {

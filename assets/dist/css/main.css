@@ -1704,8 +1704,8 @@ canvas {
 body {
   color: var(--ggs-text);
   font-size: var(--base);
-  font-family: "Metrophobic", sans-serif;
-  font-weight: 200;
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
   background-image: var(--ggs-bg);
   background-size: 100%;
   background-attachment: fixed;
@@ -1738,9 +1738,10 @@ main{
   flex-direction: column;
 }
 h1, h2, h3, h4, h5 {
-  font-family: "Abel", sans-serif;
+  font-family: "Lighters", sans-serif;
   font-weight: 600;
   line-height: 1;
+  text-transform: uppercase;
   margin-top: clamp(1.618rem, 3.14vw, 3.14159rem);
   margin-bottom: clamp(0.618rem, 1.618vw, 1.618rem);
   color: var(--ggs-heading);
@@ -3404,7 +3405,6 @@ button.swiper-pagination-bullet {
 }
 .xc-slider__featured-products .collection .product[data-layout=featured] .image-overlay-container{
   height: 100%;
-  max-height: 25rem;
   flex: 1 1 0%;
   flex-basis: 25%;
   align-self: center;
@@ -3415,14 +3415,19 @@ button.swiper-pagination-bullet {
     padding: 1rem;
   }
 }
-@media (min-width: 1024px){
-  .xc-slider__featured-products .collection .product[data-layout=featured] .image-overlay-container{
-    max-height: 33rem;
-  }
-}
 @media (min-width: 1536px){
   .xc-slider__featured-products .collection .product[data-layout=featured] .image-overlay-container{
     padding: 2rem;
+  }
+}
+.xc-slider__featured-products .collection .product[data-layout=featured] .image-overlay-container a{
+  display: block;
+  max-height: 25rem;
+  overflow: hidden;
+}
+@media (min-width: 1024px){
+  .xc-slider__featured-products .collection .product[data-layout=featured] .image-overlay-container a{
+    max-height: 29rem;
   }
 }
 .xc-slider__featured-products .collection .product[data-layout=featured] .variant-image{
@@ -3473,6 +3478,7 @@ button.swiper-pagination-bullet {
   min-height: fit-content;
   width: 92%;
   flex-direction: column;
+  justify-content: space-between;
   overflow-x: auto;
   overflow-y: scroll;
 }
@@ -3653,7 +3659,7 @@ button.swiper-pagination-bullet {
   overflow: hidden;
 }
 .kg-bookmark-title {
-  font-family: "Abel", sans-serif;
+  font-family: "Lighters", sans-serif;
   font-size: var(--h3);
   line-height: 1.4em;
   font-weight: 600;
@@ -4206,6 +4212,9 @@ button.swiper-pagination-bullet {
     padding-top: 6rem;
   }
 }
+.xc-shop__nav h4 {
+  font-size: var(--md);
+}
 .xc-shop__nav ul{
   display: flex;
   width: 100%;
@@ -4229,6 +4238,10 @@ button.swiper-pagination-bullet {
   .xc-shop__nav ul li{
     display: block;
   }
+}
+.xc-shop__nav ul li {
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
 }
 .slayify .collection{
   display: grid;
@@ -4324,8 +4337,7 @@ button.swiper-pagination-bullet {
   margin-bottom: 1rem;
 }
 .product .product-details .product-title {
-  font-size: var(--lg);
-  font-family: "Abel", sans-serif;
+  font-size: var(--md);
   font-weight: 600;
   letter-spacing: normal;
   line-height: 1.2;

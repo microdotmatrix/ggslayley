@@ -2,6 +2,7 @@ h1, h2, h3, h4, h5 {
 	font-family: $text-header;
 	font-weight: 600;
 	line-height: 1;
+  text-transform: uppercase;
 	margin-top: clamp(#{$phi}rem, 3.14vw, #{$pi}rem);
 	margin-bottom: clamp(0.618rem, 1.618vw, 1.618rem);
 	color: $h-color;
