@@ -501,7 +501,8 @@ iframe.wait-autoplay {
 /*Skin */
 
 .glightbox-clean .gslide-description {
-  background: #fff;
+  background: var(--ggs-bg);
+  max-width: 33%;
 }
 
 .glightbox-clean .gdesc-inner {
@@ -509,18 +510,21 @@ iframe.wait-autoplay {
 }
 
 .glightbox-clean .gslide-title {
-  font-size: 1em;
-  font-weight: normal;
-  font-family: arial;
-  color: #000;
+  //font-size: 1em;
+  //font-weight: normal;
+  //font-family: arial;
+  //color: #000;
+  color: var(--ggs-heading);
   margin-bottom: 19px;
   line-height: 1.4em;
 }
 
 .glightbox-clean .gslide-desc {
-  font-size: 0.86em;
+  //font-family: arial;
+  //font-size: 0.86em;
+  color: var(--ggs-medium);
+  font-size: $p;
   margin-bottom: 0;
-  font-family: arial;
   line-height: 1.4em;
 }
 
@@ -889,7 +893,8 @@ iframe.wait-autoplay {
   }
   .gslide-description.description-left,
     .gslide-description.description-right {
-    max-width: 275px;
+    //max-width: 275px;
+    max-width: 33%;
   }
   .glightbox-open {
     height: auto;
