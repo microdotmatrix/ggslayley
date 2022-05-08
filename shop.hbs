@@ -2,33 +2,21 @@
 
 {{#page}}
 	<section id="shop" class="xc-page">
-    <div class="xc-shop" data-flex="row">
-      <nav class="shop-breadcrumbs">
-        <ul>
-          <li>
-            <a href="{{@site.url}}/shop">Shop</a>
-          </li>
-          <li>
-            {{> "icons/utility" name="chevron-right"}}
-          </li>
-          <li>
-            All
-          </li>
-        </ul>
-      </nav>
-    </div>
-	  <div class="xc-shop" data-flex="row">
+	  <article class="xc-shop" data-flex="row">
 
       <div class="xc-shop__nav" data-column="2">
         {{> "shop/sidebar.nav"}}
       </div>
 
       <div class="slayify" data-column="10">
-        <div class="collection" id="288384778408"></div>
+        <div id="new" class="shop-container">
+          <h4>Shop</h4>
+          <div class="collection" id="288384778408"></div>
+        </div>
       </div>
 
       {{> "shop/cart"}}
-  	</div>
+  	</article>
 	</section>
 {{/page}}
 
