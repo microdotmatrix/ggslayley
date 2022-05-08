@@ -1,7 +1,8 @@
 .xc-shop {
   @include adaptive($container-gutter);
   max-width: 1900px;
-  padding-top: $spacing-unit;
+  padding-top: $space-pi;
+  padding-bottom: $space-e;
   .shop-breadcrumbs {
     @apply relative left-1/4 top-6;
     ul {
@@ -34,6 +35,14 @@
       @apply inline-block md:block;
       font-family: $barlow;
       font-weight: 400;
+      .emphasis-new {
+        font-size: $md;
+        font-weight: 600;
+      }
+      .active {
+        font-weight: 600;
+        color: var(--ggs-bright);
+      }
     }
   }
 }

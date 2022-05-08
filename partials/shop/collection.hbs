@@ -57,26 +57,26 @@ $(function() {
 								  '<div class="product-details">' +
 										'<h4 class="product-title pointer"></h4>' +
                     '<div class="variant-selectors"></div>' +
-                    '<div class="product-options">' +
-                      '<div class="variant-select pointer">Read More... <i class="icon icon-chevron-fwd-circle"></i></div>' +
+                    '<div class="product-options pointer">' +
+                      '<div class="variant-select">See Options... <i class="icon icon-chevron-fwd-circle"></i></div>' +
                       '<div class="variant-price"></div>' +
-								  '</div>'+
-									'<div class="product-modal">' +
-										'<div class="modal-left">' +
-                      '<figure class="modal-image"><img class="variant-image"></figure>' +
-                    '</div>'+
-										'<div class="modal-right">' +
-                      '<h4 class="product-title"></h4>' +
-                      '<h2 class="variant-title"></h2>' +
-											'<div class="variant-price"></div>' +
-					  					'<div class="variant-selectors"></div>' +
-											'<div class="product-description"></div>' +
-										'</div>' +
-                    '<div class="button-container">' +
-											'<button class="btn buy-button js-prevent-cart-listener add-button" data-product-id = "'+product.id+'" data-variant-id = "'+ product.selectedVariant.id+'">Add To Cart</button>' +
-									  '</div>' +
-										'<i class="icon product-modal-close" aria-hidden="true"></i>' +
-								  '</div>' +
+								    '</div>'+
+                    '<div class="product-modal">' +
+                      '<div class="modal-left">' +
+                        '<figure class="modal-image"><img class="variant-image"></figure>' +
+                      '</div>'+
+                      '<div class="modal-right">' +
+                        '<h4 class="product-title"></h4>' +
+                        '<h2 class="variant-title"></h2>' +
+                        '<div class="variant-price"></div>' +
+                        '<div class="variant-selectors"></div>' +
+                        '<div class="product-description"></div>' +
+                      '</div>' +
+                      '<div class="button-container">' +
+                        '<button class="btn buy-button js-prevent-cart-listener add-button" data-product-id = "'+product.id+'" data-variant-id = "'+ product.selectedVariant.id+'">Add To Cart</button>' +
+                      '</div>' +
+                      '<i class="icon product-modal-close" aria-hidden="true"></i>' +
+                    '</div>' +
 								'</div>';
 
 
@@ -169,7 +169,7 @@ $(function() {
 		});
 
 		// open product modal
-		$('.collection').on('click', '.image-overlay, .variant-image, .product-details', function(){
+		$('.collection').on('click', '.image-overlay, .variant-image, .product-title', '.product-options', function(){
 			console.log('clicked');
 			$(this).parents('.product').find('.product-modal').show();
 			if (!$('.product-modal-underlay').length) {

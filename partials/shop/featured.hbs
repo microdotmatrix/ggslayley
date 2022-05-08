@@ -50,12 +50,13 @@ $(function() {
 									'</div>' +
 								  '<div class="product-details">' +
 										'<h4 class="product-title"></h4>' +
+                    '<div class="variant-thumbs">' +
                     '<div class="variant-selectors"></div>' +
                     '<div class="product-options">' +
                       '<div class="product-description"></div>' +
                       '<div class="button-container">' +
-                        '<div class="variant-price"></div>' +
                         '<button class="btn buy-button js-prevent-cart-listener add-button" data-product-id = "'+product.id+'" data-variant-id = "'+ product.selectedVariant.id+'">Add To Cart</button>' +
+                        '<div class="variant-price"></div>' +
                       '</div>' +
 								    '</div>'+
 								  '</div>' +
@@ -68,6 +69,8 @@ $(function() {
 				var variantSelectors = generateSelectors(i, product.variants);
 				updateVariantSelectors(i, variantSelectors);
 				updateVariantTitle(i, selectedVariant);
+        var variantAltImages = generateImages(i, product.variants);
+
 			}
 			updateProductTitle(i, product.title);
 			updateProductDescription(i, product.description);
@@ -183,6 +186,16 @@ $(function() {
 		}
 		return 	'<select name = "variant-selection" class = "product' + num + '">' + options + '</select>';
 	}
+
+  // Variant Image Alternate generation function...
+  function generateImages(num, variants) {
+    var thumbs;
+    for (var i = 0; i < variants.length; i++) {
+      thumbs += '<img src = "' + variants[i].image.src + '">';
+    }
+    return '<div class="var-thumb">' + thumbs + '</div>';
+  }
+
   	/* Variant option change handler
   	============================================================ */
 	function attachOnVariantSelectListeners() {

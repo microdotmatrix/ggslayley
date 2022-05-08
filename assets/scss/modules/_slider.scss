@@ -40,11 +40,11 @@
         .image-overlay-container {
           @apply flex-1 basis-1/4 self-center h-full p-0 md:p-4 2xl:p-8;
           a {
-            @apply block overflow-hidden max-h-[25rem] lg:max-h-[29rem];
+            @apply block overflow-hidden max-h-[20rem] lg:max-h-[25rem];
           }
         }
         .variant-image {
-          @apply shadow-none;
+          @apply shadow-none h-full;
         }
         .product-details {
           @apply flex-1 basis-1/3 justify-center pt-5 pl-0 pr-0;
@@ -65,8 +65,16 @@
             @apply relative flex flex-col justify-start gap-1;
             .product-description {
               @apply relative flex flex-col justify-between max-h-40 lg:max-h-48 xl:max-h-56 min-h-fit h-full w-[92%] overflow-x-auto overflow-y-scroll;
-              scrollbar-width: thin;
-              scrollbar-color: black;
+              p {
+                font-size: var(--base);
+                line-height: 1.333;
+                @include breakpoint(max, medium) {
+                  font-size: $sm;
+                }
+              }
+              h1, h2, h3, h4, h5 {
+                color: var(--ggs-subheading);
+              }
               &::-webkit-scrollbar {
                 width: 10px;
               }
@@ -76,17 +84,11 @@
               &::-webkit-scrollbar-thumb {
                 background: var(--ggs-dark);
               }
-              @include breakpoint(max, medium) {
-                p {
-                  font-size: $sm;
-                }
-              }
             }
             .button-container {
               @apply relative flex flex-row justify-between items-center left-0 md:left-0 lg:left-0 w-full md:w-full bottom-0 mx-auto pb-2 pt-0;
               .variant-price {
-                @apply text-left;
-                font-size: $xl;
+                font-size: $lg;
                 color: _slate(5);
               }
               .btn {
