@@ -1,6 +1,6 @@
 #art {
   .xc-hero {
-    @apply pt-16 pb-4 md:pt-10 lg:pt-20;
+    @apply pt-20 pb-4 md:pt-10 lg:pt-20;
     background-color: _slayley(9);
     transition: transform 500ms ease;
     .filter-button {
@@ -34,7 +34,10 @@
           color: _slayley(3);
           transition: all 600ms ease;
           @include breakpoint(max, small) {
-            font-size: $md;
+            font-size: var(--base);
+            letter-spacing: -1px;
+            text-overflow: clip;
+            white-space: nowrap;
           }
         }
       }

@@ -38,14 +38,15 @@
   @include breakpoint(max, small) {
     #art {
       .xc-hero {
-        position: fixed;
+        @apply fixed bottom-0 left-0 w-full;
         padding: 0.5rem 1rem;
-        top: 0;
-        right: 0;
         z-index: 100;
-        transform: translate(0, 80%);
-        transition: transform 500ms ease;
+        transform: translate(0);
         transform-origin: 50% 50%;
+        transition: all 500ms ease;
+        .filter-button {
+          @apply grid-cols-4;
+        }
       }
     }
   }

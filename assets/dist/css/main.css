@@ -1648,15 +1648,19 @@ Ensure the default browser behavior of the `hidden` attribute.
           animation-iteration-count: infinite;
 }
 @media (max-width: 768px) {
-  .adjust #art .xc-hero {
+  .adjust #art .xc-hero{
     position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
     padding: 0.5rem 1rem;
-    top: 0;
-    right: 0;
     z-index: 100;
-    transform: translate(0, 80%);
-    transition: transform 500ms ease;
+    transform: translate(0);
     transform-origin: 50% 50%;
+    transition: all 500ms ease;
+  }
+  .adjust #art .xc-hero .filter-button{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 @-webkit-keyframes loadify {
@@ -4094,7 +4098,7 @@ button.swiper-pagination-bullet {
   padding-top: 0;
 }
 #art .xc-hero{
-  padding-top: 4rem;
+  padding-top: 5rem;
   padding-bottom: 1rem;
 }
 @media (min-width: 768px){
@@ -4183,7 +4187,10 @@ button.swiper-pagination-bullet {
 }
 @media (max-width: 768px) {
   #art .xc-hero__category .sortFilter-button .category-name {
-    font-size: var(--md);
+    font-size: var(--base);
+    letter-spacing: -1px;
+    text-overflow: clip;
+    white-space: nowrap;
   }
 }
 .xc-gallery{
