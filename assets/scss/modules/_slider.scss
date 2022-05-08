@@ -76,6 +76,11 @@
               &::-webkit-scrollbar-thumb {
                 background: var(--ggs-dark);
               }
+              @include breakpoint(max, medium) {
+                p {
+                  font-size: $sm;
+                }
+              }
             }
             .button-container {
               @apply relative flex flex-row justify-between items-center left-0 md:left-0 lg:left-0 w-full md:w-full bottom-0 mx-auto pb-2 pt-0;
@@ -104,7 +109,7 @@
       --swiper-pagination-bullet-height: 0.8rem;
       --swiper-pagination-color: #ccc;
       --swiper-pagination-bullet-active-color: #ccc;
-      --swiper-pagination-bullet-inactive-color: #111;
+      --swiper-pagination-bullet-inactive-color: #000;
       --swiper-pagination-bullet-opacity: 1;
       --swiper-pagination-bullet-inactive-opacity: 0.7;
       @extend .swiper-pagination;

@@ -55,6 +55,11 @@ body {
   font-feature-settings: "kern" 1;
   font-kerning: normal;
 	@apply flex flex-col place-content-between w-full h-full relative;
+  @include breakpoint(max, medium) {
+    > * {
+      transition: all 100ms ease;
+    }
+  }
 }
 
 a {

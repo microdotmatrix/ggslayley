@@ -49,7 +49,7 @@ var swiper = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper', {
     type: 'bullets',
     clickable: true
   },
-  enabled: false,
+  enabled: true,
   breakpoints: {
     768: {
       enabled: true,
@@ -90,7 +90,7 @@ images.forEach(function (image) {
 });
 var header = document.querySelector(".xc-header");
 window.addEventListener("scroll", function () {
-  header.classList.toggle("stick", window.scrollY > 0);
+  header.classList.toggle("stick", window.scrollY > 10);
 });
 
 /***/ }),
