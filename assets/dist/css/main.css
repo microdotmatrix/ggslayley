@@ -3383,7 +3383,7 @@ button.swiper-pagination-bullet {
   display: flex;
   height: 100%;
   align-items: center;
-  padding: calc(var(--space-phi) + 3.14rem) calc(var(--space-pi) - var(--space-e));
+  padding: var(--space-phi) calc(var(--space-pi) - var(--space-e));
   color: var(--ggs-bg);
   font-weight: 200;
   font-family: "Barlow", sans-serif;

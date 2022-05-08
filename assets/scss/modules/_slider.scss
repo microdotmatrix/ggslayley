@@ -3,7 +3,7 @@
 .xc-slider {
   &__content {
     @apply flex items-center h-full;
-    padding: calc(#{$space-phi} + 3.14rem) calc(#{$space-pi} - #{$space-e});
+    padding: $space-phi calc(#{$space-pi} - #{$space-e});
     color: var(--ggs-bg);
     font-weight: 200;
     font-family: $barlow;
