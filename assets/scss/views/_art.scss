@@ -1,4 +1,47 @@
+#art {
+  .xc-hero {
+    @apply pt-16 pb-4 md:pt-10 lg:pt-20;
+    background-color: _slayley(9);
+    transition: transform 500ms ease;
+    .filter-button {
+      @apply relative grid grid-cols-1 md:grid-cols-4;
+    }
+    &__category {
+      @apply relative flex justify-center p-1 md:pb-10;
+      &:hover {
+        .sortFilter-button {
+          svg {
+            fill: _slayley(1);
+            filter: drop-shadow(0 1px 8px var(--ggs-link));
+          }
+          .category-name {
+            color: _slayley(1);
+          }
+        }
+      }
+      .sortFilter-button {
+        @apply relative flex flex-col items-center justify-center;
+        svg {
+          @apply h-full w-8/12 md:w-full lg:h-28 xl:h-36 max-h-full mb-3;
+          fill: _slayley(3);
+          transition: all 600ms ease;
+          @include breakpoint(max, small) {
+            display: none;
+          }
+        }
+        .category-name {
+          font-size: $lg;
+          color: _slayley(3);
+          transition: all 600ms ease;
+          @include breakpoint(max, small) {
+            font-size: $md;
+          }
+        }
+      }
+    }
+  }
+}
+
 .xc-gallery {
   @apply w-full flex;
-  
 }

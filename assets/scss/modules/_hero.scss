@@ -6,53 +6,14 @@
   }
 }
 
-#art {
-  .xc-hero {
-    @apply pt-20;
-    background-color: _slayley(9);
-    .filter-button {
-      @apply relative grid grid-cols-1 md:grid-cols-4;
-    }
-    &__category {
-      @apply relative flex justify-center p-1 md:pb-10;
-      &:hover {
-        .sortFilter-button {
-          svg {
-            fill: _slayley(1);
-            filter: drop-shadow(0 1px 8px var(--ggs-link));
-          }
-          .category-name {
-            color: _slayley(1);
-          }
-        }
-      }
-      .sortFilter-button {
-        @apply relative flex flex-col items-center justify-center;
-        svg {
-          @apply h-full w-8/12 md:w-full lg:h-28 xl:h-36 max-h-full mb-3;
-          fill: _slayley(3);
-          display: none;
-          transition: all 600ms ease;
-          @include breakpoint(min, medium) {
-            display: block;
-          }
-        }
-        .category-name {
-          font-size: $lg;
-          color: _slayley(3);
-          transition: all 600ms ease;
-        }
-      }
-    }
-  }
-}
+
 
 #about, #contact {
   .xc-hero {
-    @apply flex flex-row flex-wrap-reverse lg:flex-wrap;
+    @apply flex flex-row flex-wrap-reverse lg:flex-wrap h-24 lg:h-80;
     background-color: _slayley(9);
     &__block {
-      @apply relative flex items-end justify-start h-24 lg:h-96;
+      @apply relative flex items-end justify-start;
       background-size: 75%;
       background-repeat: no-repeat;
       background-position: 100% 50%;
@@ -64,7 +25,7 @@
       }
     }
     &__image {
-      @apply relative flex items-end justify-start h-72 lg:h-96;
+      @apply relative flex items-end justify-start;
       figure {
         @apply relative w-full h-full max-h-[500px] overflow-hidden;
         img {
