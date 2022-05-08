@@ -1,7 +1,7 @@
 // Jarallax
 import { jarallax, jarallaxVideo } from "jarallax";
 
-import Swiper, { Navigation, Pagination, Parallax, Autoplay, EffectFade, EffectCreative } from 'swiper';
+import Swiper, { Navigation, Pagination, Parallax, Autoplay, EffectFade, EffectCreative, Manipulation } from 'swiper';
 
 import luge from "@waaark/luge";
 
@@ -69,4 +69,5 @@ const header = document.querySelector(".xc-header");
 
 window.addEventListener("scroll", function () {
   header.classList.toggle("stick", window.scrollY > 10);
+  $('.xc-body').toggleClass("adjust", window.scrollY > 10);
 });

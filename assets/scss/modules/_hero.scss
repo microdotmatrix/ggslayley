@@ -11,10 +11,10 @@
     @apply pt-20;
     background-color: _slayley(9);
     .filter-button {
-      @apply relative grid grid-cols-4;
+      @apply relative grid grid-cols-1 md:grid-cols-4;
     }
     &__category {
-      @apply relative flex justify-center pb-10;
+      @apply relative flex justify-center p-1 md:pb-10;
       &:hover {
         .sortFilter-button {
           svg {
@@ -29,13 +29,16 @@
       .sortFilter-button {
         @apply relative flex flex-col items-center justify-center;
         svg {
-          @apply h-full w-10/12 md:w-full lg:h-32 xl:h-48 max-h-full mb-3;
+          @apply h-full w-8/12 md:w-full lg:h-28 xl:h-36 max-h-full mb-3;
           fill: _slayley(3);
+          display: none;
           transition: all 600ms ease;
+          @include breakpoint(min, medium) {
+            display: block;
+          }
         }
         .category-name {
           font-size: $lg;
-          font-family: $abel;
           color: _slayley(3);
           transition: all 600ms ease;
         }
@@ -77,7 +80,13 @@
 
 #shop {
   .xc-hero {
-    @apply relative py-12 hidden;
+    @apply relative h-[600px];
     background-color: _slayley(8);
+    &__block {
+      @apply flex items-end w-full h-full;
+      .collection {
+        @apply grid grid-cols-4;
+      }
+    }
   }
 }

@@ -13,6 +13,7 @@
     &__logo {
       @apply block absolute aspect-square overflow-clip rounded-full left-0 z-10;
       @include sizer(25rem);
+      clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 100%);
       transform: scale(1);
       transition: all 333ms ease;
       @include breakpoint(max, medium) {
@@ -85,7 +86,7 @@
     @apply fixed w-full top-0 left-0;
     transition: all 300ms ease-in;
     .xc-navbar {
-      @apply pt-4 pb-2;
+      @apply pb-2;
     }
     .xc-title {
       @include breakpoint(max, medium) {

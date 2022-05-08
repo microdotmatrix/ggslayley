@@ -1647,6 +1647,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
+@media (max-width: 1024px) {
+  .adjust {
+    margin-top: 10rem;
+    transition: all 200ms ease;
+  }
+}
 @-webkit-keyframes loadify {
   to {
     opacity: 1;
@@ -1869,21 +1875,21 @@ img {
 }
 .xc-grid-item, .xc-grid-sizer{
   position: relative;
-  width: 25%;
+  width: 100%;
 }
-@media (max-width: 48rem) {
-  .xc-grid-item, .xc-grid-sizer {
-    width: 100%;
-  }
-}
-@media (min-width: 48rem) and (max-width: 80rem) {
-  .xc-grid-item, .xc-grid-sizer {
+@media (min-width: 1024px) {
+  .xc-grid-item, .xc-grid-sizer{
     width: 50%;
   }
 }
-@media (min-width: 80rem) and (max-width: 90rem) {
-  .xc-grid-item, .xc-grid-sizer {
-    width: 33.333%;
+@media (min-width: 1280px) {
+  .xc-grid-item, .xc-grid-sizer{
+    width: 33.333333%;
+  }
+}
+@media (min-width: 1400px) {
+  .xc-grid-item, .xc-grid-sizer{
+    width: 25%;
   }
 }
 :where(html) {
@@ -2326,6 +2332,8 @@ i .i\:svg, .icon .i\:svg{
   border-radius: 9999px;
   width: 25rem;
   height: 25rem;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 100%);
   transform: scale(1);
   transition: all 333ms ease;
   top: -60px;
@@ -2444,7 +2452,6 @@ i .i\:svg, .icon .i\:svg{
     transition: all 300ms ease-in;
   }
   .stick .xc-navbar{
-    padding-top: 1rem;
     padding-bottom: 0.5rem;
   }
 }
@@ -2664,13 +2671,23 @@ i .i\:svg, .icon .i\:svg{
 #art .xc-hero .filter-button{
   position: relative;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+@media (min-width: 768px){
+  #art .xc-hero .filter-button{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 #art .xc-hero__category{
   position: relative;
   display: flex;
   justify-content: center;
-  padding-bottom: 2.5rem;
+  padding: 0.25rem;
+}
+@media (min-width: 768px){
+  #art .xc-hero__category{
+    padding-bottom: 2.5rem;
+  }
 }
 #art .xc-hero__category:hover .sortFilter-button svg {
   fill: #FCFEFF;
@@ -2690,7 +2707,7 @@ i .i\:svg, .icon .i\:svg{
   margin-bottom: 0.75rem;
   height: 100%;
   max-height: 100%;
-  width: 83.333333%;
+  width: 66.666667%;
 }
 @media (min-width: 768px){
   #art .xc-hero__category .sortFilter-button svg{
@@ -2699,21 +2716,26 @@ i .i\:svg, .icon .i\:svg{
 }
 @media (min-width: 1024px){
   #art .xc-hero__category .sortFilter-button svg{
-    height: 8rem;
+    height: 7rem;
   }
 }
 @media (min-width: 1280px){
   #art .xc-hero__category .sortFilter-button svg{
-    height: 12rem;
+    height: 9rem;
   }
 }
 #art .xc-hero__category .sortFilter-button svg {
   fill: #6D7682;
+  display: none;
   transition: all 600ms ease;
+}
+@media (min-width: 1024px) {
+  #art .xc-hero__category .sortFilter-button svg {
+    display: block;
+  }
 }
 #art .xc-hero__category .sortFilter-button .category-name {
   font-size: var(--lg);
-  font-family: "Abel", sans-serif;
   color: #6D7682;
   transition: all 600ms ease;
 }
@@ -2788,20 +2810,18 @@ i .i\:svg, .icon .i\:svg{
 }
 #shop .xc-hero{
   position: relative;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  display: none;
-  visibility: hidden;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  border: 0;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
+  height: 600px;
   background-color: #09090B;
+}
+#shop .xc-hero__block{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: flex-end;
+}
+#shop .xc-hero__block .collection{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 /**
  * Swiper 8.1.3
@@ -4554,7 +4574,6 @@ button.swiper-pagination-bullet {
   position: absolute;
   top: 0.75rem;
   right: 1.25rem;
-  padding: 1rem;
   cursor: pointer;
 }
 .product-modal-underlay{

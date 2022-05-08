@@ -33,3 +33,10 @@
   animation-fill-mode: both;
   animation-iteration-count: infinite;
 }
+
+.adjust {
+  @include breakpoint(max, medium) {
+    margin-top: 10rem;
+    transition: all 200ms ease;
+  }
+}

@@ -91,6 +91,7 @@ images.forEach(function (image) {
 var header = document.querySelector(".xc-header");
 window.addEventListener("scroll", function () {
   header.classList.toggle("stick", window.scrollY > 10);
+  $('.xc-body').toggleClass("adjust", window.scrollY > 10);
 });
 
 /***/ }),
