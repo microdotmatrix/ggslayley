@@ -9,12 +9,12 @@ $gradient-map: (
 	'metallic-fade':    linear-gradient(to right, #d7d2cc 0%, #304352 100%),
 	'sunset-purple':    linear-gradient(-225deg, #FF057C 0%, #8D0B93 50%, #321575 100%),
 	'morpheus':         linear-gradient(to top, #30cfd0 0%, #330867 100%),
-	'dark-seas': 		 linear-gradient(to left top, #04070b, #05090d, #060c0f, #080e11, #091012, #11181a, #171f22, #1c272a, #28383c, #34494f, #405c62, #4d6f76),
-	'lawrencium': 		 linear-gradient(to right, #0f0c29, #302b63, #24243e),
-	'royal': 				 linear-gradient(to right, #141e30, #243b55),
-	'murdered': 			 linear-gradient(360deg,#030303 10%,#1f1f1f 360%),
-	'subtle-grey':  	 linear-gradient(360deg, #dee1e1 10%, #f4f4f4 360%),
-	'haze': 				 linear-gradient(360deg,#949494 10%,#efefef 360%),
+	'dark-seas': 		    linear-gradient(to left top, #04070b, #05090d, #060c0f, #080e11, #091012, #11181a, #171f22, #1c272a, #28383c, #34494f, #405c62, #4d6f76),
+	'lawrencium': 		  linear-gradient(to right, #0f0c29, #302b63, #24243e),
+	'royal': 				    linear-gradient(to right, #141e30, #243b55),
+	'murdered': 			  linear-gradient(360deg,#030303 10%,#1f1f1f 360%),
+	'subtle-grey':  	  linear-gradient(360deg, #dee1e1 10%, #f4f4f4 360%),
+	'haze': 				    linear-gradient(360deg,#949494 10%,#efefef 360%),
 );
 
 :where(html) {

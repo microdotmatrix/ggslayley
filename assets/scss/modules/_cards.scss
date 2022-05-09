@@ -3,15 +3,8 @@
 @import "cards/kg-gallery";
 @import "cards/kg-header";
 @import "cards/kg-image";
+@import "cards/kg-callout";
 
-
-#featured-items {
-  .xc-card {
-    &__figure {
-      @apply w-1/2 mx-auto;
-    }
-  }
-}
 
 .xc-card {
   @apply relative flex;
@@ -36,7 +29,6 @@
     }
   }
 }
-
 
 .xc-page__content :not(.kg-card):not([id]) + .kg-card {
   margin-top: 10vmin;

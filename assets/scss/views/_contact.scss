@@ -1,7 +1,41 @@
 #contact {
   .xc-page__content {
-    @apply relative;
+    @apply relative gap-8;
+    article {
+      h2, h3 {
+        font-family: $abel;
+        font-weight: 600;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.333;
+      }
+      h2 {
+        font-size: $xl;
+      }
+      h3 {
+        font-size: $lg;
+      }
+    }
   }
+  .social-feeds {
+    @apply relative mx-auto my-8 max-w-6xl;
+  }
+}
+
+.instagram-media {
+  min-width: none !important;
+  max-width: 99% !important;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 !important;
+}
+
+.tiktok-embed {
+  margin: 0 auto !important;
+  max-width: 100% !important;
+  width: 99% !important;
+  height: 100%;
+  border-radius: 0 !important;
 }
 
 #fs-frm input,

@@ -12,17 +12,6 @@ h1, h2, h3, h4, h5 {
 	}
 }
 
-.h1, .h2, .h3 {
-	&-subtitle {
-		font-family: $prompt;
-		font-weight: 400;
-		line-height: 1;
-		margin-left: 0.5rem;
-		color: ocGray(6);
-		transition: all 200ms ease;
-	}
-}
-
 h1 {
 	margin-top: 0;
 	font-size: $h1;

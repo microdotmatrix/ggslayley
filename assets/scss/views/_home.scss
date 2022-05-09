@@ -21,11 +21,6 @@
   }
 }
 
-.instagram-media {
-  min-width: none !important;
-  max-width: none !important;
-}
-
 #home {
   .xc-page__content {
     > p {
@@ -42,54 +37,6 @@
       }
       .instagram-feed {
         flex: 1 0 40%;
-      }
-    }
-  }
-}
-
-.xc-postfeed {
-  @apply grid md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6;
-  .xc-card {
-    @include only(first) {
-      @apply flex flex-row col-span-4;
-      .xc-card__figure {
-        @apply relative overflow-hidden;
-        @include col(4);
-        max-height: 600px;
-        img {
-          @apply w-full h-full relative object-cover object-center;
-        }
-      }
-    }
-    @apply col-span-2 flex flex-col relative;
-    &__figure {
-      @apply relative overflow-hidden;
-      aspect-ratio: 12 / 10;
-      img {
-        @apply w-full h-full relative object-cover;
-      }
-      figcaption {
-        @apply flex flex-col absolute bottom-0 left-0 p-4 z-20 justify-end;
-        background: rgba(_slayley(9), 0.5);
-        transition: all 300ms ease;
-        &:hover {
-          background: rgba(_slayley(9), 0.9);
-        }
-      }
-    }
-    &__content {
-      @include col(5);
-      @apply px-4;
-    }
-    &__title {
-      display: block;
-      font-size: $h4;
-      font-family: $abel;
-      font-weight: 600;
-    }
-    &__excerpt {
-      > p {
-        margin-top: 0.5rem;
       }
     }
   }
