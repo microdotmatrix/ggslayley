@@ -2682,7 +2682,7 @@ i .i\:svg, .icon .i\:svg{
 }
 @media (min-width: 1024px){
   #about .xc-hero, #contact .xc-hero{
-    height: 20rem;
+    height: 22rem;
     flex-wrap: wrap;
   }
 }
@@ -2693,14 +2693,14 @@ i .i\:svg, .icon .i\:svg{
   position: relative;
   display: flex;
   align-items: flex-end;
-  justify-content: flex-start;
+  justify-content: flex-end;
   background-size: 75%;
   background-repeat: no-repeat;
   background-position: 100% 50%;
 }
 #about .xc-hero__block h3, #contact .xc-hero__block h3{
   position: relative;
-  margin-left: 5rem;
+  margin-right: 1.5rem;
   font-family: "Lighters", sans-serif;
   text-transform: uppercase;
   color: var(--ggs-accent);
@@ -4211,7 +4211,7 @@ button.swiper-pagination-bullet {
 .xc-shop {
   margin: 0 auto;
   max-width: 1900px;
-  padding-top: var(--space-pi);
+  padding-top: var(--space-phi);
   padding-bottom: var(--space-e);
 }
 @media (min-width: 768px) {
@@ -4264,6 +4264,13 @@ button.swiper-pagination-bullet {
 .xc-shop .shop-breadcrumbs ul li i > svg {
   height: inherit;
 }
+.xc-shop .shop-container {
+  margin-top: 2rem;
+}
+.xc-shop .shop-container > h4 {
+  text-align: right;
+  margin-right: 2%;
+}
 .xc-shop__nav{
   position: relative;
   z-index: 50;
@@ -4278,9 +4285,11 @@ button.swiper-pagination-bullet {
   font-size: var(--md);
 }
 .xc-shop__nav ul{
+  margin-bottom: 1.5rem;
   display: flex;
   width: 100%;
   flex-direction: column;
+  align-items: baseline;
   justify-content: space-between;
 }
 @media (min-width: 640px){
@@ -4629,10 +4638,11 @@ button.swiper-pagination-bullet {
   line-height: 1.3;
   margin: 1rem auto 0.5rem;
 }
+.product-description p {
+  font-size: var(--sm);
+}
 .button-container{
-  position: absolute;
-  left: 0px;
-  bottom: 0px;
+  position: relative;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -4643,13 +4653,7 @@ button.swiper-pagination-bullet {
 }
 @media (min-width: 768px){
   .button-container{
-    left: 21vw;
     width: auto;
-  }
-}
-@media (min-width: 1024px){
-  .button-container{
-    left: 25vw;
   }
 }
 .btn{
@@ -4664,14 +4668,15 @@ button.swiper-pagination-bullet {
   border-radius: 0.375rem;
   border-width: 1px;
   border-style: solid;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.5rem;
   color: #f1f3f5;
-  font-family: "Barlow", sans-serif;
+  font-family: "Lighters", sans-serif;
   font-size: var(--p);
   font-weight: 400;
+  text-transform: uppercase;
   background: var(--ggs-bright);
   border-color: var(--ggs-bright);
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
@@ -4950,9 +4955,6 @@ input[type=number]::-webkit-outer-spin-button {
 }
 #contact .xc-page__content{
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
 }
 #fs-frm input,
 #fs-frm select,

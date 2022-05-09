@@ -6,8 +6,11 @@
   </section>
 
 	<section id="contact" class="xc-page">
-    <div class="xc-page__content xc-container">
-      <article>{{content}}</article>
+    <div class="xc-page__content xc-container" data-grid="2">
+      <article>
+        {{content}}
+        {{> "instagram"}}
+      </article>
       <aside>
         <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/{form_id}" method="post">
           <fieldset id="fs-frm-inputs">

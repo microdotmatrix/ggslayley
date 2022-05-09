@@ -6,23 +6,22 @@
 </section>
 
 <section id="art" class="xc-page">
-    <div class="xc-page__content">
+    <article class="xc-page__content">
 
       {{#page}}
         {{content}}
       {{/page}}
 
       <div class="xc-gallery">
-          <div class="xc-grid-sizer"></div>
+        <div class="xc-grid-sizer"></div>
           {{#foreach posts visibility="all"}}
 
-              {{> "cards/art"}}
+            {{> "cards/art"}}
 
           {{/foreach}}
-
       </div>
 
-    </div>
+    </article>
 </section>
 
 {{#contentFor "scripts"}}

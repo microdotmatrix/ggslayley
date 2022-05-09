@@ -8,15 +8,15 @@
 
 #about, #contact {
   .xc-hero {
-    @apply flex flex-row flex-wrap-reverse lg:flex-wrap h-24 lg:h-80;
+    @apply flex flex-row flex-wrap-reverse lg:flex-wrap h-24 lg:h-[22rem];
     background-color: _slayley(9);
     &__block {
-      @apply relative flex items-end justify-start;
+      @apply relative flex items-end justify-end;
       background-size: 75%;
       background-repeat: no-repeat;
       background-position: 100% 50%;
       h3 {
-        @apply relative ml-20;
+        @apply relative mr-6;
         font-family: $lighters;
         text-transform: uppercase;
         color: var(--ggs-accent);
