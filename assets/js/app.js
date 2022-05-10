@@ -71,3 +71,9 @@ window.addEventListener("scroll", function () {
   header.classList.toggle("stick", window.scrollY > 10);
   $('.xc-body').toggleClass("adjust", window.scrollY > 10);
 });
+
+import lazySizes from 'lazysizes';
+
+lazySizes.cfg.lazyClass = 'lethargy';
+
+$('img').addClass('lethargy');
