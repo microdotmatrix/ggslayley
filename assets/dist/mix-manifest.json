@@ -2,5 +2,11 @@
     "/js/app.js": "/js/app.js",
     "/js/lib.js": "/js/lib.js",
     "/css/main.css": "/css/main.css",
-    "/svg/bootstrap-icons.svg": "/svg/bootstrap-icons.svg"
+    "/svg/bootstrap-icons.svg": "/svg/bootstrap-icons.svg",
+    "/fonts/AnonymousState.otf": "/fonts/AnonymousState.otf",
+    "/fonts/BigBadBugs.ttf": "/fonts/BigBadBugs.ttf",
+    "/fonts/Blacklisted.ttf": "/fonts/Blacklisted.ttf",
+    "/fonts/DreamingofLilian.ttf": "/fonts/DreamingofLilian.ttf",
+    "/fonts/GraphikArts.ttf": "/fonts/GraphikArts.ttf",
+    "/fonts/VintageGlitch.otf": "/fonts/VintageGlitch.otf"
 }
