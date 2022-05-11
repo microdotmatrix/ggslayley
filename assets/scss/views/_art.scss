@@ -47,4 +47,40 @@
 
 .xc-gallery {
   @apply w-full flex;
+  .gallery-item {
+    cursor: pointer;
+  }
+  .xc-card {
+    @apply relative flex;
+    &__figure {
+      @apply block relative w-full overflow-clip;
+      img {
+        @apply w-full h-full object-cover;
+      }
+      &:hover {
+        figcaption {
+          display: block;
+          opacity: 1;
+
+        }
+      }
+      figcaption {
+        @apply absolute h-1/2 w-full bottom-0 left-0 px-6 py-3 opacity-0;
+        display: none;
+        background: rgba(_slayley(1), 0.7);
+        .xc-card__meta {
+          @apply block;
+          font-size: $sm;
+          font-family: $uni-sans;
+          font-weight: 400;
+        }
+        .xc-card__title {
+          display: block;
+          font-family: $abel;
+          font-size: $lg;
+          font-weight: 600;
+        }
+      }
+    }
+  }
 }

@@ -6,30 +6,6 @@
 @import "cards/kg-callout";
 
 
-.xc-card {
-  @apply relative flex;
-  &__figure {
-    @apply block relative w-full overflow-clip;
-    img {
-      @apply w-full h-full object-cover;
-    }
-    figcaption {
-      .xc-card__meta {
-        @apply block;
-        font-size: $sm;
-        font-family: $uni-sans;
-        font-weight: 400;
-      }
-      .xc-card__title {
-        display: block;
-        font-family: $abel;
-        font-size: $lg;
-        font-weight: 600;
-      }
-    }
-  }
-}
-
 .xc-page__content :not(.kg-card):not([id]) + .kg-card {
   margin-top: 10vmin;
 }
