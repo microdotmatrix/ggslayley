@@ -9,24 +9,24 @@ Front end built to serve media-focused, primarily original content made by creat
 ---
 #### Tools & Packages Used:
 * [Ghost CMS](https://ghost.org)
-* [Handlebars.js](https://handlebarsjs.io)
-* Node.js
-* Sass + PostCSS
-* Laravel Mix Webpack
-* Gulp
+* [Handlebars.js](https://handlebarsjs.com)
+* [Node.js](https://nodejs.org)
+* [Sass](https://sass-lang.com) + [PostCSS](https://postcss.org)
+* [Laravel Mix Webpack](https://github.com/laravel-mix/laravel-mix)
+* [Gulp](https://gulpjs.com)
 
 #### Libraries & Plugins:
-* Gerillass SCSS Toolkit
-* TailwindCSS v3
-* Accoutrement
-* Luge
-* Jarallax
-* jQuery
-* GSAP
-* GLightbox
-* jQuery Swiper
-* Isotope JS
-* Bootstrap Icons
+* [Gerillass](https://gerillass.com) SCSS Toolkit
+* [TailwindCSS](https://tailwindcss.com) v3
+* [Accoutrement](https://github.com/oddbird/accoutrement)
+* [Luge](https://github.com/AntoineW/luge)
+* [Jarallax](https://github.com/nk-o/jarallax)
+* [jQuery](https://jquery.com)
+* [GSAP](https://greensock.com)
+* [GLightbox](https://github.com/biati-digital/glightbox)
+* [jQuery Swiper](https://swiper.js)
+* [Isotope JS](https://isotope.metafizzy.co)
+* [Bootstrap Icons](https://icons.getbootstrap.com)
 
 Site Structure:
 ------
