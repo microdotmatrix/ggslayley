@@ -6,11 +6,11 @@
   </section>
 
 	<section id="contact" class="xc-page">
-    <div class="xc-page__content xc-container" data-grid="2">
-      <article>
+    <div class="xc-page__content xc-container" data-flex="row">
+      <article data-column="6">
         {{content}}
       </article>
-      <aside>
+      <aside data-column="6">
         <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/{form_id}" method="post">
           <fieldset id="fs-frm-inputs">
             <label for="full-name">Full Name</label>
@@ -25,12 +25,12 @@
         </form>
       </aside>
     </div>
-    <div class="social-feeds" data-grid="2">
-      <div id="instagram">
+    <div class="social-feeds" data-flex="row">
+      <div id="instagram" data-column="6">
         <h4>{{> "icons/social" name="instagram" size="h4"}} Instagram</h4>
         {{> "instagram"}}
       </div>
-      <div id="tiktok">
+      <div id="tiktok" data-column="6">
         <h4>{{> "icons/social" name="tiktok" size="h4"}} TikTok</h4>
         {{> "tiktok"}}
       </div>

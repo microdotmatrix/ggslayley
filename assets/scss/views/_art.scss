@@ -45,6 +45,22 @@
   }
 }
 
+#art {
+  @include breakpoint(max, small) {
+    .xc-hero {
+      @apply fixed bottom-0 left-0 w-full;
+      padding: 0.5rem 1rem;
+      z-index: 100;
+      transform: translate(0);
+      transform-origin: 50% 50%;
+      transition: all 500ms ease;
+      .filter-button {
+        @apply grid-cols-4;
+      }
+    }
+  }
+}
+
 .xc-gallery {
   @apply w-full flex;
   .gallery-item {
@@ -60,11 +76,10 @@
       &:hover {
         figcaption {
           opacity: 1;
-
         }
       }
       figcaption {
-        @apply absolute h-1/2 w-full bottom-0 left-0 px-6 py-3 opacity-0;
+        @apply absolute h-auto lg:h-1/2 w-full bottom-0 left-0 px-6 pt-3 pb-12 lg:pt-3 lg:pb-3 opacity-100 lg:opacity-0;
         background: rgba(_slayley(1), 0.6);
         transition: all 400ms ease;
         .xc-card__meta {

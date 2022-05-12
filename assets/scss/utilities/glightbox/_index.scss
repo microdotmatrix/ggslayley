@@ -897,7 +897,8 @@ iframe.wait-autoplay {
     max-width: 33%;
   }
   .glightbox-open {
-    height: auto;
+    //height: auto;
+    height: 100%;
   }
   .goverlay {
     background: rgba(0, 0, 0, 0.92);

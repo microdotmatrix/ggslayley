@@ -16,7 +16,7 @@
         <div class="xc-grid-sizer"></div>
           {{#foreach posts visibility="all"}}
 
-            {{> "cards/art"}}
+            {{> "cards/art.old"}}
 
           {{/foreach}}
       </div>
@@ -27,7 +27,6 @@
 {{#contentFor "scripts"}}
 
   <script>
-
     var $grid = $('.xc-gallery').imagesLoaded( function() {
       $grid.isotope({
         itemSelector: '.xc-grid-item',

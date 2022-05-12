@@ -79,15 +79,15 @@ lazySizes.cfg.lazyClass = 'lethargy';
 $('img').addClass('lethargy');
 
 
-import lightGallery from 'lightgallery';
-
-import lgZoom from 'lightgallery/plugins/zoom';
-import lgShare from 'lightgallery/plugins/share';
-import lgHash from 'lightgallery/plugins/hash';
-
-lightGallery(document.getElementById("gallery-container"), {
-  speed: 500,
-  selector: '.gallery-item',
-  customSlideName: true,
-  plugins: [lgZoom, lgShare, lgHash]
-});
+// import lightGallery from 'lightgallery';
+//
+// import lgZoom from 'lightgallery/plugins/zoom';
+// import lgShare from 'lightgallery/plugins/share';
+// import lgHash from 'lightgallery/plugins/hash';
+//
+// lightGallery(document.getElementById("gallery-container"), {
+//   speed: 500,
+//   selector: '.gallery-item',
+//   customSlideName: true,
+//   plugins: [lgZoom, lgShare, lgHash]
+// });
