@@ -24,8 +24,10 @@
 
 [data-flex],
 [data-flex="row"] {
-  @include row();
-
+  @include row($wrap: nowrap);
+  @include breakpoint(max, medium) {
+    @include row($wrap: wrap);
+  }
 }
 
 [data-flex="column"] {

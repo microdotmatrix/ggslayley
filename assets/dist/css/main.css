@@ -793,7 +793,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: flex;
   flex: 0 1 auto;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+}
+@media (max-width: 1024px) {
+  [data-flex],
+[data-flex=row] {
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 [data-flex=column] {
   box-sizing: border-box;
@@ -2731,7 +2743,6 @@ i .i\:svg, .icon .i\:svg{
 }
 #about .xc-hero, #contact .xc-hero{
   display: flex;
-  height: 6rem;
   flex-direction: row;
   flex-wrap: wrap-reverse;
 }
@@ -2747,15 +2758,25 @@ i .i\:svg, .icon .i\:svg{
 #about .xc-hero__block, #contact .xc-hero__block{
   position: relative;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: flex-end;
-  background-size: 75%;
-  background-repeat: no-repeat;
-  background-position: 100% 50%;
+}
+@media (min-width: 1024px){
+  #about .xc-hero__block, #contact .xc-hero__block{
+    align-items: flex-end;
+  }
 }
 #about .xc-hero__block h3, #contact .xc-hero__block h3{
   position: relative;
+  margin-top: 1rem;
   margin-right: 1.5rem;
+}
+@media (min-width: 1024px){
+  #about .xc-hero__block h3, #contact .xc-hero__block h3{
+    margin-top: 0px;
+  }
+}
+#about .xc-hero__block h3, #contact .xc-hero__block h3 {
   font-family: "Lighters", sans-serif;
   text-transform: uppercase;
   color: var(--ggs-accent);
@@ -2768,10 +2789,15 @@ i .i\:svg, .icon .i\:svg{
 }
 #about .xc-hero__image figure, #contact .xc-hero__image figure{
   position: relative;
-  height: 100%;
-  max-height: 500px;
+  height: 20rem;
+  max-height: 540px;
   width: 100%;
   overflow: hidden;
+}
+@media (min-width: 1024px){
+  #about .xc-hero__image figure, #contact .xc-hero__image figure{
+    height: 100%;
+  }
 }
 #about .xc-hero__image figure img, #contact .xc-hero__image figure img{
   height: 100%;
@@ -4142,6 +4168,15 @@ button.swiper-pagination-bullet {
 }
 .xc-page#art {
   padding-top: 0;
+}
+.xc-share__link{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 #art .xc-hero{
   padding-top: 5rem;

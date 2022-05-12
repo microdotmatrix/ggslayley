@@ -2,13 +2,16 @@
 
 {{#page}}
   <section id="contact">
-    {{> "heros/page2"}}
+    {{> "heros/page"}}
   </section>
 
 	<section id="contact" class="xc-page">
     <div class="xc-page__content xc-container" data-flex="row">
       <article data-column="6">
         {{content}}
+        <div class="xc-page__sharing">
+          {{> "share"}}
+        </div>
       </article>
       <aside data-column="6">
         <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/{form_id}" method="post">
