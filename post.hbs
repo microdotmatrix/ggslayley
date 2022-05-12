@@ -4,10 +4,12 @@
 
 <section id="post" class="xc-article{{post_class}}">
 
-    <header class="xc-article__header">
+    <header class="xc-article__header" style="background-image: url('{{img_url feature_image size="xl"}}');">
+      <div class="burn-overlay"></div>
+      <div class="blur-overlay"></div>
       {{#if feature_image}}
-        <figure class="xc-article__feature-image" style="background-image: url('img_url feature_image size="xl"');">
-          <a class="gallery-item" data-src='{{img_url feature_image size="xl"}}' data-slide-name="{{slug}}" data-sub-html="{{content}}">
+        <figure class="xc-article__feature-image">
+          <a rel="lightbox" class="glightbox" href="{{img_url feature_image size="xl"}}" data-title="{{title}}" data-description="{{excerpt}}" data-gallery='{{tags from="2" limit="1" autolink="false"}}'>
             <img
               srcset="{{img_url feature_image size="s"}} 300w,
                   {{img_url feature_image size="m"}} 720w,
@@ -27,41 +29,28 @@
       {{/if}}
       <div class="xc-article__post-meta xc-container">
         <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
-        <h2 class="xc-article__title">{{title}}</h2>
+        <h4 class="xc-article__title">{{title}}</h4>
         {{#if custom_excerpt}}
           <p class="xc-article__excerpt">{{custom_excerpt}}</p>
         {{/if}}
+        <article class="xc-article__content xc-container">
+          {{content}}
+        </article>
       </div>
     </header>
-
-    <article class="xc-article__content xc-container">
-      {{content}}
-    </article>
-
-    <footer class="xc-article__footer xc-container">
-      <div class="xc-article__post-authors">
-        Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
-      </div>
-
-      {{!--
-      <section class="xc-post-comments">
-          If you want to embed comments, this is a good place to do it!
-      </section>
-      --}}
-      <aside class="xc-article flex flex-row justify-between items-center">
-        <div class="xc-article__pg--next">
-            {{#next_post}}
-              <a href="{{url}}">{{> "icons/utility" name="arrow-left"}}</a> <span>{{title}}</span>
-            {{/next_post}}
-        </div>
-        <div class="xc-article__pg--prev">
-            {{#prev_post}}
-              <span>{{title}}</span> <a href="{{url}}">{{> "icons/utility" name="arrow-right"}}</a>
-            {{/prev_post}}
-        </div>
-      </aside>
-    </footer>
 
 </article>
 
 {{/post}}
+
+{{#contentFor "scripts"}}
+  <script type="module">
+    import 'https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js';
+
+    const glightbox = GLightbox({
+      touchNavigation: true,
+      loop: false,
+      autoplayVideos: true
+    });
+  </script>
+{{/contentFor}}

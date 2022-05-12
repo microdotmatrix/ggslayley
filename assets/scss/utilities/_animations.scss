@@ -55,6 +55,18 @@
   }
 }
 
+@keyframes hueRotatorBlur {
+  0% {
+    backdrop-filter: blur(9px) contrast(0.8) hue-rotate(0);
+  }
+  50% {
+    backdrop-filter: blur(6px) contrast(1.8) hue-rotate(120deg);
+  }
+  100% {
+    backdrop-filter: blur(9px) contrast(0.8) hue-rotate(0);
+  }
+}
+
 
 // Mobile Nav Burger Animation
 

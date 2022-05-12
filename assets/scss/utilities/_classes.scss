@@ -23,6 +23,24 @@
 	clear: both;
 }
 
+.burn-overlay {
+  @apply flex w-full h-full absolute top-0 left-0;
+  background: rgba(_slayley(9), 0.7);
+  mix-blend-mode: color-burn;
+  animation-name: hueRotatorBlur;
+  animation-duration: 12s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+.blur-overlay {
+  @apply flex w-full h-full absolute top-0 left-0;
+  background: $gr-sunset-purple;
+  backdrop-filter: blur(4px);
+  opacity: 0.25;
+}
+
 .rgb-overlay {
   @apply flex w-full h-full absolute top-0 left-0;
   background: rgba(_slayley(5), 0.3);

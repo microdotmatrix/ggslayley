@@ -16,14 +16,16 @@
     {{else}}
       <img class="xc-card__image" src='http://placeskull.com/800/600/222222/1' alt="Placeholder Skull"/>
     {{/if}}
-    <figcaption>
-      <span class="xc-card__meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time></span>
-      <a class="xc-card__title" href="{{url}}">{{title}}</a>
-      <div class="xc-card__tags">
-        {{#foreach tags}}
-          <span class="post-tag post-tag-{{slug}}">#{{name}}</span>
-        {{/foreach}}
-      </div>
-    </figcaption>
+    <a href="{{url}}">
+      <figcaption>
+        <span class="xc-card__meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time></span>
+        <a class="xc-card__title" href="{{url}}">{{title}}</a>
+        <div class="xc-card__tags">
+          {{#foreach tags}}
+            <span class="post-tag post-tag-{{slug}}">#{{name}}</span>
+          {{/foreach}}
+        </div>
+      </figcaption>
+    </a>
   </figure>
 </article>
