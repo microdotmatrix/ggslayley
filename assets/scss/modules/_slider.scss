@@ -66,7 +66,7 @@
             .product-description {
               @apply relative flex flex-col justify-between max-h-40 lg:max-h-48 xl:max-h-56 min-h-fit h-full w-[92%] overflow-x-auto overflow-y-scroll;
               p {
-                font-size: var(--base);
+                font-size: $sm;
                 line-height: 1.333;
                 @include breakpoint(max, medium) {
                   font-size: $sm;

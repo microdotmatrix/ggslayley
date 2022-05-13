@@ -2,7 +2,7 @@
   @apply relative z-20 w-full xl:w-[90%];
   display: none;
   transition: all 400ms ease;
-  @include breakpoint(min, $bp-md) {
+  @include breakpoint(min, medium) {
     display: block;
   }
   &.expand {
@@ -68,7 +68,9 @@
       .line-top,
       .line-middle,
       .line-bottom {
-        @apply absolute block h-1 w-9 rounded-sm bg-white;
+        @apply absolute block rounded-sm bg-white;
+        width: 36px;
+        height: 4px;
       }
       .line-top {
         top: 0;
