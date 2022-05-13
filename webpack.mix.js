@@ -24,15 +24,4 @@ mix.js('assets/js/app.js', 'js')
     ]
   })
   .copy('assets/svg/bootstrap-icons.svg', 'assets/dist/svg')
-  //.copy('assets/fonts', 'assets/dist/fonts')
-  //.copy([
-  //  'assets/svg/mandalas.svg',
-  //  'assets/svg/utility.svg',
-  //  'assets/svg/social.svg'
-  //], 'assets/dist/svg')
-  //.copy('assets/video/mk-lightwarp.mp4', 'assets/dist/video')
-  //.copy('assets/video', 'assets/dist/video')
-  //.autoload({
-  //  jquery: ['$', 'window.jQuery']
-  //})
 ;
