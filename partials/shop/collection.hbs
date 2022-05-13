@@ -43,7 +43,7 @@ $(function() {
 
   	/* Fetch products in collection and loop through to create HTML for each product
   	======================================================================== */
-	client.fetchQueryProducts({collection_id: collectionID, sort_by: 'collection-default', limit: 4 }).then(function(products) {
+	client.fetchQueryProducts({collection_id: collectionID, sort_by: 'collection-default' }).then(function(products) {
 
 		// Products ==  the array of products within the collection
 		for (i = 0; i < products.length; i++) {
