@@ -1,10 +1,20 @@
 <div class="xc-share">
-  <a class="xc-share__link i:facebook" href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}" target="_blank" rel="noopener noreferrer">
+  <a class="xc-share__link {{#if colors}}i:facebook{{/if}}" href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}" target="_blank" rel="noopener noreferrer">
       {{> "icons/social" name="facebook"}}
-      Share
   </a>
-  <a class="xc-share__link i:twitter" href="https://twitter.com/intent/tweet?url={{url absolute="true"}}&text={{encode title}}" target="_blank" rel="noopener noreferrer">
+  <a class="xc-share__link {{#if colors}}i:twitter{{/if}}" href="https://twitter.com/intent/tweet?url={{url absolute="true"}}&text={{encode title}}" target="_blank" rel="noopener noreferrer">
       {{> "icons/social" name="twitter"}}
-      Tweet
+  </a>
+  <a class="xc-share__link {{#if colors}}i:linkedin{{/if}}" href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&title={{encode title}}&summary={{encode excerpt}}&source={{url absolute="true"}}" target="_blank" rel="noopener noreferrer">
+      {{> "icons/social" name="linkedin"}}
+  </a>
+  <a class="xc-share__link {{#if colors}}i:pinterest{{/if}}" href="https://pinterest.com/pin/create/button/?url={{url absolute="true"}}&description={{encode title}}{{#if feature_image}}&media={{img_url feature_image size="sm"}}{{/if}}" target="_blank" rel="noopener noreferrer">
+      {{> "icons/social" name="pinterest"}}
+  </a>
+  <a class="xc-share__link {{#if colors}}i:google{{/if}}" href="https://plus.google.com/share?url={{url absolute="true"}}" target="_blank" rel="noopener noreferrer">
+      {{> "icons/social" name="google"}}
+  </a>
+  <a class="xc-share__link {{#if colors}}i:reddit{{/if}}" href="http://www.reddit.com/submit?url={{url absolute="true"}}&title={{encode title}}" target="_blank" rel="noopener noreferrer">
+      {{> "icons/social" name="reddit"}}
   </a>
 </div>

@@ -30,6 +30,9 @@
       <div class="xc-article__post-meta xc-container">
         <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
         <h4 class="xc-article__title">{{title}}</h4>
+        <div class="xc-article__share xc-container">
+          {{> "share"}}
+        </div>
         {{#if custom_excerpt}}
           <p class="xc-article__excerpt">{{custom_excerpt}}</p>
         {{/if}}

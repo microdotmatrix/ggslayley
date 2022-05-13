@@ -10,12 +10,12 @@
       <article data-column="6">
         {{content}}
         <div class="xc-page__sharing">
-          {{> "share"}}
+          {{> "share" colors="on"}}
         </div>
       </article>
       <aside data-column="6">
-        <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/{form_id}" method="post">
-          <fieldset id="fs-frm-inputs">
+        <form id="contact-me" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xzboyapl" method="post">
+          <fieldset id="contact-me-inputs">
             <label for="full-name">Full Name</label>
             <input type="text" name="name" id="full-name" placeholder="Name? ASL?" required="">
             <label for="email-address">Email Address</label>
@@ -24,7 +24,10 @@
             <textarea rows="5" name="message" id="message" placeholder="Hello, you have reached the contact form of Slayley.com. Please leave a message after the beep... BEEEEEEEEEEP" required=""></textarea>
             <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
           </fieldset>
-          <input type="submit" value="Send">
+          <div class="submission">
+            <input type="reset" value="Reset">
+            <input type="submit" value="Send">
+          </div>
         </form>
       </aside>
     </div>
@@ -40,3 +43,12 @@
     </div>
 	</section>
 {{/page}}
+
+{{#contentFor "scripts"}}
+  <script src="{{asset "dist/js/powermode.js"}}"></script>
+  <script>
+    POWERMODE.colorful = true; // make power mode colorful
+    POWERMODE.shake = false; // turn off shake
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+{{/contentFor}}

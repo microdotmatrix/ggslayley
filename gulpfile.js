@@ -2,6 +2,8 @@ const {src, dest} = require('gulp');
 const pump = require('pump');
 
 var zip = require('gulp-zip');
+var rename = require('gulp-rename');
+var uglify = require('gulp-uglify');
 
 const handleError = (done) => {
     return function (err) {
@@ -11,6 +13,15 @@ const handleError = (done) => {
         return done(err);
     };
 };
+
+function js(done) {
+  pump([
+      src('assets/dist/js/app.js', {sourcemaps: true}),
+      uglify(),
+      rename('app.min.js'),
+      dest('assets/dist/js/', {sourcemaps: '.'}),
+  ], handleError(done));
+}
 
 function zipper(done) {
     var targetDir = 'zip/';
@@ -35,4 +46,5 @@ function zipper(done) {
 }
 
 exports.zip = zipper;
+exports.jsmin = js;
 exports.default = zip;

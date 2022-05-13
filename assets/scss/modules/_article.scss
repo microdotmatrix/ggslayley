@@ -19,14 +19,39 @@
   }
   &__post-meta {
     @apply relative md:absolute left-0 bottom-0 z-20 w-full md:w-1/2 pl-6 mt-6 md:mt-0;
+    background: radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(208,218,223,0.25) 50%, rgba(208,218,223,0) 100%);
+    background-size: 225%;
+    background-position: 100% 0;
     h4 {
       color: var(--ggs-dark);
+      margin-bottom: 1rem;
     }
     time {
       font-size: $md;
       font-family: $uni-sans;
       font-weight: 600;
       color: var(--ggs-heading);
+    }
+  }
+  &__content {
+    @apply relative mb-6;
+  }
+  &__share {
+    @apply relative flex justify-start pt-3 border-t border-slate-400/50;
+    .xc-share {
+      --icon-size: #{$lg};
+      &__link {
+        padding: 0;
+        gap: 0;
+        svg {
+          fill: _slayley(7);
+        }
+        &:hover {
+          svg {
+            fill: _slayley(5);
+          }
+        }
+      }
     }
   }
 }
