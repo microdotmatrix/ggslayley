@@ -40,13 +40,13 @@
           {{content}}
         </article>
         <div class="xc-article__paginate xc-container">
-          {{#prev_post in="primary_tag"}}
-            <a href="{{url}}">{{> "icons/utility" name="chevron-left" size="p"}} Prev</a>
-          {{/prev_post}}
-
           {{#next_post in="primary_tag"}}
-            <a href="{{url}}">Next {{> "icons/utility" name="chevron-right" size="p"}}</a>
+            <a href="{{url}}">prev {{> "icons/utility" name="chevron-left" size="p"}}</a>
           {{/next_post}}
+
+          {{#prev_post in="primary_tag"}}
+            <a href="{{url}}">{{> "icons/utility" name="chevron-right" size="p"}} Next</a>
+          {{/prev_post}}
         </div>
       </div>
     </header>
