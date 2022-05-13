@@ -18,7 +18,7 @@ mix.js('assets/js/app.js', 'js')
         }]
       }),
       tailwindcss('tailwind.config.js')
-    ],
+    ]
   })
   .setPublicPath('assets/dist')
   .browserSync({
