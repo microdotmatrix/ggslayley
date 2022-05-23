@@ -1,15 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500&display=swap');
-// font-family: 'Kanit', sans-serif;
-@import url('https://fonts.googleapis.com/css?family=Abel:400');
-// font-family: 'Abel', sans-serif;
-@import url('https://fonts.googleapis.com/css2?family=Metrophobic&display=swap');
-// font-family: 'Metrophobic', sans-serif;
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Barlow:wght@200;300;400;500;600&family=Kanit:wght@200;300;400;500;600&family=Metrophobic&display=swap');
 // font-family: 'Barlow', sans-serif;
+// font-family: 'Abel', sans-serif;
+// font-family: 'Metrophobic', sans-serif;
+// font-family: 'Kanit', sans-serif;
 
 @include font-face('Uni Sans', '/assets/dist/fonts/uni-sans/UniSansThin', normal, 400, woff2 woff);
 @include font-face('Lighters', '/assets/dist/fonts/lighters/lighters-demo', normal, 400, woff2 woff);
-@include font-face('Big Bad Bugs', '/assets/dist/fonts/BigBadBugs', normal, 400, ttf);
 @include font-face('Blacklisted', '/assets/dist/fonts/Blacklisted', normal, 400, ttf);
-@include font-face('Dreaming of Lilian', '/assets/dist/fonts/DreamingofLilian', normal, 400, ttf);
-@include font-face('Graphik Arts', '/assets/dist/fonts/GraphikArts', normal, 400, ttf);

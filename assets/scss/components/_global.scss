@@ -41,7 +41,8 @@ body {
   -webkit-text-size-adjust: 100%;
   font-feature-settings: "kern" 1;
   font-kerning: normal;
-	@apply flex flex-col place-content-between w-full h-full relative;
+	@apply flex flex-col w-full h-full relative;
+  block-size: 100%;
   @include breakpoint(max, medium) {
     > * {
       transition: all 100ms ease;
@@ -59,5 +60,5 @@ a {
 }
 
 main {
-  @apply w-full relative flex flex-col;
+  @apply w-full relative flex flex-col mt-40 md:mt-0;
 }

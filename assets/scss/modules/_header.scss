@@ -1,5 +1,5 @@
 .xc-header {
-  @apply relative;
+  @apply fixed w-full md:relative;
   z-index: 999;
   background-color: rgba(_slayley(9), 1);
   border-bottom: 1px solid;

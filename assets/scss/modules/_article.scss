@@ -35,7 +35,7 @@
     }
   }
   &__content {
-    @apply relative mb-6;
+    @apply relative mb-6 px-3;
     p {
       margin: calc(var(--space-phi)*0.25) 0 calc(var(--space-phi)*.25);
       color: var(--ggs-primary);

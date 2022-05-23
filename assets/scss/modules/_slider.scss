@@ -64,7 +64,7 @@
           .product-options {
             @apply relative flex flex-col justify-start gap-1;
             .product-description {
-              @apply relative flex flex-col justify-between max-h-40 lg:max-h-48 xl:max-h-56 min-h-fit h-full w-[92%] overflow-x-auto overflow-y-scroll;
+              @apply relative flex flex-col justify-between max-h-40 lg:max-h-48 xl:max-h-56 min-h-fit h-full w-[92%] overflow-x-hidden overflow-y-scroll;
               p {
                 font-size: $sm;
                 line-height: 1.333;
@@ -75,6 +75,9 @@
               h1, h2, h3, h4, h5 {
                 color: var(--ggs-subheading);
               }
+              h2 { font-size: $h3; }
+              h3 { font-size: $h4; }
+              h4 { font-size: $h5; }
               &::-webkit-scrollbar {
                 width: 10px;
               }

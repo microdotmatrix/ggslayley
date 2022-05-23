@@ -1,6 +1,3 @@
-// Jarallax
-import { jarallax, jarallaxVideo } from "jarallax";
-
 import Swiper, { Navigation, Pagination, Parallax, Autoplay, EffectFade, EffectCreative, Manipulation } from 'swiper';
 
 //import luge from "@waaark/luge";
@@ -35,6 +32,8 @@ const swiper = new Swiper('.swiper', {
   }
 });
 
+// Jarallax
+import { jarallax, jarallaxVideo } from "jarallax";
 
 jarallaxVideo();
 

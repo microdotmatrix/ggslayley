@@ -2,6 +2,7 @@
   .xc-page__content {
     @apply relative gap-8;
     article {
+      @apply px-3;
       h2, h3 {
         font-family: $barlow;
         font-weight: 400;
@@ -15,6 +16,9 @@
       h3 {
         font-size: $md;
       }
+    }
+    aside {
+      @apply px-3;
     }
   }
   .social-feeds {

@@ -15,9 +15,6 @@
 <body class="{{body_class}}">
 
   {{> "header"}}
-  {{#is "home"}}
-    {{> "heros/home"}}
-  {{/is}}
 
   <main class="xc-body">
 
@@ -31,8 +28,8 @@
   {{!-- <foot> --}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-  <script src="{{asset "dist/js/app.min.js"}}"></script>
-
+  <script src="{{asset "dist/js/lib.js"}}"></script>
+  <script src="{{asset "dist/js/app.js"}}"></script>
 
   {{> "scripts"}}
 
