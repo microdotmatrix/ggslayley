@@ -34,6 +34,8 @@ function zipper(done) {
         '!zip', '!zip/**',
         '!assets/video', '!assets/video/**',
         '!assets/scss', '!assets/scss/**',
+        '!assets/fonts', '!assets/fonts/**',
+        '!assets/css', '!assets/css/**',
         '!assets/js', '!assets/js/**',
         '!assets/svg', '!assets/svg/**',
         '!assets/images', '!assets/images/**',
