@@ -7,6 +7,19 @@
     display: flex;
     padding: 1.2em 1.6em;
     border-radius: 3px;
+    &-text {}
+    &-background {
+      &-grey { background-color: inherit; }
+      &-white { background-color: inherit; }
+      &-blue { background-color: inherit; }
+      &-green { background-color: inherit; }
+      &-yellow { background-color: inherit; }
+      &-red { background-color: inherit; }
+      &-pink { background-color: inherit; }
+      &-purple { background-color: inherit; }
+      &-accent { background-color: inherit; }
+    }
+    &-emoji {}
 }
 
 .kg-callout-card-grey {
