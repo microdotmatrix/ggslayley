@@ -2,7 +2,7 @@ let mix = require('laravel-mix');
 const tailwindcss = require('tailwindcss');
 
 if (mix.inProduction()) {
-  mix.js('assets/js/app.js', 'js')
+  mix.js('assets/js/app.js', 'js').extract()
   mix.sass('assets/scss/main.scss', 'css')
   mix.options({
       terser: {},
