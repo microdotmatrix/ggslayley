@@ -1,9 +1,9 @@
-import Swiper, { Navigation, Pagination, Autoplay, EffectFade, Breakpoints } from 'swiper';
+import Swiper, { Navigation, Pagination, Autoplay, EffectFade } from 'swiper';
 
 //import luge from "@waaark/luge";
 
 const swiper = new Swiper('.swiper', {
-  modules: [Navigation, Pagination, Autoplay, EffectFade, Breakpoints],
+  modules: [Navigation, Pagination, Autoplay, EffectFade],
   slidesPerView: 1,
   navigation: {
     nextEl: '.slide__nav-next',

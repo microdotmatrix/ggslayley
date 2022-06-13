@@ -1,6 +1,7 @@
-{{#page}}
-<div class="xc-hero" style="background-image: url('{{ feature_img }}'); background-size: cover; background-position: center;">
-  <div class="parallax-container" data-jarallax data-video-src="mp4:https://slayley.sfo3.digitaloceanspaces.com/galaxy-wormhole--med.mp4"></div>
+<div class="xc-hero">
+  <div class="parallax-container" data-jarallax data-video-src="mp4:https://slayley.sfo3.digitaloceanspaces.com/galaxy-wormhole--med.mp4">
+    <img src="{{feature_image}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" />
+  </div>
   <div class="video-overlay"></div>
     <div class="xc-hero__wrapper">
       <div class="xc-slider">
@@ -30,4 +31,3 @@
       </div>
     </div>
 </div>
-{{/page}}
