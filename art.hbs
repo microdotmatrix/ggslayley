@@ -26,6 +26,9 @@
 
 {{#contentFor "scripts"}}
 
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+
   <script>
     var $grid = $('.xc-gallery').imagesLoaded( function() {
       $grid.isotope({
@@ -52,5 +55,7 @@
       });
     });
   </script>
+
+
 
 {{/contentFor}}

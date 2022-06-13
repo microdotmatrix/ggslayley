@@ -9,8 +9,11 @@
     font-family: $barlow;
   }
   &__intro-msg {
-    padding-top: -2.5%;
+    padding-top: 0;
     padding-left: 2.5%;
+    @include breakpoint(max, medium) {
+      padding-top: 16.5%;
+    }
     h2 {
       color: var(--ggs-accent);
       font-family: $lighters;
