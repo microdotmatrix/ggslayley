@@ -1,4 +1,5 @@
 <div class="xc-hero">
+  {{#page}}
   <div class="parallax-container" data-jarallax data-video-src="mp4:https://slayley.sfo3.digitaloceanspaces.com/galaxy-wormhole--med.mp4" style="background-image: url('{{ img_url feature_img }}'); background-size: cover; background-position: center;"></div>
   <div class="video-overlay"></div>
     <div class="xc-hero__wrapper">
@@ -6,9 +7,9 @@
 
           <article class="xc-slider__content" data-flex="row">
             <div class="xc-slider__intro-msg" data-column="4">
-              {{#page}}
+
                 {{content}}
-              {{/page}}
+
             </div>
             <div class="xc-slider__featured-products" data-column="8">
               <div class="swiper">
@@ -28,5 +29,5 @@
 
       </div>
     </div>
-
+  {{/page}}
 </div>
