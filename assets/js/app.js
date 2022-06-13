@@ -1,9 +1,9 @@
-import Swiper, { Navigation, Pagination, Parallax, Autoplay, EffectFade, EffectCreative, Manipulation } from 'swiper';
+import Swiper, { Navigation, Pagination, Autoplay, EffectFade, Breakpoints } from 'swiper';
 
 //import luge from "@waaark/luge";
 
 const swiper = new Swiper('.swiper', {
-  modules: [Navigation, Pagination, Parallax, Autoplay, EffectFade, EffectCreative],
+  modules: [Navigation, Pagination, Autoplay, EffectFade, Breakpoints],
   slidesPerView: 1,
   navigation: {
     nextEl: '.slide__nav-next',
@@ -18,7 +18,6 @@ const swiper = new Swiper('.swiper', {
   breakpoints: {
     768: {
       enabled: true,
-      parallax: true,
       effect: 'slide',
       fadeEffect: {
         crossFade: true
