@@ -1,15 +1,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
 
-{{#is "post, page"}}
-  <script>
-    const lightbox = GLightbox({
+<script>
+  const lightbox = GLightbox({
       touchNavigation: true,
       descPosition: 'right',
       selector: 'data-gallery'
-    });
-  </script>
+  });
+</script>
 
+{{#is "post, page"}}
   <script>
     var images = document.querySelectorAll('.kg-gallery-image img');
     images.forEach(function (image) {
