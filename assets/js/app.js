@@ -43,6 +43,7 @@ jarallax(document.querySelectorAll('.jarallax'), {
 
 jarallax(document.querySelectorAll('.parallax-container'), {
   speed: -0.6,
+  disableVideo: /iPad|iPhone|iPod|Android/
 });
 
 
