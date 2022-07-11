@@ -1,0 +1,79 @@
+.xc-article {
+  @apply relative;
+  &__header {
+    @apply relative w-full h-full max-h-full md:max-h-[50vh] lg:max-h-[69vh] xl:max-h-[78vh] flex flex-col justify-center items-center lg:justify-end md:items-end;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  &__feature-image {
+    @apply relative h-5/6 max-h-[38rem] lg:mb-8 mt-0 mr-0 md:mr-[5vw] lg:mr-[6vw] shadow-xl shadow-gray-900/75;
+    img {
+      @apply w-full h-full object-cover lg:object-contain object-center;
+    }
+    figcaption {
+      @apply absolute bottom-0 right-1/3;
+      font-size: $sm;
+    }
+  }
+  &__post-meta {
+    @apply relative md:absolute left-0 bottom-0 z-20 w-full md:w-1/2 pl-6 mt-6 md:mt-0;
+    background: radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(208,218,223,0.25) 50%, rgba(208,218,223,0) 100%);
+    background-size: 225%;
+    background-position: 100% 0;
+    h4 {
+      color: var(--ggs-dark);
+      margin-bottom: 0.5rem;
+    }
+    time {
+      display: block;
+      font-size: $md;
+      font-family: $uni-sans;
+      font-weight: 600;
+      color: var(--ggs-heading);
+      margin-bottom: 0.25rem;
+    }
+  }
+  &__content {
+    @apply relative mb-6 px-3;
+    p {
+      margin: calc(var(--space-phi)*0.25) 0 calc(var(--space-phi)*.25);
+      color: var(--ggs-primary);
+    }
+  }
+  &__share {
+    @apply relative flex justify-start pt-3 border-t;
+    border-image: linear-gradient(to right, rgba(_slate(4), 0.4), rgba(_slate(4), 0)) 1 0 1 0;
+    .xc-share {
+      --icon-size: #{$lg};
+      &__link {
+        padding: 0;
+        gap: 0;
+        svg {
+          fill: _slayley(7);
+        }
+        &:hover {
+          svg {
+            fill: _slayley(5);
+          }
+        }
+      }
+    }
+  }
+  &__paginate {
+    @apply relative flex w-full justify-between items-center mb-4 pr-6;
+    a {
+      @apply relative block px-3 pt-2 pb-1 border border-slate-400/20 hover:border-slate-300/30;
+      color: var(--ggs-dark);
+      background-color: rgba(_slayley(3), 0.2);
+      font-family: $lighters;
+      font-weight: 600;
+      text-transform: uppercase;
+      transition: all 300ms ease;
+      &:hover {
+        background-color: rgba(_slayley(1), 0.3);
+        text-decoration: none;
+      }
+    }
+  }
+}

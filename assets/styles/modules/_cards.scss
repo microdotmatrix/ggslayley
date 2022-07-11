@@ -1,0 +1,33 @@
+@import "cards/kg-bookmark";
+@import "cards/kg-button";
+@import "cards/kg-gallery";
+@import "cards/kg-header";
+@import "cards/kg-image";
+@import "cards/kg-callout";
+@import "cards/kg-audio";
+@import "cards/kg-before-after";
+@import "cards/kg-blockquote";
+@import "cards/kg-file";
+@import "cards/kg-nft";
+@import "cards/kg-product";
+@import "cards/kg-toggle";
+@import "cards/kg-video";
+
+.kg-width-wide { width: 100%; }
+.kg-width-full { width: 100%; }
+
+.xc-page__content :not(.kg-card):not([id]) + .kg-card {
+  margin-top: 10vmin;
+}
+
+.xc-page__content .kg-card + :not(.kg-card) {
+  margin-top: 6vmin;
+}
+
+.kg-card {
+  @apply relative flex;
+  h1, h2, h3, h4, h5 {
+    letter-spacing: normal;
+  }
+}
+

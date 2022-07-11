@@ -1,0 +1,13 @@
+.xc-page {
+  padding-top: $space-phi;
+  padding-bottom: $space-e;
+  &#art {
+    padding-top: 0;
+  }
+}
+
+.xc-share {
+  &__link {
+    @apply inline-flex items-center px-2 py-2 gap-1;
+  }
+}

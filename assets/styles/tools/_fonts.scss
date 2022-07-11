@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Barlow:wght@200;300;400;500;600&family=Kanit:wght@200;300;400;500;600&family=Metrophobic&display=swap');
+// font-family: 'Barlow', sans-serif;
+// font-family: 'Abel', sans-serif;
+// font-family: 'Metrophobic', sans-serif;
+// font-family: 'Kanit', sans-serif;
+
+@include font-face('Uni Sans', '/assets/dist/fonts/uni-sans/UniSansThin', normal, 400, woff2 woff);
+@include font-face('Lighters', '/assets/dist/fonts/lighters/lighters-demo', normal, 400, woff2 woff);
+@include font-face('Blacklisted', '/assets/dist/fonts/Blacklisted', normal, 400, ttf);

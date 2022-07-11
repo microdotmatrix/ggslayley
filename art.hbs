@@ -14,9 +14,18 @@
 
       <div id="gallery-container" class="xc-gallery">
         <div class="xc-grid-sizer"></div>
-          {{#foreach posts visibility="all"}}
+          {{#foreach posts limit="8"}}
 
-            {{> "cards/art.old"}}
+            {{> "cards/art"}}
+
+          {{/foreach}}
+      </div>
+
+      <div id="gallery-container" class="xc-gallery">
+        <div class="xc-grid-sizer"></div>
+          {{#foreach posts from="8" to="16" limit="8"}}
+
+            {{> "cards/art"}}
 
           {{/foreach}}
       </div>
@@ -55,7 +64,5 @@
       });
     });
   </script>
-
-
 
 {{/contentFor}}

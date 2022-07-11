@@ -1,0 +1,7 @@
+.kg-image-card {
+  &.kg-card-hascaption {
+    figcaption {
+      @apply absolute left-0 top-0;
+    }
+  }
+}

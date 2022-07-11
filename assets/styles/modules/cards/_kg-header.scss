@@ -1,0 +1,14 @@
+.kg-header-card {
+  @apply flex flex-col w-full py-8 mb-12 text-center border-y border-slate-600;
+  background: $gr-dark-fade;
+  background-size: cover;
+  background-position: 50% 50%;
+  &-header {
+    font-size: $h1;
+    color: var(--ggs-accent);
+    margin-bottom: 0;
+  }
+  &-subheader {
+    color: var(--ggs-text);
+  }
+}

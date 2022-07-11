@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{meta_title}}</title>
-    <link rel="stylesheet" href="{{asset "dist/css/main.css"}}">
+    <link rel="stylesheet" href="{{asset "build/css/main.min.css"}}">
 
     {{{block "styles"}}}
 
@@ -28,9 +28,7 @@
   {{!-- <foot> --}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-  <script async src="{{asset "dist/js/manifest.js"}}"></script>
-  <script async src="{{asset "dist/js/vendor.js"}}"></script>
-  <script async src="{{asset "dist/js/app.js"}}"></script>
+  <script src="{{asset "build/js/app.min.js"}}"></script>
 
   {{> "scripts"}}
 

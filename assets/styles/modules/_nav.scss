@@ -1,0 +1,116 @@
+.xc-nav {
+  @apply relative z-20 w-full xl:w-[90%];
+  display: none;
+  transition: all 400ms ease;
+  @include breakpoint(min, medium) {
+    display: block;
+  }
+  &.expand {
+    @apply flex fixed z-40 top-0 left-0 w-full h-screen justify-center items-center;
+    transition: all 400ms ease;
+    background-color: _slayley(9);
+    ul {
+      @apply justify-start;
+      li {
+        padding: 1rem 0;
+      }
+    }
+  }
+  ul {
+    @apply flex flex-col xl:flex-row justify-between items-center text-center;
+    li {
+      flex: 0 1 0%;
+      &.nav-current {
+        a {
+          color: var(--ggs-brighter);
+          &::before {
+            content: "";
+            position: absolute;
+          }
+
+        }
+      }
+      a {
+        @apply block relative;
+        font-size: $p;
+        font-family: $lighters;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--ggs-link-inv);
+        transition: all 200ms ease;
+        &::after {
+          @apply absolute left-0 bottom-[6px] w-full h-[1px];
+          content: "";
+          background: radial-gradient(circle, rgba(ocGrape(4), 1) 0%, rgba(#330867, 0.8) 50%, rgba(#30cfd0, 0) 100%);
+          transform: scaleX(0);
+          transform-origin: center;
+          transition: transform 420ms ease-in;
+        }
+        &:hover {
+          color: var(--ggs-brighter);
+          text-decoration: none;
+
+          &::after {
+            transform: scaleX(1);
+          }
+        }
+        @include breakpoint(min, $bp-xl) {
+          font-size: $md;
+        }
+      }
+    }
+  }
+  &__burger {
+    @apply absolute z-50 -top-[7.5rem] right-4;
+    height: 28px;
+    width: 36px;
+    .burger-box {
+      .line-top,
+      .line-middle,
+      .line-bottom {
+        @apply absolute block rounded-sm bg-white;
+        width: 36px;
+        height: 4px;
+      }
+      .line-top {
+        top: 0;
+        transform-origin: 34px 2px;
+      }
+      .line-middle {
+        top: 12px;
+        transition: opacity 200ms linear;
+      }
+      .line-bottom {
+        bottom: 0;
+        transform-origin: 34px 2px;
+      }
+      &.is-open {
+        .line-top {
+          animation: line-top-out 400ms linear normal;
+          animation-fill-mode: forwards;
+        }
+        .line-middle {
+          opacity: 0;
+        }
+        .line-bottom {
+          animation: line-bot-out 400ms linear normal;
+          animation-fill-mode: forwards;
+        }
+      }
+
+      &.is-closed {
+        .line-top {
+          animation: line-top-in 400ms linear normal;
+          animation-fill-mode: forwards;
+        }
+        .line-middle {
+          transition-delay: 100ms;
+        }
+        .line-bottom {
+          animation: line-bot-in 400ms linear normal;
+          animation-fill-mode: forwards;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.kg-button-card {
+  @apply flex justify-center;
+  .kg-btn {
+    @apply block py-3 px-6 my-6 rounded-md shadow-lg shadow-slate-900/50 hover:shadow-slate-900/80;
+    font-size: $p;
+    font-weight: 500;
+    color: _slayley(9);
+    background: _slayley(2);
+    &:hover {
+      color: _slayley(2);
+      background: _slayley(7);
+      text-decoration: none;
+    }
+  }
+}

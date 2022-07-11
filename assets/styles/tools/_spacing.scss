@@ -1,0 +1,29 @@
+@use "accoutrement/sass/tools";
+
+$spacing-global: (
+   "phi" : 1.618,
+   "e" : 2.71828,
+   "pi" : 3.14159,
+   "golden" : 1.618,
+   "content-width" : 1920px,
+   "spacing-unit" : calc(1.618rem * var(--phi)),
+   "space-phi" : calc(1.618rem * var(--phi)),
+   "space-e" : calc(1.618rem * var(--e)),
+   "space-pi" : calc(1.618rem * var(--pi))
+);
+
+$spacing-header: (
+   "pt" : var(--space-phi),
+   "pb" : var(--space-pi)
+);
+
+$spacing-footer: (
+   "pt" : 1.618rem,
+   "pb" : 3.14159rem
+);
+
+:where(html) {
+   @include tools.custom-props($spacing-global);
+   @include tools.custom-props($spacing-header, 'header-');
+   @include tools.custom-props($spacing-footer, 'footer-');
+}

@@ -1,0 +1,29 @@
+// Palette Selector
+
+@function palette($colorMap, $shade) {
+
+  @if map-has-key($colorMap, $shade) {
+     $shade: map-get($colorMap, $shade);
+  } @else {
+     @if type-of($shade) != colour {
+        @error "Invalid colour name: `#{$shade}`.";
+     }
+  }
+
+  @return $shade;
+}
+
+// Social Media Color Map Function stolen from Spice Sass...
+
+@function socialMedia($platform) {
+
+  @if map-has-key($social-colors, $platform) {
+     $platform: map-get($social-colors, $platform);
+  } @else {
+     @if type-of($platform) != colour {
+        @error "Invalid colour name: `#{$platform}`.";
+     }
+  }
+
+  @return $platform;
+}

@@ -1,0 +1,41 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "gerillass/scss/gerillass";
+
+@import "config";
+
+@import "functions/selectors";
+@import "functions/easing";
+@import "functions/flex-grid";
+@import "functions/mixins";
+
+@import "utilities/layout";
+@import "utilities/animations";
+@import "utilities/classes";
+
+@import "components/global";
+@import "components/typography";
+@import "components/media";
+@import "components/parallax";
+@import "components/gallery";
+@import "components/icons";
+@import "components/forms";
+
+@import "modules/header";
+@import "modules/nav";
+@import "modules/hero";
+@import "modules/slider";
+@import "modules/cards";
+@import "modules/article";
+@import "modules/footer";
+
+@import "views/home";
+@import "views/page";
+@import "views/art";
+@import "views/about";
+@import "views/shop";
+@import "views/contact";
+
+@import "utilities/glightbox";

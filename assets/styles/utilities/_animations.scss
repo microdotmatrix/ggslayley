@@ -1,0 +1,157 @@
+@keyframes menuLink--before {
+  0% {
+     filter: blur(1px);
+  }
+  50% {
+     filter: blur(2px);
+  }
+  100% {
+     filter: blur(1px);
+  }
+}
+
+@keyframes gradient {
+  0% {
+     background-position: 0% 50%;
+  }
+  50% {
+     background-position: 100% 50%;
+  }
+  100% {
+     background-position: 0% 50%;
+  }
+}
+
+@keyframes moveDots {
+  from {
+     transform: rotate(0deg) scale(12) translateX(-20px);
+  }
+  to {
+     transform: rotate(360deg) scale(18) translateX(20px);
+  }
+}
+
+@keyframes textMorph3d {
+  0% {
+    text-shadow: 2px 2px 0px rgb(40 40 40 / 100%), 0px 0px 2px rgb(10 189 240 / 5%), 0px 0px 0px rgb(254 1 1 / 8%);
+  }
+  50% {
+    text-shadow: 2px 2px 0px rgb(40 40 40 / 100%), -5px -2px 0px rgb(10 189 240 / 10%), 4px 4px 1px rgb(254 1 1 / 15%);
+  }
+  100% {
+    text-shadow: 2px 2px 0px rgb(40 40 40 / 100%), 4px 3px 1px rgb(10 189 240 / 4%), -1px 3px 2px rgb(254 1 1 / 5%);
+  }
+}
+
+@keyframes hueRotator {
+  0% {
+    backdrop-filter: blur(0px) contrast(1) hue-rotate(0);
+  }
+  50% {
+    backdrop-filter: blur(3px) contrast(1.2) hue-rotate(180deg);
+  }
+  100% {
+    backdrop-filter: blur(0px) contrast(1) hue-rotate(0);
+  }
+}
+
+@keyframes hueRotatorBlur {
+  0% {
+    backdrop-filter: blur(9px) contrast(0.8) hue-rotate(0);
+  }
+  50% {
+    backdrop-filter: blur(6px) contrast(1.8) hue-rotate(120deg);
+  }
+  100% {
+    backdrop-filter: blur(9px) contrast(0.8) hue-rotate(0);
+  }
+}
+
+
+// Mobile Nav Burger Animation
+
+@keyframes line-top-in {
+  0% {
+    left: -5px;
+    bot: 0;
+    transform: rotate(-45deg);
+  }
+  20% {
+    left: -5px;
+    bot: 0;
+    transform: rotate(-60deg);
+  }
+  80% {
+    left: 0;
+    bot: 0;
+    transform: rotate(15deg);
+  }
+  100% {
+    left: 0;
+    bot: 1px;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes line-top-out {
+  0% {
+    left: 0;
+    top: 0;
+    transform: rotate(0deg);
+  }
+  20% {
+    left: 0;
+    top: 0;
+    transform: rotate(15deg);
+  }
+  80% {
+    left: -5px;
+    top: 0;
+    transform: rotate(-60deg);
+  }
+  100% {
+    left: -5px;
+    top: 1px;
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes line-bot-in {
+  0% {
+    left: -5px;
+    transform: rotate(45deg);
+  }
+  20% {
+    left: -5px;
+    bot: 0;
+    transform: rotate(60deg);
+  }
+  80% {
+    left: 0;
+    bot: 0;
+    transform: rotate(-15deg);
+  }
+  100% {
+    left: 0;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes line-bot-out {
+  0% {
+    left: 0;
+    transform: rotate(0deg);
+  }
+  20% {
+    left: 0;
+    transform: rotate(-15deg);
+  }
+  80% {
+    left: -5px;
+    transform: rotate(60deg);
+  }
+  100% {
+    left: -5px;
+    transform: rotate(45deg);
+  }
+}

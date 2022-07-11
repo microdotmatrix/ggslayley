@@ -1,0 +1,48 @@
+.xc-hero {
+  @apply relative;
+  border-image: linear-gradient(to left, rgba(_slate(4), 0.4), rgba(_slate(4), 0)) 1 0 1 0;
+  &__wrapper {
+    @include adaptive($container-gutter);
+  }
+}
+
+#about, #contact {
+  .xc-hero {
+    @apply flex flex-row flex-wrap-reverse lg:flex-wrap lg:h-[22rem];
+    background-color: _slayley(9);
+    &__block {
+      @apply relative flex items-center lg:items-end justify-end;
+      h3 {
+        @apply relative mt-4 lg:mt-0 mr-6;
+        font-family: $lighters;
+        text-transform: uppercase;
+        color: var(--ggs-accent);
+      }
+    }
+    &__image {
+      @apply relative flex items-end justify-start;
+      figure {
+        @apply relative w-full h-80 lg:h-full max-h-[540px] overflow-hidden;
+        img {
+          @apply w-full h-full object-cover object-bottom;
+        }
+        figcaption {
+          @apply absolute bottom-2 right-2;
+        }
+      }
+    }
+  }
+}
+
+#shop {
+  .xc-hero {
+    @apply relative h-[600px];
+    background-color: _slayley(8);
+    &__block {
+      @apply flex items-end w-full h-full;
+      .collection {
+        @apply grid grid-cols-4;
+      }
+    }
+  }
+}

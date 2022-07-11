@@ -1,0 +1,12 @@
+#about {
+  .kg-gallery-card {
+    @apply my-12;
+  }
+  .xc-article__content {
+    max-width: 96ch;
+    h3 {
+      font-size: $lg;
+      margin-top: $spacing-unit;
+    }
+  }
+}

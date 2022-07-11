@@ -1,0 +1,52 @@
+:where(html) {
+  --icon-size: #{$lg};
+}
+
+i, .icon {
+  @apply inline-flex justify-center items-center align-middle;
+  @include sizer(var(--icon-size));
+  transition: all 300ms ease;
+  &:hover {
+    filter: brightness(1.5);
+  }
+  .i\:svg {
+    @apply relative w-5/6 h-5/6;
+  }
+}
+
+.icon--h1 { width: $h1; }
+.icon--h2 { width: $h2; }
+.icon--h3 { width: $h3; }
+.icon--h4 { width: $h4; }
+.icon--h5 { width: $h5; }
+.icon--xl { width: $xl; }
+.icon--lg { width: $lg; }
+.icon--md { width: $md; }
+.icon--sm { width: $sm; }
+.icon--p  { width: $p;  }
+
+.social-links {
+  ul {
+    @apply flex items-center gap-5;
+    li {
+      @apply flex-1;
+      a {
+        @apply relative flex justify-center items-center;
+        i {
+          --icon-size: #{$xl};
+          .i\:svg {
+            @apply relative w-full h-full;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@each $name, $color in $social-color-list {
+  .i\:#{$name} {
+    background-color: #{$color};
+    color: #fff;
+  }
+}
