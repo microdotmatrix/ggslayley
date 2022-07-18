@@ -1,14 +1,20 @@
-@import "swiper/swiper";
+
+// @import '@splidejs/splide/dist/css/splide.min.css';
 
 .xc-slider {
+  position: relative;
+  width: 100%;
   &__content {
     @apply flex items-center h-full;
+    flex-flow: row wrap;
+    width: 100%;
     padding: $space-phi calc(#{$space-pi} - #{$space-e});
     color: var(--ggs-bg);
     font-weight: 200;
     font-family: $barlow;
   }
   &__intro-msg {
+    width: 33%;
     padding-top: 0;
     padding-left: 2.5%;
     @include breakpoint(max, medium) {
@@ -29,86 +35,26 @@
     }
   }
   &__featured-products {
-    @apply relative;
-    .swiper {
+    position: relative;
+    display: flex;
+    .splide__track {
       box-shadow: var(--shadow-6);
       background: rgba(_slayley(9), 0.4);
       backdrop-filter: blur(3px);
       padding-bottom: 2rem;
-    }
-    .collection {
-      @apply flex;
-      .product[data-layout="featured"] {
-        @apply flex flex-col justify-center lg:flex-row;
-        .image-overlay-container {
-          @apply flex-1 basis-1/4 self-center h-full p-0 md:p-4 2xl:p-8;
-          a {
-            @apply block overflow-hidden max-h-[20rem] lg:max-h-[25rem];
-          }
-        }
-        .variant-image {
-          @apply shadow-none h-full;
-        }
-        .product-details {
-          @apply flex-1 basis-1/3 justify-center pt-5 pl-0 pr-0;
-          .product-title {
-            @apply px-6;
-            font-size: $lg;
-            color: var(--ggs-light);
-            text-shadow: 4px 3px 3px rgba(_slayley(9), 0.9);
-            @include breakpoint(min, large) {
-              @apply px-3;
-              font-size: $h4;
-            }
-          }
-          .variant-selectors {
-            @apply mx-6;
-          }
-          .product-options {
-            @apply relative flex flex-col justify-start gap-1;
-            .product-description {
-              @apply relative flex flex-col justify-between max-h-40 lg:max-h-48 xl:max-h-56 min-h-fit h-full w-[92%] overflow-x-hidden overflow-y-scroll;
-              p {
-                font-size: $sm;
-                line-height: 1.333;
-                @include breakpoint(max, medium) {
-                  font-size: $sm;
-                }
-              }
-              h1, h2, h3, h4, h5 {
-                color: var(--ggs-subheading);
-              }
-              h2 { font-size: $h3; }
-              h3 { font-size: $h4; }
-              h4 { font-size: $h5; }
-              &::-webkit-scrollbar {
-                width: 10px;
-              }
-              &::-webkit-scrollbar-track {
-                background: var(--ggs-primary);
-              }
-              &::-webkit-scrollbar-thumb {
-                background: var(--ggs-dark);
-              }
-            }
-            .button-container {
-              @apply relative flex flex-row justify-between items-center left-0 md:left-0 lg:left-0 w-full md:w-full bottom-0 mx-auto pb-2 pt-0;
-              .variant-price {
-                font-size: $lg;
-                color: _slate(5);
-              }
-              .btn {
-                @apply pt-3 pb-2 px-3 mx-auto border border-solid rounded-md w-fit h-fit overflow-hidden text-ellipsis appearance-none;
-                font-size: $sm;
-                font-family: $lighters;
-                text-transform: uppercase;
-                line-height: 1;
-              }
-            }
-          }
+      .splide__list {
+        // flex: 0 0 100%;
+        height: 100%;
+        z-index: 1;
+        transition-property: transform;
+        transform: translateZ(0);
+        .splide__slide {
+          flex: 1 0 100%;
+          height: 100%;
         }
       }
     }
+
   }
   &__nav {
     @apply relative;
@@ -158,6 +104,80 @@
       }
       @include breakpoint(min, 2xlarge) {
         right: 25%;
+      }
+    }
+  }
+}
+
+.collection {
+  @apply flex;
+  .product[data-layout="featured"] {
+    @apply flex flex-col justify-center lg:flex-row;
+    .image-overlay-container {
+      @apply flex-1 basis-1/4 self-center h-full p-0 md:p-4 2xl:p-8;
+      a {
+        @apply block overflow-hidden max-h-[20rem] lg:max-h-[25rem];
+      }
+    }
+    .variant-image {
+      @apply shadow-none h-full;
+    }
+    .product-details {
+      @apply flex-1 basis-1/3 justify-center pt-5 pl-0 pr-0;
+      .product-title {
+        @apply px-6;
+        font-size: $lg;
+        color: var(--ggs-light);
+        text-shadow: 4px 3px 3px rgba(_slayley(9), 0.9);
+        @include breakpoint(min, large) {
+          @apply px-3;
+          font-size: $h4;
+        }
+      }
+      .variant-selectors {
+        @apply mx-6;
+      }
+      .product-options {
+        @apply relative flex flex-col justify-start gap-1;
+        .product-description {
+          @apply relative flex flex-col justify-between max-h-40 lg:max-h-48 xl:max-h-56 min-h-fit h-full w-[92%] overflow-x-hidden overflow-y-scroll;
+          p {
+            font-size: $sm;
+            line-height: 1.333;
+            @include breakpoint(max, medium) {
+              font-size: $sm;
+            }
+          }
+          h1, h2, h3, h4, h5 {
+            color: var(--ggs-subheading);
+          }
+          h2 { font-size: $h3; }
+          h3 { font-size: $h4; }
+          h4 { font-size: $h5; }
+          &::-webkit-scrollbar {
+            width: 10px;
+          }
+          &::-webkit-scrollbar-track {
+            background: var(--ggs-primary);
+          }
+          &::-webkit-scrollbar-thumb {
+            background: var(--ggs-dark);
+          }
+        }
+        .button-container {
+          @apply relative flex flex-row justify-between items-center left-0 md:left-0 lg:left-0 w-full md:w-full bottom-0 mx-auto pb-2 pt-0;
+          .variant-price {
+            font-size: $lg;
+            color: _slate(5);
+          }
+          .btn {
+            @apply pt-3 pb-2 px-3 mx-auto border border-solid rounded-md w-fit h-fit overflow-hidden text-ellipsis appearance-none;
+            font-size: $sm;
+            font-family: $lighters;
+            text-transform: uppercase;
+            line-height: 1;
+          }
+        }
       }
     }
   }

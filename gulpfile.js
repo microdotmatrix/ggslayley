@@ -6,10 +6,8 @@ const dartSass = require("sass");
 const del = require("del");
 const { createGulpEsbuild } = require('gulp-esbuild');
 
-// const groupCSSMediaQueries = "gulp-group-css-media-queries";
 const gulp = require("gulp");
 const gulpSass = require("gulp-sass");
-// const imagemin = require("gulp-imagemin");
 const newer = require("gulp-newer");
 const notify = require("gulp-notify");
 const plumber = require("gulp-plumber");
@@ -18,13 +16,10 @@ const postCss = require("gulp-postcss")
 const postCssImport = require("postcss-import");
 const postCssPresetEnv = require("postcss-preset-env");
 const purgecss = require("gulp-purgecss");
+const cssnano = require("gulp-cssnano");
 
-// const pug = "gulp-pug";
 const rename = require("gulp-rename");
 const sourcemaps = require("gulp-sourcemaps");
-// const svgmin = require("gulp-svgmin");
-// const versionNumber = "gulp-version-number";
-// const webp = require("gulp-webp");
 
 // ? Configure gulp-sass
 const sass = gulpSass(dartSass);
@@ -42,29 +37,24 @@ const distDir = "./assets/build"; // Build dir
 const srcDir = "./assets"; // Source dir
 
 const esbuild = createGulpEsbuild({
-  incremental: mode === "development",
-  piping: mode === "development"
+  incremental: true,
+  piping: true
 });
 
 const paths = {
   distDir,
   srcDir,
   src: {
-//    images: `${srcDir}/images/**/*.{jpg,jpeg,png,gif,webp}`,
     scripts: `${srcDir}/scripts/app.js`,
-//    svg: `${srcDir}/images/**/*.svg`,
     styles: `${srcDir}/styles/main.scss`,
   },
   dist: {
     pages: distDir,
-//    images: `${distDir}/img/`,
     svg: `${distDir}/img/`,
     scripts: `${distDir}/js/`,
     styles: `${distDir}/css/`,
   },
   watch: {
-    //markup: [`${srcDir}/includes/**/*.pug`, `${srcDir}/pages/**/*.pug`],
- //   images: `${srcDir}/images/**/*.{jpg,jpeg,png,gif,webp}`,
     scripts: `${srcDir}/scripts/**/*.{js,mjs,mts,ts}`,
     styles: `${srcDir}/styles/**/*.{sass,scss,css}`,
     svg: `${srcDir}/images/**/*.svg`,
@@ -119,15 +109,26 @@ function compileStyles () {
         tailwindcss(tailwindConfig)
       ])
     )
-    //.pipe(gulpResolveUrl())
-    //.pipe(groupCSSMediaQueries())
     .pipe(
       rename((path) => {
         path.extname = ".css";
       })
     )
     .pipe(dest(paths.dist.styles))
-    .pipe(cleanCSS())
+    .pipe(plumber.stop())
+};
+
+function buildStyles() {
+  return src(paths.dist.styles+'main.css')
+    .pipe(
+      plumber(
+        notify.onError({
+          title: "Error in buildStyles task",
+          message: "<%= error.message %>",
+        })
+      )
+    )
+    .pipe(cssnano())
     .pipe(
       rename((path) => {
         path.extname = ".min.css";
@@ -136,7 +137,7 @@ function compileStyles () {
     .pipe(plumber.stop())
     .pipe(dest(paths.dist.styles))
     .pipe(bs.stream());
-};
+}
 
 function compileScripts () {
   return src(paths.src.scripts)
@@ -155,7 +156,7 @@ function compileScripts () {
     )
     .pipe(
       esbuild({
-        minify: mode === "production",
+        minify: false,
         format: "cjs",
         treeShaking: true,
         bundle: true,
@@ -239,7 +240,7 @@ const compile = series(
 /*                                Default task                                */
 /* -------------------------------------------------------------------------- */
 exports.default = compile;
-exports.build = compile;
+exports.build = series(compile, buildStyles);
 exports.watch = series(local, compile);
 
 exports.zip = zipper;

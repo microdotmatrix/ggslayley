@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{meta_title}}</title>
-    <link rel="stylesheet" href="{{asset "build/css/main.min.css"}}">
-
+    <link rel="stylesheet" href="{{asset "build/css/main.css"}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css">
     {{{block "styles"}}}
-
+    <script type="module" src="{{asset "build/js/app.min.js"}}"></script>
     {{ghost_head}}
 </head>
 
@@ -19,7 +19,6 @@
   <main class="xc-body">
 
     {{{body}}}
-    {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
 
   </main>
 
@@ -27,8 +26,6 @@
 
   {{!-- <foot> --}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-  <script src="{{asset "build/js/app.min.js"}}"></script>
 
   {{> "scripts"}}
 

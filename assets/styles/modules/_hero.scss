@@ -3,6 +3,7 @@
   border-image: linear-gradient(to left, rgba(_slate(4), 0.4), rgba(_slate(4), 0)) 1 0 1 0;
   &__wrapper {
     @include adaptive($container-gutter);
+    width: 100%;
   }
 }
 

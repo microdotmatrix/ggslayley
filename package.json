@@ -18,7 +18,7 @@
     ],
     "scripts": {
         "mix": "npx mix",
-        "build": "gulp",
+        "build": "gulp build",
         "dev": "gulp watch",
         "deploy": "npx mix && gulp jsmin"
     },
@@ -33,6 +33,7 @@
         "gulp": "^4.0.2",
         "gulp-babel": "^8.0.0",
         "gulp-clean-css": "^4.3.0",
+        "gulp-cssnano": "^2.1.3",
         "gulp-esbuild": "^0.10.4",
         "gulp-group-css-media-queries": "^1.2.2",
         "gulp-newer": "^1.4.0",
@@ -55,6 +56,7 @@
         "webpack": "^5.73.0"
     },
     "dependencies": {
+        "@splidejs/splide": "^4.0.7",
         "@waaark/luge": "^0.6.7-beta",
         "accoutrement": "^4.0.1",
         "activate-power-mode": "^1.0.0",
