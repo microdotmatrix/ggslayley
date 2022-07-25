@@ -55,7 +55,7 @@
       animation-timing-function: ease(elastic-2);
       animation-duration: 250ms;
       transition: all 420ms ease-in-out;
-      @include breakpoint(max, $bp-sm) {
+      @include breakpoint(max, small) {
         font-size: 4rem;
       }
       &:hover {

@@ -1,7 +1,7 @@
 import GLightbox from 'glightbox';
 
-export default class Lightbox {
-  constructor() {
+export default function Lightbox() {
+
     const lightbox = GLightbox({
       touchNavigation: true,
       descPosition: 'right',
@@ -19,5 +19,5 @@ export default class Lightbox {
       image.parentNode.insertBefore(wrapper, image.parentNode.firstChild);
       wrapper.appendChild(image);
     });
-  }
+
 };

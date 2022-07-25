@@ -109,13 +109,15 @@ function compileStyles () {
         tailwindcss(tailwindConfig)
       ])
     )
+    .pipe(cssnano())
     .pipe(
       rename((path) => {
-        path.extname = ".css";
+        path.extname = ".min.css";
       })
     )
-    .pipe(dest(paths.dist.styles))
     .pipe(plumber.stop())
+    .pipe(dest(paths.dist.styles))
+    .pipe(bs.stream());
 };
 
 function buildStyles() {
@@ -151,7 +153,9 @@ function compileScripts () {
     )
     .pipe(
       babel({
-        presets: ['@babel/preset-env'],
+        presets: [
+          '@babel/preset-env'
+        ],
       })
     )
     .pipe(
@@ -163,6 +167,7 @@ function compileScripts () {
         // TODO: Add sourcemaps support
       })
     )
+
     .pipe(
       rename((path) => {
         path.extname = ".min.js";

@@ -1,25 +1,24 @@
 // import Swiper, { Navigation, Pagination, Autoplay } from 'swiper';
 // import { jarallax, jarallaxVideo } from "jarallax";
+import './modules/shop/v1'
 
-// import Lightbox from './modules/lightbox';
+import { Nav } from './modules/nav';
+import { Slider } from './modules/slider';
+Nav();
+Slider();
+
+// import { Shop } from './modules/shop/featured';
+// Shop();
+
 import Header from './modules/header';
+import Lightbox from './modules/lightbox';
 // import Slider from './modules/slider';
-
-import { Splide } from '@splidejs/splide'
 // import { SlideTrans } from './util/slidetrans'
 
-const config = {
-  type: 'loop',
-  height     : '9rem',
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-  var splide = new Splide('.splide', config);
-  splide.mount();
-});
-// new Lightbox();
-new Header();
+//Lightbox();
+//Header();
 // new Slider();
+
 
 // jarallaxVideo();
 // jarallax(document.querySelectorAll('.jarallax'), {
