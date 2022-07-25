@@ -5,11 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{meta_title}}</title>
-    <link rel="stylesheet" href="{{asset "dist/css/main.css"}}">
+    <script src="http://localhost:3000/@vite/client"></script>
+    <script src="{{asset url='js/vite.js'}}" type="module"></script>
 
     {{{block "styles"}}}
 
     {{ghost_head}}
+
+
 </head>
 
 <body class="{{body_class}}">
