@@ -7,8 +7,9 @@ $(function() {
 	/* Build new ShopifyBuy client
 	============================================================ */
   const client = ShopifyBuy.buildClient({
-    domain: 'slayley.myshopify.com',
-    storefrontAccessToken: 'dbd31b8fc838a695d54c9befd30cf148',
+    domain: process.env.SHOPIFY_DOMAIN,
+    storefrontAccessToken: process.env.SHOPIFY_ACCESS_TOKEN,
+    apiKey: process.env.SHOPIFY_API_KEY,
     appId: '1'
   });
 	var product;
